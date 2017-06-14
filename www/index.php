@@ -12,18 +12,91 @@ var_dump($curriculo);
 echo "</pre>";
 
 ?>
-<?php require __DIR__ . "/header.php"; ?>
-<?php require __DIR__ . "/sidebar.php"; ?>
+    <!DOCTYPE html>
+    <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+    <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+    <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <title>Responsive Resume/CV Template for Developers</title>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+        <meta name="author" content="Rodrigo Landim Carneiro">
+        <link rel="shortcut icon" href="favicon.png">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
+
+        <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="css/styles.css">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+<body>
+<div class="wrapper">
+    <div class="sidebar-wrapper">
+        <div class="profile-container">
+            <img class="profile img-responsive img-circle" src="<?php echo get_gravatar($curriculo->getEmail1(), 100) ?>" alt="<?php echo $curriculo->getNome(); ?>" />
+            <h1 class="name"><?php echo $curriculo->getNome(); ?></h1>
+            <h3 class="tagline">Full Stack Developer</h3>
+        </div><!--//profile-container-->
+
+        <div class="contact-container container-block">
+            <ul class="list-unstyled contact-list">
+                <?php if (!isNullOrEmpty($curriculo->getEmail1())) : ?>
+                <li class="email"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
+                <?php endif; ?>
+                <li class="phone"><i class="fa fa-phone"></i><a href="tel:55062996257590">+55 (62) 9 9625-7590</a></li>
+                <li class="website"><i class="fa fa-globe"></i><a href="http://emagine.com.br" target="_blank">emagine.com.br</a></li>
+                <li class="linkedin"><i class="fa fa-linkedin"></i><a href="https://linkedin.com/in/rodrigolandim" target="_blank">#rodrigolandim</a></li>
+                <li class="github"><i class="fa fa-github"></i><a href="#" target="_blank">github.com/landim32</a></li>
+                <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/landim32official" target="_blank">@landim32official</a></li>
+            </ul>
+        </div><!--//contact-container-->
+        <div class="education-container container-block">
+            <h2 class="container-block-title">Education</h2>
+            <div class="item">
+                <h4 class="degree">Engenharia da Computação</h4>
+                <h5 class="meta">IESB</h5>
+                <div class="time">2003 - 2008</div>
+            </div><!--//item-->
+        </div><!--//education-container-->
+
+        <?php if (count($curriculo->listarLingua()) > 0) : ?>
+        <div class="languages-container container-block">
+            <h2 class="container-block-title">Languages</h2>
+            <ul class="list-unstyled interests-list">
+                <?php foreach ($curriculo->listarLingua() as $lingua) : ?>
+                <li><?php echo $lingua->getNome(); ?> <span class="lang-desc">(<?php echo $lingua->getTipo(); ?>)</span></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+
+        <!--div class="interests-container container-block">
+            <h2 class="container-block-title">Interests</h2>
+            <ul class="list-unstyled interests-list">
+                <li>Climbing</li>
+                <li>Snowboarding</li>
+                <li>Cooking</li>
+            </ul>
+        </div>-->
+
+    </div><!--//sidebar-wrapper-->
     <div class="main-wrapper">
 
         <section class="section summary-section">
             <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
             <div class="summary">
                 <p>
-                    Sou um Full Stack Developer. Recentemente participei de alguns projetos como: aplicativos para
-                    Android & iOS usando Xamarin c#.NET; um sistema de gestão imobiliária completo integrado com
-                    websites, rede sociais e outros serviços; desenvolvimento de plugins e templates para Wordpress;e
-                    automação de negociações para mercado financeiro IBOV e Forex.
+                    <?php echo $curriculo->getResumo(); ?>
                 </p>
             </div><!--//summary-->
         </section><!--//section-->
@@ -35,4 +108,18 @@ echo "</pre>";
         <?php require __DIR__ . "/conhecimento.inc.php"; ?>
 
     </div><!--//main-body-->
-<?php require __DIR__ . "/footer.php"; ?>
+</div>
+
+<footer class="footer">
+    <div class="text-center">
+        <small class="copyright">Designed by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+    </div><!--//container-->
+</footer><!--//footer-->
+
+<!-- Javascript -->
+<script type="text/javascript" src="plugins/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- custom js -->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
