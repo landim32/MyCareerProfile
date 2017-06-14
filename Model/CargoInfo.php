@@ -2,6 +2,8 @@
 
 namespace Emagine\Model;
 
+use stdClass;
+
 /**
  * Created by PhpStorm.
  * User: rodri
@@ -99,5 +101,15 @@ class CargoInfo
      */
     public function adicionarConhecimento($value) {
         $this->conhecimentos[] = $value;
+    }
+
+    /**
+     * @param stdClass $value
+     * @param string $language
+     * @return CargoInfo
+     */
+    public static function fromJson($value, $language = "pt_BR") {
+        $cargo = new CargoInfo();
+        return $cargo;
     }
 }

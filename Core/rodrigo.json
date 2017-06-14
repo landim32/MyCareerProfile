@@ -1,0 +1,356 @@
+{
+  "nome": "Rodrigo Landim",
+  "email1": "rodrigo@emagine.com.br",
+  "telefone1": "+55 (62) 9 9625-7590",
+  "website": "emagine.com.br",
+  "github": "landim32",
+  "twitter": "landim32official",
+  "graduacao": [
+    {
+      "curso": "Engenharia da Computação",
+      "instituicao": "IESB",
+      "inicio": 2003,
+      "termino": 2008
+    }
+  ],
+  "linguas": [
+    { "nome": "Português", "tipo" : "nativo" },
+    { "nome": "Inglês", "tipo" : "avançado" }
+  ],
+  "resumo": {
+    "pt_BR": "Sou um Full Stack Developer. Recentemente participei de alguns projetos como: aplicativos para Android & iOS usando Xamarin c#.NET; um sistema de gestão imobiliária completo integrado com websites, rede sociais e outros serviços; desenvolvimento de plugins e templates para Wordpress;e automação de negociações para mercado financeiro IBOV e Forex."
+  },
+  "cargos": [
+    {
+      "nome": "Full Stack Developer",
+      "empresa" : "Emagine",
+      "data_inicio": "2017-04-01",
+      "descricao" : "Trabalhando como Freelance, desenvolvendo projetos mobile em Xamarin, dando manutenção e dando consultoria em projetos anteriores.",
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Xamarin Developer",
+      "empresa" : "Club Management Apps",
+      "data_inicio": "2016-07-01",
+      "data_termino": "2017-03-01",
+      "descricao" : "Trabalhei na migração de um aplicativo móvel para gestão de obras de pavimentação feito em Titanium para Xamarin. Desenvolvi uma ferramenta de Geolocalização de radares em Android e iOS usando Xamarin.",
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "Java para Android", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "Titanium", "estilo": "info" },
+        { "nome": "Appcelerator", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "PHP Developer",
+      "empresa" : "Imobsync",
+      "data_inicio": "2013-01-01",
+      "data_termino": "2016-07-01",
+      "descricao" : "Desenvolvi todo o sistema de gestão imobiliária, portal imobiliário, integração entre corretores, websites usando WordPress e API própria.",
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "Wordpress", "estilo": "info" },
+        { "nome": "Apache", "estilo": "info" },
+        { "nome": "OpenSSL", "estilo": "info" },
+        { "nome": "PowerDNS", "estilo": "info" },
+        { "nome": "Java para Android", "estilo": "info" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    },
+    {
+      "nome": ".NET Developer / Gerente de Projetos",
+      "empresa" : "Wimoveis.com",
+      "data_inicio": "2005-09-01",
+      "data_termino": "2011-11-01",
+      "descricao" : "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões.",
+      "conhecimentos": [
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Silverlight", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Senior Developer",
+      "empresa" : "Implanta Informática",
+      "data_inicio": "2003-07-01",
+      "data_termino": "2005-08-01",
+      "descricao" : "Ajudei no desenvolvimento do sistema SISCAF, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, que era uma interface web do sistema.",
+      "conhecimentos": [
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "Delphi", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" },
+        { "nome": "HTML", "estilo": "info" },
+        { "nome": "CSS", "estilo": "info" },
+        { "nome": "Javascript", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Network Manager",
+      "empresa" : "ZarpNet Internet",
+      "data_inicio": "2001-04-01",
+      "data_termino": "2003-06-01",
+      "descricao" : "Configuração e automação de rotinas para servdores FreeBSD e Linux usando serviços de hospedagem de páginas, email e acesso a Internet.",
+      "conhecimentos": [
+        { "nome": "C++", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "Firewall", "estilo": "primary" },
+        { "nome": "FreeBSD", "estilo": "info" },
+        { "nome": "Solaris", "estilo": "info" },
+        { "nome": "Linux", "estilo": "info" },
+        { "nome": "Shell Script", "estilo": "primary" },
+        { "nome": "Pearl", "estilo": "primary" },
+        { "nome": "Sendmail", "estilo": "info" },
+        { "nome": "QMail", "estilo": "info" }
+      ],
+      "situacao" : "escondido"
+    },
+    {
+      "nome": "PHP Developer",
+      "empresa" : "Yawl Internet",
+      "data_inicio": "2000-04-01",
+      "data_termino": "2001-05-01",
+      "descricao" : "Ajudei a criar uma interface web para a configuração de serviços de um provedor de Internet.",
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" }
+      ],
+      "situacao" : "escondido"
+    },
+    {
+      "nome": "PHP Developer",
+      "empresa" : "Rudah Internet",
+      "data_inicio": "1999-09-01",
+      "data_termino": "2000-04-01",
+      "descricao" : "Ajudei no desenvolvimento de uma intranet para a FUNCEP.",
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" }
+      ],
+      "situacao" : "escondido"
+    },
+    {
+      "nome": "Desenvolvedor / Suporte Têcnico",
+      "empresa" : "Netium Internet",
+      "data_inicio": "1998-09-01",
+      "data_termino": "1999-04-01",
+      "descricao" : "Ajudei no desenvolvimento de uma intranet para a FUNCEP.",
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" }
+      ],
+      "situacao" : "escondido"
+    }
+  ],
+  "projetos": [
+    {
+      "nome": "Imhovel",
+      "descricao" : "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
+        { "nome": "Imhovel Busca", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
+        { "nome": "Imhovel Busca", "tipo": "ios", "url": "#" },
+        { "nome": "Imhovel Corretor", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" },
+        { "nome": "Imhovel Corretor", "tipo": "ios", "url": "#" }
+      ],
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "SQLite", "estilo": "success" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Imhovel",
+      "descricao" : "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
+        { "nome": "Imhovel Busca", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
+        { "nome": "Imhovel Busca", "tipo": "ios", "url": "#" },
+        { "nome": "Imhovel Corretor", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" },
+        { "nome": "Imhovel Corretor", "tipo": "ios", "url": "#" }
+      ],
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "SQLite", "estilo": "success" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Wimoveis",
+      "descricao" : "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Fui responsável pelo desenovimento de todo o projeto.",
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://wimoveis.com" }
+      ],
+      "conhecimentos": [
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" },
+        { "nome": "WebServices", "estilo": "info" },
+        { "nome": "AJAX", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "CSS", "estilo": "info" },
+        { "nome": "Unit", "estilo": "info" },
+        { "nome": "Silverlight", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Simeon",
+      "descricao" : "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
+      "links": [
+        { "nome": "EPA", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" },
+        { "nome": "EPA", "tipo": "ios", "url": "#" }
+      ],
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    },
+    {
+      "nome": "Radar Mais",
+      "descricao" : "O Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
+      "links": [
+        { "nome": "Radar Mais", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
+        { "nome": "Radar Mais", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
+      ],
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    },
+    {
+      "nome": "Radar Mais",
+      "descricao" : "O Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
+      "links": [
+        { "nome": "Radar Mais", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
+        { "nome": "Radar Mais", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
+      ],
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    },
+    {
+      "nome": "Imobsync",
+      "descricao" : "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://imobsync.com" }
+      ],
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "Angular", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
+        { "nome": "jQuery", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "Info" },
+        { "nome": "Bootstrap", "estilo": "Info" },
+        { "nome": "Less", "estilo": "Info" },
+        { "nome": "Slim Framework", "estilo": "Info" },
+        { "nome": "PHPUnit", "estilo": "Info" },
+        { "nome": "Apache", "estilo": "Info" },
+        { "nome": "PowerDNS", "estilo": "Info" }
+      ]
+    },
+    {
+      "nome": "Emagine",
+      "descricao" : "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br" }
+      ],
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "Wordpress", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "PostgreSQL", "estilo": "success" }
+      ]
+    },
+    {
+      "nome": "Unico Calc",
+      "descricao" : "Calculadora exclusiva de usinagem para a Único Asfaltos.",
+      "links": [
+        { "nome": "UnicoCalc", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagementApps.UnicoCalc" },
+        { "nome": "UnicoCalc", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/unicocalc/id1160854486?l=en&mt=8" }
+      ],
+      "conhecimentos": [
+        { "nome": "Appcelerator", "estilo": "primary" },
+        { "nome": "Titanium", "estilo": "primary" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    },
+    {
+      "nome": "PAVmanager",
+      "descricao" : "O PAVmanager é um sistema de gestão de obras de pavimentação essencial para sua empresa. Através dele você pode gerenciar online e offline, todas as fases de sua obra, de onde estiver e em tempo real.",
+      "links": [
+        { "nome": "PAVManager", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagement.PAVmanager" },
+        { "nome": "PAVManager", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/pavmanager/id1090884915?l=en&mt=8" }
+      ],
+      "conhecimentos": [
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "Appcelerator", "estilo": "primary" },
+        { "nome": "Titanium", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    }
+  ],
+  "conhecimentos": [
+    { "nome": "c#.NET", "value": 100 },
+    { "nome": "Xamarin", "value": 100 },
+    { "nome": "PHP", "value": 100 },
+    { "nome": "Javascript & jQuery", "value": 95 },
+    { "nome": "HTML5, CSS & Less", "value": 95 },
+    { "nome": "Angular", "value": 80 },
+    { "nome": "MySQL", "value": 90 },
+    { "nome": "GitHub", "value": 80 },
+    { "nome": "Bootstrap", "value": 90 },
+    { "nome": "SQL Server", "value": 90 },
+    { "nome": "PostgreSQL", "value": 70 },
+    { "nome": "Wordpress", "value": 70 },
+    { "nome": "Linux & FreeBSD", "value": 70 },
+    { "nome": "Java", "value": 60 }
+  ]
+}

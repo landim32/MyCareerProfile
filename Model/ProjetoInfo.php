@@ -2,19 +2,22 @@
 
 namespace Emagine\Model;
 
+use stdClass;
+
 /**
  * Created by PhpStorm.
  * User: rodri
  * Date: 13/06/2017
  * Time: 12:23
  */
-class CargoInfo
+class ProjetoInfo
 {
     private $nome;
     private $descricao;
     private $data_inicio;
     private $data_termino;
     private $atual = false;
+    private $links = array();
     private $conhecimentos = array();
 
     /**
@@ -99,5 +102,29 @@ class CargoInfo
      */
     public function adicionarConhecimento($value) {
         $this->conhecimentos[] = $value;
+    }
+
+    /**
+     * @return LinkInfo[]
+     */
+    public function listarLinks() {
+        return $this->links;
+    }
+
+    /**
+     * @param LinkInfo $value
+     */
+    public function adicionarLink($value) {
+        $this->links[] = $value;
+    }
+
+    /**
+     * @param stdClass $value
+     * @param string $language
+     * @return ProjetoInfo
+     */
+    public static function fromJson($value, $language = "pt_BR") {
+        $projeto = new ProjetoInfo();
+        return $projeto;
     }
 }

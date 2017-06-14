@@ -2,6 +2,8 @@
 
 namespace Emagine\Model;
 
+use stdClass;
+
 /**
  * Class ConhecimentoInfo
  */
@@ -55,6 +57,16 @@ class ConhecimentoInfo
      */
     public function setPorcentagem($value) {
         $this->porcentagem = $value;
+    }
+
+    /**
+     * @param stdClass $value
+     * @param string $language
+     * @return ConhecimentoInfo
+     */
+    public static function fromJson($value, $language = "pt_BR") {
+        $conhecimento = new ConhecimentoInfo();
+        return $conhecimento;
     }
 
 }
