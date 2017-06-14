@@ -1,5 +1,7 @@
 <?php
 
+require dirname(__DIR__ ) . "/Core/config.inc.php";
+
 use Emagine\BLL\CurriculoBLL;
 
 $regraCurriculo = new CurriculoBLL();
