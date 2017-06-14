@@ -7,7 +7,9 @@ use Emagine\BLL\CurriculoBLL;
 $regraCurriculo = new CurriculoBLL();
 $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
 
+echo "<pre>";
 var_dump($curriculo);
+echo "</pre>";
 
 ?>
 <?php require __DIR__ . "/header.php"; ?>
