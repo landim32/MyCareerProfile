@@ -12,10 +12,14 @@ use stdClass;
 
 class CursoInfo
 {
+    const GRADUACAO = "graduacao";
+    const CURSO = "curso";
+
     private $curso = "";
     private $instituicao = "";
     private $inicio = "";
     private $termino = "";
+    private $tipo = "";
 
     /**
      * @return string
@@ -74,6 +78,20 @@ class CursoInfo
     }
 
     /**
+     * @return string
+     */
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setTipo($value) {
+        $this->tipo = $value;
+    }
+
+    /**
      * @param stdClass $value
      * @param string $language
      * @return CursoInfo
@@ -91,6 +109,9 @@ class CursoInfo
         }
         if (isset($value->termino)) {
             $curso->setTermino(getStr($value->termino, $language));
+        }
+        if (isset($value->tipo)) {
+            $curso->setTipo(getStr($value->tipo, $language));
         }
         return $curso;
     }
