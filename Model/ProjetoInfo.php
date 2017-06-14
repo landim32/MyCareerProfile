@@ -125,6 +125,28 @@ class ProjetoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $projeto = new ProjetoInfo();
+        if (isset($value->nome)) {
+            $projeto->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->descricao)) {
+            $projeto->setDescricao(getStr($value->descricao, $language));
+        }
+        if (isset($value->data_inicio)) {
+            $projeto->setDataInicio(getStr($value->data_inicio, $language));
+        }
+        if (isset($value->data_termino)) {
+            $projeto->setDataTermino(getStr($value->data_termino, $language));
+        }
+        if (isset($value->links) && count($value->links) > 0) {
+            foreach ($value->links as $link) {
+                $projeto->adicionarLink( LinkInfo::fromJson($link, $language) );
+            }
+        }
+        if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
+            foreach ($value->conhecimentos as $conhecimento) {
+                $projeto->adicionarConhecimento( ConhecimentoInfo::fromJson($conhecimento, $language) );
+            }
+        }
         return $projeto;
     }
 }

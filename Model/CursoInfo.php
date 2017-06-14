@@ -80,6 +80,18 @@ class CursoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $curso = new CursoInfo();
+        if (isset($value->curso)) {
+            $curso->setCurso(getStr($value->curso, $language));
+        }
+        if (isset($value->instituicao)) {
+            $curso->setInstituicao(getStr($value->instituicao, $language));
+        }
+        if (isset($value->inicio)) {
+            $curso->setInicio(getStr($value->inicio, $language));
+        }
+        if (isset($value->termino)) {
+            $curso->setTermino(getStr($value->termino, $language));
+        }
         return $curso;
     }
 }

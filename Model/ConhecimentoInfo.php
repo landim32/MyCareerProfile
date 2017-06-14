@@ -66,6 +66,15 @@ class ConhecimentoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $conhecimento = new ConhecimentoInfo();
+        if (isset($value->nome)) {
+            $conhecimento->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->estilo)) {
+            $conhecimento->setEstilo(getStr($value->estilo, $language));
+        }
+        if (isset($value->valor)) {
+            $conhecimento->setPorcentagem(getStr($value->valor, $language));
+        }
         return $conhecimento;
     }
 

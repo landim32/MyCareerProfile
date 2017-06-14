@@ -209,14 +209,30 @@ class CurriculoInfo {
      */
     public static function fromJson($value, $language = "pt_BR") {
         $curriculo = new CurriculoInfo();
-        $curriculo->setNome( getStr( $value->nome, $language ) );
-        $curriculo->setEmail1( getStr( $value->email1, $language ) );
-        $curriculo->setTelefone1( getStr( $value->telefone1, $language ) );
-        $curriculo->setWebsite( getStr( $value->website, $language ) );
-        $curriculo->setLinkedin( getStr( $value->linkedin, $language ) );
-        $curriculo->setGithub( getStr( $value->github, $language ) );
-        $curriculo->setTwitter( getStr( $value->twitter, $language ) );
-        $curriculo->setResumo( getStr( $value->resumo, $language ) );
+        if (isset($value->nome)) {
+            $curriculo->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->email1)) {
+            $curriculo->setEmail1(getStr($value->email1, $language));
+        }
+        if (isset($value->telefone1)) {
+            $curriculo->setTelefone1(getStr($value->telefone1, $language));
+        }
+        if (isset($value->website)) {
+            $curriculo->setWebsite(getStr($value->website, $language));
+        }
+        if (isset($value->linkedin)) {
+            $curriculo->setLinkedin(getStr($value->linkedin, $language));
+        }
+        if (isset($value->github)) {
+            $curriculo->setGithub(getStr($value->github, $language));
+        }
+        if (isset($value->twitter)) {
+            $curriculo->setTwitter(getStr($value->twitter, $language));
+        }
+        if (isset($value->resumo)) {
+            $curriculo->setResumo(getStr($value->resumo, $language));
+        }
         if (isset($value->linguas) && count($value->linguas) > 0) {
             foreach ($value->linguas as $lingua) {
                 $curriculo->adicionarLingua( LinguaInfo::fromJson($lingua, $language) );

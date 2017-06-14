@@ -8,6 +8,7 @@
 
 namespace Emagine\Model;
 
+use stdClass;
 
 class LinkInfo
 {
@@ -59,5 +60,24 @@ class LinkInfo
      */
     public function setUrl($value) {
         $this->url = $value;
+    }
+
+    /**
+     * @param stdClass $value
+     * @param string $language
+     * @return LinkInfo
+     */
+    public static function fromJson($value, $language = "pt_BR") {
+        $link = new LinkInfo();
+        if (isset($value->nome)) {
+            $link->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->nome)) {
+            $link->setTipo(getStr($value->tipo, $language));
+        }
+        if (isset($value->url)) {
+            $link->setUrl(getStr($value->url, $language));
+        }
+        return $link;
     }
 }

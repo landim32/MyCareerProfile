@@ -110,6 +110,23 @@ class CargoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $cargo = new CargoInfo();
+        if (isset($value->nome)) {
+            $cargo->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->descricao)) {
+            $cargo->setDescricao(getStr($value->descricao, $language));
+        }
+        if (isset($value->data_inicio)) {
+            $cargo->setDataInicio(getStr($value->data_inicio, $language));
+        }
+        if (isset($value->data_termino)) {
+            $cargo->setDataTermino(getStr($value->data_termino, $language));
+        }
+        if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
+            foreach ($value->conhecimentos as $conhecimento) {
+                $cargo->adicionarConhecimento( ConhecimentoInfo::fromJson($conhecimento, $language) );
+            }
+        }
         return $cargo;
     }
 }

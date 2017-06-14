@@ -53,8 +53,12 @@ class LinguaInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $lingua = new LinguaInfo();
-        $lingua->setNome( getStr($value->nome, $language ) );
-        $lingua->setTipo( getStr($value->tipo, $language ) );
+        if (isset($value->nome)) {
+            $lingua->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->tipo)) {
+            $lingua->setTipo(getStr($value->tipo, $language));
+        }
         return $lingua;
     }
 }
