@@ -1,3 +1,13 @@
+<?php
+
+use Emagine\BLL\CurriculoBLL;
+
+$regraCurriculo = new CurriculoBLL();
+$curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
+
+var_dump($curriculo);
+
+?>
 <?php require __DIR__ . "/header.php"; ?>
 <?php require __DIR__ . "/sidebar.php"; ?>
     <div class="main-wrapper">
