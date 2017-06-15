@@ -70,6 +70,8 @@ class CurriculoPDF extends FPDF
 
         $this->SetTextColor(0, 0, 0);
 
+        $y = $this->GetY();
+
         $this->SetFont('Arial','',9);
         $this->Cell(20,5,"Telefone:", 0, 0, "R");
         $this->SetFont('Arial','B',9);
@@ -79,6 +81,23 @@ class CurriculoPDF extends FPDF
         $this->Cell(20,5,"Email:", 0, 0, "R");
         $this->SetFont('Arial','B',9);
         $this->Cell(0,5,$curriculo->getEmail1(), 0, 1);
+
+        $this->SetY($y);
+        $this->SetX($this->GetPageWidth() / 2);
+
+        $this->SetFont('Arial','',9);
+        $this->Cell(20,5,"LinkedIn:", 0, 0, "R");
+        $this->SetFont('Arial','B',9);
+        $this->Cell(0,5,$curriculo->getLinkedin(), 0, 1);
+
+        /*
+        $this->SetX($this->GetPageWidth() / 2);
+
+        $this->SetFont('Arial','',9);
+        $this->Cell(20,5,":", 0, 0, "R");
+        $this->SetFont('Arial','B',9);
+        $this->Cell(0,5,$curriculo->getTelefone1(), 0, 1);
+        */
     }
 
     public function gerar() {
