@@ -65,12 +65,12 @@ class CurriculoPDF extends FPDF
         $this->SetTextColor(120, 120, 120);
         $this->Cell(0,5,$curriculo->getCargoAtual(), 0, 1);
 
-        $this->Line(10, $this->GetY(), 160, $this->GetY());
+        $this->Line(10, $this->GetY(), $this->GetPageWidth(), $this->GetY());
         $this->SetXY($this->GetX(), $this->GetY() + 5);
 
         $this->SetFont('Arial','',9);
         $this->SetTextColor(0, 0, 0);
-        $this->Cell(0,5,"Telefone: ");
+        $this->Cell(30,5,"Telefone: ");
         $this->Cell(0,5,$curriculo->getTelefone1(), 0, 1);
     }
 
