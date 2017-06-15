@@ -105,6 +105,13 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getGithubUrl() {
+        return "https://github.com/" . $this->getGithub();
+    }
+
+    /**
      * @param string $value
      */
     public function setGithub($value) {
@@ -116,6 +123,13 @@ class CurriculoInfo {
      */
     public function getTwitter() {
         return $this->twitter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitterUrl() {
+        return "https://twitter.com/" . $this->getTwitter();
     }
 
     /**

@@ -55,10 +55,10 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 <li class="linkedin"><i class="fa fa-linkedin"></i><a href="<?php echo $curriculo->getLinkedinUrl(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getGithub())) : ?>
-                <li class="github"><i class="fa fa-github"></i><a href="https://github.com/<?php echo $curriculo->getGithub(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
+                <li class="github"><i class="fa fa-github"></i><a href="<?php echo $curriculo->getGithubUrl(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getTwitter())) : ?>
-                <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/<?php echo $curriculo->getTwitter(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
+                <li class="twitter"><i class="fa fa-twitter"></i><a href="<?php echo $curriculo->getTwitterUrl(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
                 <?php endif; ?>
             </ul>
         </div><!--//contact-container-->
