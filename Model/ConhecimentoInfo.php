@@ -73,7 +73,13 @@ class ConhecimentoInfo
             $conhecimento->setEstilo(getStr($value->estilo, $language));
         }
         if (isset($value->valor)) {
-            $conhecimento->setPorcentagem(getStr($value->valor, $language));
+            $conhecimento->setPorcentagem($value->valor);
+        }
+        elseif (isset($value->value)) {
+            $conhecimento->setPorcentagem($value->value);
+        }
+        elseif (isset($value->procentagem)) {
+            $conhecimento->setPorcentagem($value->porcetagem);
         }
         return $conhecimento;
     }
