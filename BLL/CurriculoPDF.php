@@ -70,7 +70,7 @@ class CurriculoPDF extends FPDF
 
         $this->SetFont('Arial','',9);
         $this->SetTextColor(0, 0, 0);
-        $this->Cell(30,5,"Telefone: ");
+        $this->Cell(25,5,"Telefone:", 0, 0, "R");
         $this->Cell(0,5,$curriculo->getTelefone1(), 0, 1);
     }
 
