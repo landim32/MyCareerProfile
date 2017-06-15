@@ -262,13 +262,6 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
 
     </div><!--//main-body-->
 </div>
-
-<?php
-echo "<pre>";
-var_dump($curriculo);
-echo "</pre>";
-?>
-
 <footer class="footer">
     <div class="text-center">
         <small class="copyright">Designed by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
