@@ -268,6 +268,18 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getCargoAtual() {
+        if (count($this->cargos) > 0) {
+            /** @var CargoInfo $cargo */
+            $cargo = $this->cargos[0];
+            return $cargo->getNome();
+        }
+        return "";
+    }
+
+    /**
      * @param stdClass $value
      * @param string $language
      * @return CurriculoInfo
