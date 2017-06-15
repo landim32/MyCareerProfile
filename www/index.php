@@ -120,7 +120,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 <div class="details">
                     <p><?php echo $cargo->getDescricao(); ?></p>
                     <?php foreach ($cargo->listarConhecimento() as $conhecimento) : ?>
-                    <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php $conhecimento->getNome(); ?></span>
+                    <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php echo $conhecimento->getNome(); ?></span>
                     <?php endforeach; ?>
                 </div><!--//details-->
             </div><!--//item-->
