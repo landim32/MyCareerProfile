@@ -63,7 +63,7 @@ class CurriculoPDF extends FPDF
 
         $this->SetFont('Arial','',10);
         $this->SetTextColor(120, 120, 120);
-        $this->Cell(0,7,$curriculo->getCargoAtual());
+        $this->Cell(0,7,$curriculo->getCargoAtual(), 0, 1);
     }
 
     public function gerar() {
