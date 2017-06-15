@@ -32,6 +32,7 @@ class CurriculoPDF extends FPDF
     }
 
     public function Header() {
+        /*
         $this->SetFont('Arial','B',15);
         // Move to the right
         $this->Cell(80);
@@ -39,6 +40,7 @@ class CurriculoPDF extends FPDF
         $this->Cell(30,10,'Title',1,0,'C');
         // Line break
         $this->Ln(20);
+        */
     }
 
     public function Footer()
@@ -51,12 +53,29 @@ class CurriculoPDF extends FPDF
         $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
 
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarDado($curriculo) {
+        $this->SetFont('Arial','B',12);
+        $this->SetTextColor(0, 0, 0);
+        $this->Cell(0,7,$curriculo->getNome());
+
+        $this->SetFont('Arial','',10);
+        $this->SetTextColor(120, 120, 120);
+        $this->Cell(0,7,$curriculo->getCargoAtual());
+    }
+
     public function gerar() {
+        $curriculo = $this->getCurriculo();
         $this->AliasNbPages();
         $this->AddPage();
+        $this->gerarDado($curriculo);
+        /*
         $this->SetFont('Arial','',12);
         for($i=1;$i<=40;$i++)
             $this->Cell(0,10,'Printing line number '.$i,0,1);
+        */
     }
 
 }
