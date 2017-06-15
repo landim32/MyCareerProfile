@@ -55,8 +55,8 @@ class CurriculoPDF extends FPDF
 
     private function desenharLinha() {
         $this->SetDrawColor(120, 120, 120);
-        $this->Line(10, $this->GetY(), $this->GetPageWidth() - 20, $this->GetY());
-        $this->SetXY($this->GetX(), $this->GetY() + 2);
+        $this->Line(10, $this->GetY() + 1, $this->GetPageWidth() - 10, $this->GetY() + 1);
+        $this->SetY($this->GetY() + 3);
     }
 
     /**
@@ -120,6 +120,8 @@ class CurriculoPDF extends FPDF
         $this->desenharLinha();
 
         $this->escreverTituloSessao("Resumo");
+        $this->SetFont('Arial','B',9);
+        $this->SetTextColor(0, 0, 0);
         $this->MultiCell(0, 5, $curriculo->getResumo());
 
         /*
