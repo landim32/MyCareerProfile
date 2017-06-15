@@ -56,7 +56,7 @@ class CurriculoPDF extends FPDF
         $this->AddPage();
         $this->SetFont('Arial','',12);
         for($i=1;$i<=40;$i++)
-            $this->Cell(0,0,'Printing line number '.$i,0,1);
+            $this->Cell(0,10,'Printing line number '.$i,0,1);
     }
 
 }
