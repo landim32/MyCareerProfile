@@ -172,35 +172,10 @@
       "descricao" : "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
       "links": [
         { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
-        { "nome": "Imhovel Busca", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
-        { "nome": "Imhovel Busca", "tipo": "ios", "url": "#" },
-        { "nome": "Imhovel Corretor", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" },
-        { "nome": "Imhovel Corretor", "tipo": "ios", "url": "#" }
-      ],
-      "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "SQLite", "estilo": "success" },
-        { "nome": "Javascript", "estilo": "info" },
-        { "nome": "jQuery", "estilo": "info" },
-        { "nome": "Angular", "estilo": "info" },
-        { "nome": "HTML5", "estilo": "info" },
-        { "nome": "Bootstrap", "estilo": "info" },
-        { "nome": "Less", "estilo": "info" }
-      ]
-    },
-    {
-      "nome": "Imhovel",
-      "url": "https://imhovel.com.br",
-      "descricao" : "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
-      "links": [
-        { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
-        { "nome": "Imhovel Busca", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
-        { "nome": "Imhovel Busca", "tipo": "ios", "url": "#" },
-        { "nome": "Imhovel Corretor", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" },
-        { "nome": "Imhovel Corretor", "tipo": "ios", "url": "#" }
+        { "nome": "Imhovel Busca (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
+        { "nome": "Imhovel Busca (iOS)", "tipo": "ios", "url": "#" },
+        { "nome": "Imhovel Corretor (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" },
+        { "nome": "Imhovel Corretor (iOS)", "tipo": "ios", "url": "#" }
       ],
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
@@ -239,8 +214,8 @@
       "url": "http://simeon.com.br",
       "descricao" : "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
       "links": [
-        { "nome": "EPA", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" },
-        { "nome": "EPA", "tipo": "ios", "url": "#" }
+        { "nome": "EPA (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" },
+        { "nome": "EPA (iOS)", "tipo": "ios", "url": "#" }
       ],
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
@@ -252,8 +227,8 @@
       "nome": "Radar Mais",
       "descricao" : "O Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
       "links": [
-        { "nome": "Radar Mais", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
-        { "nome": "Radar Mais", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
+        { "nome": "Radar Mais (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
+        { "nome": "Radar Mais (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
       ],
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
@@ -307,8 +282,8 @@
       "nome": "Unico Calc",
       "descricao" : "Calculadora exclusiva de usinagem para a Único Asfaltos.",
       "links": [
-        { "nome": "UnicoCalc", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagementApps.UnicoCalc" },
-        { "nome": "UnicoCalc", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/unicocalc/id1160854486?l=en&mt=8" }
+        { "nome": "UnicoCalc (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagementApps.UnicoCalc" },
+        { "nome": "UnicoCalc (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/unicocalc/id1160854486?l=en&mt=8" }
       ],
       "conhecimentos": [
         { "nome": "Appcelerator", "estilo": "primary" },
@@ -321,8 +296,8 @@
       "nome": "PAVmanager",
       "descricao" : "O PAVmanager é um sistema de gestão de obras de pavimentação essencial para sua empresa. Através dele você pode gerenciar online e offline, todas as fases de sua obra, de onde estiver e em tempo real.",
       "links": [
-        { "nome": "PAVManager", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagement.PAVmanager" },
-        { "nome": "PAVManager", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/pavmanager/id1090884915?l=en&mt=8" }
+        { "nome": "PAVManager (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagement.PAVmanager" },
+        { "nome": "PAVManager (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/pavmanager/id1090884915?l=en&mt=8" }
       ],
       "conhecimentos": [
         { "nome": "c#.NET", "estilo": "primary" },
