@@ -108,7 +108,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         <?php if (count($curriculo->listarCargo()) > 0) : ?>
         <section class="section experiences-section">
             <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-            <?php foreach ($curriculo->listarCargo() as $cargo) : ?>
+            <?php foreach ($curriculo->listarCargoVisivel() as $cargo) : ?>
             <div class="item">
                 <div class="meta">
                     <div class="upper-row">
@@ -125,6 +125,28 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 </div><!--//details-->
             </div><!--//item-->
             <?php endforeach; ?>
+            <?php if (count($curriculo->listarCargoEscondido()) > 0) : ?>
+            <a href="#profession-hidden" class="hidden-btn">Visualizar mais cargos <i class="fa fa-chevron-down"></i></a>
+            <div id="profession-hidden" style="display: none;">
+                <?php foreach ($curriculo->listarCargoEscondido() as $cargo) : ?>
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="job-title"><?php echo $cargo->getNome(); ?></h3>
+                                <div class="time"><?php echo $cargo->getDataInicioStr(); ?> - <?php echo $cargo->getDataTerminoStr(); ?></div>
+                            </div><!--//upper-row-->
+                            <div class="company"><?php echo $cargo->getEmpresa(); ?></div>
+                        </div><!--//meta-->
+                        <div class="details">
+                            <p><?php echo $cargo->getDescricao(); ?></p>
+                            <?php foreach ($cargo->listarConhecimento() as $conhecimento) : ?>
+                                <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php echo $conhecimento->getNome(); ?></span>
+                            <?php endforeach; ?>
+                        </div><!--//details-->
+                    </div><!--//item-->
+                <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
         </section><!--//section-->
         <hr />
         <?php endif; ?>

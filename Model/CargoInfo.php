@@ -12,12 +12,15 @@ use stdClass;
  */
 class CargoInfo
 {
+    const ATIVO = "ativo";
+    const ESCONDIDO = "escondido";
+
     private $nome = "";
     private $empresa = "";
     private $descricao = "";
     private $data_inicio = null;
     private $data_termino = null;
-    private $atual = false;
+    private $situacao = "ativo";
     private $conhecimentos = array();
 
     /**
@@ -91,17 +94,17 @@ class CargoInfo
     }
 
     /**
-     * @return bool
+     * @return string
      */
-    public function getAtual() {
-        return $this->atual;
+    public function getSituacao() {
+        return $this->situacao;
     }
 
     /**
-     * @param bool $value
+     * @param string $value
      */
-    public function setAtual($value) {
-        $this->atual = $value;
+    public function setSituacao($value) {
+        $this->situacao = $value;
     }
 
     /**

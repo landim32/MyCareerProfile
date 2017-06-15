@@ -188,6 +188,32 @@ class CurriculoInfo {
     }
 
     /**
+     * @return CargoInfo[]
+     */
+    public function listarCargoVisivel() {
+        $cargos = array();
+        foreach ($this->listarCargo() as $cargo) {
+            if ($cargo->getSituacao() != CargoInfo::ESCONDIDO) {
+                $cargos[] = $cargo;
+            }
+        }
+        return $cargos;
+    }
+
+    /**
+     * @return CargoInfo[]
+     */
+    public function listarCargoEscondido() {
+        $cargos = array();
+        foreach ($this->listarCargo() as $cargo) {
+            if ($cargo->getSituacao() == CargoInfo::ESCONDIDO) {
+                $cargos[] = $cargo;
+            }
+        }
+        return $cargos;
+    }
+
+    /**
      * @return ProjetoInfo[]
      */
     public function listarProjeto() {
