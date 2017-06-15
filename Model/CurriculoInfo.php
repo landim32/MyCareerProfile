@@ -84,6 +84,13 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getLinkedinUrl() {
+        return "https://linkedin.com/in/" . $this->getLinkedin();
+    }
+
+    /**
      * @param string $value
      */
     public function setLinkedin($value) {

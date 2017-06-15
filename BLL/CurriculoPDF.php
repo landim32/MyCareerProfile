@@ -82,8 +82,7 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','B',9);
         $this->Cell(0,5,$curriculo->getEmail1(), 0, 1);
 
-        $this->SetY($y);
-        $this->SetX($this->GetPageWidth() / 2);
+        $this->SetXY(50, $y);
 
         $this->SetFont('Arial','',9);
         $this->Cell(20,5,"LinkedIn:", 0, 0, "R");

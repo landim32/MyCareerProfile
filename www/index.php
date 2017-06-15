@@ -52,7 +52,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 <li class="website"><i class="fa fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getLinkedin())) : ?>
-                <li class="linkedin"><i class="fa fa-linkedin"></i><a href="https://linkedin.com/in/<?php echo $curriculo->getLinkedin(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a></li>
+                <li class="linkedin"><i class="fa fa-linkedin"></i><a href="<?php echo $curriculo->getLinkedinUrl(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getGithub())) : ?>
                 <li class="github"><i class="fa fa-github"></i><a href="https://github.com/<?php echo $curriculo->getGithub(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
