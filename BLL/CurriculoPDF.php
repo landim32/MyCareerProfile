@@ -10,6 +10,7 @@ namespace Emagine\BLL;
 
 require_once dirname(__DIR__) . '/fpdf/fpdf.php';
 
+use Emagine\Model\CargoInfo;
 use FPDF;
 use Emagine\Model\CurriculoInfo;
 
@@ -55,8 +56,8 @@ class CurriculoPDF extends FPDF
 
     private function desenharLinha() {
         $this->SetDrawColor(120, 120, 120);
-        $this->Line(10, $this->GetY() + 1, $this->GetPageWidth() - 10, $this->GetY() + 1);
-        $this->SetY($this->GetY() + 4);
+        $this->Line(10, $this->GetY() + 2, $this->GetPageWidth() - 10, $this->GetY() + 2);
+        $this->SetY($this->GetY() + 5);
     }
 
     /**
@@ -66,6 +67,30 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','',12);
         $this->SetTextColor(120, 120, 120);
         $this->Cell(0,6, $texto, 0, 1);
+    }
+
+    /**
+     * @param CargoInfo $cargo
+     */
+    private function escreverCargo($cargo) {
+        $this->SetFont('Arial','B',9);
+        $this->SetTextColor(0, 0, 0);
+        $this->Cell(0,6, $cargo->getNome());
+        $this->SetFont('Arial','',9);
+        $this->Cell(0,6, " em ");
+        $this->SetFont('Arial','B',9);
+        $this->Cell(0,6, $cargo->getEmpresa(), 0, 1);
+
+        $this->SetFont('Arial','',9);
+        $this->SetDrawColor(120, 120, 120);
+        $this->Cell(0,6, $cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr(), 0, 1);
+        $this->SetFont('Arial','',9);
+        $this->SetTextColor(0, 0, 0);
+
+        $this->SetX($this->GetX() + 5);
+        $this->MultiCell(0, 5, utf8_decode($cargo->getDescricao()));
+
+        $this->SetY($this->GetY() + 5);
     }
 
     /**
@@ -125,7 +150,14 @@ class CurriculoPDF extends FPDF
         $this->MultiCell(0, 5, utf8_decode($curriculo->getResumo()));
 
         $this->desenharLinha();
-        
+
+        $this->escreverTituloSessao("Experiências Profissionais");
+
+        foreach ($curriculo->listarCargo() as $cargo) {
+            $this->escreverCargo($cargo);
+        }
+
+
     }
 
     public function gerar() {
