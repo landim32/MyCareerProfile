@@ -59,9 +59,9 @@ class CurriculoPDF extends FPDF
     private function gerarDados($curriculo) {
         $this->SetFont('Arial','B',16);
         $this->SetTextColor(0, 0, 0);
-        $this->Cell(0,7,$curriculo->getNome(), 0 ,1);
+        $this->Cell(0,6,$curriculo->getNome(), 0 ,1);
 
-        $this->SetFont('Arial','',10);
+        $this->SetFont('Arial','',12);
         $this->SetTextColor(120, 120, 120);
         $this->Cell(0,6,$curriculo->getCargoAtual(), 0, 1);
 
