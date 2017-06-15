@@ -24,19 +24,4 @@ class CurriculoBLL
         $curriculo = json_decode($json);
         return CurriculoInfo::fromJson($curriculo, $language);
     }
-
-    /**
-     * @param CurriculoInfo $curriculo
-     */
-    public function gerarPDF($curriculo) {
-        require_once dirname(__DIR__) . '/fpdf/fpdf.php';
-
-        $pdf = new FPDF();
-        $pdf->AliasNbPages();
-        $pdf->AddPage();
-        $pdf->SetFont('Times','',12);
-        for($i=1;$i<=40;$i++)
-            $pdf->Cell(0,10,'Printing line number '.$i,0,1);
-        $pdf->Output();
-    }
 }
