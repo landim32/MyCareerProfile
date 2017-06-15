@@ -66,7 +66,7 @@ class CurriculoPDF extends FPDF
     private function escreverTituloSessao($texto) {
         $this->SetFont('Arial','',12);
         $this->SetTextColor(120, 120, 120);
-        $this->Cell(0,6, $texto, 0, 1);
+        $this->Cell(0,7, utf8_decode($texto), 0, 1);
     }
 
     /**
@@ -75,11 +75,11 @@ class CurriculoPDF extends FPDF
     private function escreverCargo($cargo) {
         $this->SetFont('Arial','B',9);
         $this->SetTextColor(0, 0, 0);
-        $this->Cell(0,6, $cargo->getNome());
+        $this->Cell($this->GetStringWidth($cargo->getNome()),6, $cargo->getNome());
         $this->SetFont('Arial','',9);
-        $this->Cell(0,6, " em ");
+        $this->Cell($this->GetStringWidth(" em "),6, " em ");
         $this->SetFont('Arial','B',9);
-        $this->Cell(0,6, $cargo->getEmpresa(), 0, 1);
+        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, $cargo->getEmpresa(), 0, 1);
 
         $this->SetFont('Arial','',9);
         $this->SetDrawColor(120, 120, 120);
