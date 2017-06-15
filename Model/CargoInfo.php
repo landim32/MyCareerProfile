@@ -155,10 +155,13 @@ class CargoInfo
             $cargo->setDescricao(getStr($value->descricao, $language));
         }
         if (isset($value->data_inicio)) {
-            $cargo->setDataInicio(getStr($value->data_inicio, $language));
+            $cargo->setDataInicio($value->data_inicio);
         }
         if (isset($value->data_termino)) {
-            $cargo->setDataTermino(getStr($value->data_termino, $language));
+            $cargo->setDataTermino($value->data_termino);
+        }
+        if (isset($value->situacao)) {
+            $cargo->setSituacao($value->situacao);
         }
         if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
             foreach ($value->conhecimentos as $conhecimento) {
