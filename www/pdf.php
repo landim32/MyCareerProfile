@@ -3,9 +3,12 @@
 require dirname(__DIR__ ) . "/Core/config.inc.php";
 
 use Emagine\BLL\CurriculoBLL;
-use Emagine\Model\ProjetoInfo;
+use Emagine\BLL\CurriculoPDF;
 
 $regraCurriculo = new CurriculoBLL();
 $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
 
-$regraCurriculo->gerarPDF($curriculo);
+$curriculoPDF = new CurriculoPDF();
+$curriculoPDF->setCurriculo($curriculo);
+$curriculoPDF->gerar();
+$curriculoPDF->output();
