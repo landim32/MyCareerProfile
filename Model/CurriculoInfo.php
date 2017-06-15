@@ -181,13 +181,6 @@ class CurriculoInfo {
     }
 
     /**
-     * @param CargoInfo $value
-     */
-    public function adicionarCargo($value) {
-        $this->cargos[] = $value;
-    }
-
-    /**
      * @return CargoInfo[]
      */
     public function listarCargoVisivel() {
@@ -214,10 +207,43 @@ class CurriculoInfo {
     }
 
     /**
+     * @param CargoInfo $value
+     */
+    public function adicionarCargo($value) {
+        $this->cargos[] = $value;
+    }
+
+    /**
      * @return ProjetoInfo[]
      */
     public function listarProjeto() {
         return $this->projetos;
+    }
+
+    /**
+     * @return ProjetoInfo[]
+     */
+    public function listarProjetoVisivel() {
+        $projetos = array();
+        foreach ($this->listarProjeto() as $projeto) {
+            if ($projeto->getSituacao() != ProjetoInfo::OCULTO) {
+                $projetos[] = $projeto;
+            }
+        }
+        return $projetos;
+    }
+
+    /**
+     * @return ProjetoInfo[]
+     */
+    public function listarProjetoEscondido() {
+        $projetos = array();
+        foreach ($this->listarProjeto() as $projeto) {
+            if ($projeto->getSituacao() == ProjetoInfo::OCULTO) {
+                $projetos[] = $projeto;
+            }
+        }
+        return $projetos;
     }
 
     /**

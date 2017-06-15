@@ -193,6 +193,7 @@
     },
     {
       "nome": "Imhovel",
+      "url": "https://imhovel.com.br",
       "descricao" : "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
       "links": [
         { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
@@ -217,6 +218,7 @@
     },
     {
       "nome": "Wimoveis",
+      "url": "http://wimoveis.com",
       "descricao" : "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Fui responsável pelo desenovimento de todo o projeto.",
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://wimoveis.com" }
@@ -234,6 +236,7 @@
     },
     {
       "nome": "Simeon",
+      "url": "http://simeon.com.br",
       "descricao" : "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
       "links": [
         { "nome": "EPA", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" },
@@ -259,20 +262,8 @@
       ]
     },
     {
-      "nome": "Radar Mais",
-      "descricao" : "O Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
-      "links": [
-        { "nome": "Radar Mais", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
-        { "nome": "Radar Mais", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
-      ],
-      "conhecimentos": [
-        { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "SQLite", "estilo": "success" }
-      ]
-    },
-    {
       "nome": "Imobsync",
+      "url": "http://imobsync.com",
       "descricao" : "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://imobsync.com" }
@@ -294,6 +285,7 @@
     },
     {
       "nome": "Emagine",
+      "url": "http://emagine.com.br",
       "descricao" : "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br" }
@@ -308,7 +300,8 @@
         { "nome": "Less", "estilo": "info" },
         { "nome": "MySQL", "estilo": "success" },
         { "nome": "PostgreSQL", "estilo": "success" }
-      ]
+      ],
+      "situacao": "oculto"
     },
     {
       "nome": "Unico Calc",
@@ -321,7 +314,8 @@
         { "nome": "Appcelerator", "estilo": "primary" },
         { "nome": "Titanium", "estilo": "primary" },
         { "nome": "SQLite", "estilo": "success" }
-      ]
+      ],
+      "situacao": "oculto"
     },
     {
       "nome": "PAVmanager",
@@ -336,7 +330,8 @@
         { "nome": "Titanium", "estilo": "primary" },
         { "nome": "MySQL", "estilo": "success" },
         { "nome": "SQLite", "estilo": "success" }
-      ]
+      ],
+      "situacao": "oculto"
     }
   ],
   "conhecimentos": [
