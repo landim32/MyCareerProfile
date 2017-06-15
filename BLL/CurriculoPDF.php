@@ -65,6 +65,7 @@ class CurriculoPDF extends FPDF
         $this->SetTextColor(120, 120, 120);
         $this->Cell(0,6,$curriculo->getCargoAtual(), 0, 1);
 
+        $this->SetDrawColor(120, 120, 120);
         $this->Line(10, $this->GetY(), $this->GetPageWidth() - 20, $this->GetY());
         $this->SetXY($this->GetX(), $this->GetY() + 2);
 
@@ -82,7 +83,7 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','B',9);
         $this->Cell(0,5,$curriculo->getEmail1(), 0, 1);
 
-        $colx = ($this->GetPageWidth() / 2) - 20;
+        $colx = ($this->GetPageWidth() / 2) - 10;
 
         $this->SetXY($colx, $y);
 
