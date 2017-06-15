@@ -261,6 +261,20 @@ class CurriculoInfo {
     }
 
     /**
+     * @return ConhecimentoInfo[]
+     */
+    public function listarConhecimentoVisivel() {
+        return array_slice($this->conhecimentos, 0, 7);
+    }
+
+    /**
+     * @return ConhecimentoInfo[]
+     */
+    public function listarConhecimentoOculto() {
+        return array_slice($this->conhecimentos, 7);
+    }
+
+    /**
      * @param ConhecimentoInfo $value
      */
     public function adicionarConhecimento($value) {
