@@ -161,6 +161,19 @@ class CurriculoInfo {
     }
 
     /**
+     * @return CursoInfo[]
+     */
+    public function listarGraduacao() {
+        $graduacoes = array();
+        foreach ($this->listarCurso() as $curso) {
+            if ($curso->getTipo() == CursoInfo::GRADUACAO) {
+                $graduacoes[] = $curso;
+            }
+        }
+        return $graduacoes;
+    }
+
+    /**
      * @return CargoInfo[]
      */
     public function listarCargo() {

@@ -10,8 +10,9 @@
     {
       "curso": "Engenharia da Computação",
       "instituicao": "IESB",
-      "inicio": 2003,
-      "termino": 2008
+      "inicio": "2003-01-01",
+      "termino": "2008-01-01",
+      "tipo": "graduacao"
     }
   ],
   "linguas": [

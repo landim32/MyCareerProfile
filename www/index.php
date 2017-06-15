@@ -61,14 +61,18 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 <?php endif; ?>
             </ul>
         </div><!--//contact-container-->
+        <?php if (count($curriculo->listarCurso()) > 0) : ?>
         <div class="education-container container-block">
             <h2 class="container-block-title">Education</h2>
+            <?php foreach ($curriculo->listarGraduacao() as $graduacao) : ?>
             <div class="item">
-                <h4 class="degree">Engenharia da Computação</h4>
-                <h5 class="meta">IESB</h5>
-                <div class="time">2003 - 2008</div>
+                <h4 class="degree"><?php echo $graduacao->getCurso(); ?></h4>
+                <h5 class="meta"><?php echo $graduacao->getInstituicao(); ?></h5>
+                <div class="time"><?php echo $graduacao->getDataInicioAno(); ?> - <?php echo $graduacao->getDataTerminoAno(); ?></div>
             </div><!--//item-->
+            <?php endforeach; ?>
         </div><!--//education-container-->
+        <?php endif; ?>
 
         <?php if (count($curriculo->listarLingua()) > 0) : ?>
         <div class="languages-container container-block">
@@ -101,8 +105,29 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 </p>
             </div><!--//summary-->
         </section><!--//section-->
-        <?php require __DIR__ . "/cargo.inc.php"; ?>
+        <?php if (count($curriculo->listarCargo()) > 0) : ?>
+        <section class="section experiences-section">
+            <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+            <?php foreach ($curriculo->listarCargo() as $cargo) : ?>
+            <div class="item">
+                <div class="meta">
+                    <div class="upper-row">
+                        <h3 class="job-title"><?php echo $cargo->getNome(); ?></h3>
+                        <div class="time"><?php echo $cargo->getDataInicioStr(); ?> - <?php echo $cargo->getDataTerminoStr(); ?></div>
+                    </div><!--//upper-row-->
+                    <div class="company"><?php echo $cargo->getEmpresa(); ?></div>
+                </div><!--//meta-->
+                <div class="details">
+                    <p><?php echo $cargo->getDescricao(); ?></p>
+                    <?php foreach ($cargo->listarConhecimento() as $conhecimento) : ?>
+                    <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php $conhecimento->getNome(); ?></span>
+                    <?php endforeach; ?>
+                </div><!--//details-->
+            </div><!--//item-->
+            <?php endforeach; ?>
+        </section><!--//section-->
         <hr />
+        <?php endif; ?>
         <?php require __DIR__ . "/projeto.inc.php"; ?>
         <hr />
         <?php require __DIR__ . "/conhecimento.inc.php"; ?>

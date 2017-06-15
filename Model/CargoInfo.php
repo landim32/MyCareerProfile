@@ -12,10 +12,11 @@ use stdClass;
  */
 class CargoInfo
 {
-    private $nome;
-    private $descricao;
-    private $data_inicio;
-    private $data_termino;
+    private $nome = "";
+    private $empresa = "";
+    private $descricao = "";
+    private $data_inicio = null;
+    private $data_termino = null;
     private $atual = false;
     private $conhecimentos = array();
 
@@ -31,6 +32,20 @@ class CargoInfo
      */
     public function setNome($value) {
         $this->nome = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmpresa() {
+        return $this->empresa;
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setEmpresa($value) {
+        $this->empresa = $value;
     }
 
     /**
@@ -104,6 +119,23 @@ class CargoInfo
     }
 
     /**
+     * @return string
+     */
+    public function getDataInicioStr() {
+        return date("M/Y", strtotime($this->getDataInicio()));
+    }
+
+    /**
+     * @return string
+     */
+    public function getDataTerminoStr() {
+        if (isNullOrEmpty($this->data_termino)) {
+            return "Atual";
+        }
+        return date("M/Y", strtotime($this->getDataTermino()));
+    }
+
+    /**
      * @param stdClass $value
      * @param string $language
      * @return CargoInfo
@@ -112,6 +144,9 @@ class CargoInfo
         $cargo = new CargoInfo();
         if (isset($value->nome)) {
             $cargo->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->empresa)) {
+            $cargo->setEmpresa(getStr($value->empresa, $language));
         }
         if (isset($value->descricao)) {
             $cargo->setDescricao(getStr($value->descricao, $language));

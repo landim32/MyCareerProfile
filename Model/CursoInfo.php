@@ -17,8 +17,8 @@ class CursoInfo
 
     private $curso = "";
     private $instituicao = "";
-    private $inicio = "";
-    private $termino = "";
+    private $data_inicio = "";
+    private $data_termino = "";
     private $tipo = "";
 
     /**
@@ -52,29 +52,29 @@ class CursoInfo
     /**
      * @return string
      */
-    public function getInicio() {
-        return $this->inicio;
+    public function getDataInicio() {
+        return $this->data_inicio;
     }
 
     /**
      * @param string $value
      */
-    public function setInicio($value) {
-        $this->inicio = $value;
+    public function setDataInicio($value) {
+        $this->data_inicio = $value;
     }
 
     /**
      * @return string
      */
-    public function getTermino() {
-        return $this->termino;
+    public function getDataTermino() {
+        return $this->data_termino;
     }
 
     /**
      * @param string $value
      */
-    public function setTermino($value) {
-        $this->termino = $value;
+    public function setDataTermino($value) {
+        $this->data_termino = $value;
     }
 
     /**
@@ -92,6 +92,20 @@ class CursoInfo
     }
 
     /**
+     * @return int
+     */
+    public function getDataInicioAno() {
+        return intval(date("Y", strtotime($this->getDataInicio())));
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataTerminoAno() {
+        return intval(date("Y", strtotime($this->getDataTermino())));
+    }
+
+    /**
      * @param stdClass $value
      * @param string $language
      * @return CursoInfo
@@ -105,10 +119,10 @@ class CursoInfo
             $curso->setInstituicao(getStr($value->instituicao, $language));
         }
         if (isset($value->inicio)) {
-            $curso->setInicio(getStr($value->inicio, $language));
+            $curso->setDataInicio(getStr($value->inicio, $language));
         }
         if (isset($value->termino)) {
-            $curso->setTermino(getStr($value->termino, $language));
+            $curso->setDataTermino(getStr($value->termino, $language));
         }
         if (isset($value->tipo)) {
             $curso->setTipo(getStr($value->tipo, $language));
