@@ -11,6 +11,7 @@ namespace Emagine\BLL;
 require_once dirname(__DIR__) . '/fpdf/fpdf.php';
 
 use Emagine\Model\CargoInfo;
+use Emagine\Model\ConhecimentoInfo;
 use Emagine\Model\ProjetoInfo;
 use FPDF;
 use Emagine\Model\CurriculoInfo;
@@ -53,6 +54,18 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','I',8);
         // Page number
         $this->Cell(0,10,$this->PageNo(),0,0,'R');
+    }
+
+    /**
+     * @param ConhecimentoInfo[] $conhecimentos
+     * @return string
+     */
+    private function consolidarConhecimento($conhecimentos) {
+        $vetor = array();
+        foreach ($conhecimentos as $conhecimento) {
+            $vetor[] = $conhecimento->getNome();
+        }
+        return implode(", ", $vetor);
     }
 
     private function desenharLinha() {
@@ -148,9 +161,11 @@ class CurriculoPDF extends FPDF
         $this->SetTextColor(0, 0, 0);
 
         $this->SetX($this->GetX() + 5);
-        $this->MultiCell(0, 5, utf8_decode($cargo->getDescricao()));
+        $this->SetFont('Arial','',8);
+        $descricao = $cargo->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($cargo->listarConhecimento()) . ".";
+        $this->MultiCell(0, 4, utf8_decode($descricao));
 
-        $this->SetY($this->GetY() + 3);
+        $this->SetY($this->GetY() + 2);
     }
 
     /**
@@ -171,26 +186,12 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','B',9);
         $this->SetTextColor(0, 0, 0);
         $this->Cell($this->GetStringWidth($projeto->getNome()),6, utf8_decode($projeto->getNome()), 0 , 1);
-        /*
-        $this->SetFont('Arial','',9);
-        $em = " " . _("at") . " ";
-        $this->Cell($this->GetStringWidth($em),6, $em);
-        $this->SetFont('Arial','B',9);
-        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, utf8_decode($cargo->getEmpresa()), 0, 1);
-        */
 
-        /*
-        $this->SetFont('Arial','',9);
-        $this->SetDrawColor(120, 120, 120);
-        $this->Cell(0,6, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
+        $this->SetX($this->GetX() + 3);
         $this->SetFont('Arial','',9);
         $this->SetTextColor(0, 0, 0);
-        */
-
-        $this->SetX($this->GetX() + 5);
-        $this->SetFont('Arial','',9);
-        $this->SetTextColor(0, 0, 0);
-        $this->MultiCell(0, 5, utf8_decode($projeto->getDescricao()));
+        $descricao = $projeto->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($projeto->listarConhecimento()) . ".";
+        $this->MultiCell(0, 4, utf8_decode($descricao));
 
         foreach ($projeto->listarLinks() as $link) {
             $this->SetTextColor(0, 0, 0);
@@ -202,7 +203,7 @@ class CurriculoPDF extends FPDF
             $this->Cell(0,4, utf8_decode($link->getUrl()), 0, 1);
         }
 
-        $this->SetY($this->GetY() + 3);
+        $this->SetY($this->GetY() + 2);
     }
 
     /**
