@@ -97,6 +97,16 @@ class CurriculoPDF extends FPDF
     /**
      * @param string $text
      * @param int $size
+     * @param int $h
+     * @param int $w
+     */
+    private function escreverLabel($text, $size, $h, $w) {
+        $this->escrever($text, $size,CurriculoPDF::CINZA,$h,"R", $w,"",false);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
      * @param string $cor
      * @param int $h
      * @param string $align
@@ -219,36 +229,25 @@ class CurriculoPDF extends FPDF
 
         $y = $this->GetY();
 
-        $this->escrever(_("Phone") . ":",9,CurriculoPDF::CINZA,5,"R",20, "",false);
+        //$this->escrever(_("Phone") . ":",9,CurriculoPDF::CINZA,5,"R",20, "",false);
+        $this->escreverLabel(_("Phone") . ":",9,5,20);
         $this->escreverNegritoLn($curriculo->getTelefone1(),9,CurriculoPDF::PRETO,5);
 
-        $this->textoPreto();
-        $this->Cell(20,5,_("Email") . ":", 0, 0, "R");
-        $this->textoPreto(9, "B");
-        $this->Cell(0,5,utf8_decode($curriculo->getEmail1()), 0, 1);
+        $this->escreverLabel(_("Email") . ":",9,5,20);
+        $this->escreverNegritoLn($curriculo->getEmail1(),9,CurriculoPDF::PRETO,5);
 
         $colx = ($this->GetPageWidth() / 2) - 10;
 
         $this->SetXY($colx, $y);
 
-        $this->textoCinza();
-        $this->SetFont('Arial','',9);
-        $this->Cell(20,5,"LinkedIn:", 0, 0, "R");
-        $this->textoAzul();
-        $this->SetFont('Arial','U',9);
-        $this->Cell(0,5,$curriculo->getLinkedinUrl(), 0, 1);
+        $this->escreverLabel(_("LinkedIn") . ":",9,5,20);
+        $this->escreverLinkLn($curriculo->getLinkedinUrl(),9,5);
 
-        $this->SetX($colx);
-        $this->SetFont('Arial','',9);
-        $this->Cell(20,5,"GitHub:", 0, 0, "R");
-        $this->SetFont('Arial','U',9);
-        $this->Cell(0,5,$curriculo->getGithubUrl(), 0, 1);
+        $this->escreverLabel(_("GitHub") . ":",9,5,20);
+        $this->escreverLinkLn($curriculo->getGithubUrl(),9,5);
 
-        $this->SetX($colx);
-        $this->SetFont('Arial','',9);
-        $this->Cell(20,5,"Twitter:", 0, 0, "R");
-        $this->SetFont('Arial','U',9);
-        $this->Cell(0,5,$curriculo->getTwitterUrl(), 0, 1);
+        $this->escreverLabel(_("Twitter") . ":",9,5,20);
+        $this->escreverLinkLn($curriculo->getTwitterUrl(),9,5);
 
         $this->desenharLinha();
 
