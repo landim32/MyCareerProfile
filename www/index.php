@@ -38,7 +38,7 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
             <img class="profile img-responsive img-circle" src="<?php echo get_gravatar($curriculo->getEmail1(), 100) ?>" alt="<?php echo $curriculo->getNome(); ?>" />
             <h1 class="name"><?php echo $curriculo->getNome(); ?></h1>
             <h3 class="tagline"><?php echo $curriculo->getCargoAtual(); ?></h3>
-            <div>
+            <div style="margin-top: 12px;">
                 <a target="_blank" href="<?php echo TEMA_PATH . "/pdf/" . IDIOMA . "/" . PROFILE; ?>">
                     <i class="fa fw fa-download"></i> <?php echo _("Download PDF"); ?>
                 </a>
@@ -47,7 +47,6 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
         <div class="contact-container container-block">
             <ul class="list-unstyled contact-list">
-                <li class="text-center"><i class="fa fw fa-download"></i><a target="_blank" href="<?php echo TEMA_PATH . "/pdf/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Download PDF"); ?></a></li>
                 <?php if (!isNullOrEmpty($curriculo->getEmail1())) : ?>
                 <li class="email"><i class="fa fw fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
                 <?php endif; ?>
