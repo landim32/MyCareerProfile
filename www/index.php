@@ -21,11 +21,11 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="<?php echo $curriculo->getResumo(); ?>" />
         <meta name="author" content="Rodrigo Landim" />
-        <link rel="shortcut icon" href="favicon.png" />
+        <link rel="shortcut icon" href="<?php echo TEMA_PATH; ?>/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css' />
-        <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css" />
-        <link id="theme-style" rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="<?php echo TEMA_PATH; ?>/plugins/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<?php echo TEMA_PATH; ?>/plugins/font-awesome/css/font-awesome.css" />
+        <link id="theme-style" rel="stylesheet" href="<?php echo TEMA_PATH; ?>/css/styles.css" />
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -267,8 +267,8 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         <small class="copyright"><?php echo sprintf( _("Designed by %s for developers"), "<a href=\"http://themes.3rdwavemedia.com\" target=\"_blank\">Xiaoying Riley</a>"); ?></small>
     </div><!--//container-->
 </footer><!--//footer-->
-<script type="text/javascript" src="plugins/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="<?php echo TEMA_PATH; ?>/plugins/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="<?php echo TEMA_PATH; ?>/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo TEMA_PATH; ?>/js/main.js"></script>
 </body>
 </html>

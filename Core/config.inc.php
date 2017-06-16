@@ -5,7 +5,14 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 
-define("IDIOMA", "pt_BR");
+define("PROFILE", $_GET["profile"]);
+if (array_key_exists("idioma", $_GET)) {
+    define("IDIOMA", $_GET["idioma"]);
+}
+else {
+    define("IDIOMA", "pt_BR");
+}
+define("TEMA_PATH", "/team");
 
 if (function_exists('bindtextdomain')) {
     if (IDIOMA == 'pt_BR') {
