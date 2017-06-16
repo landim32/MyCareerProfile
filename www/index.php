@@ -38,6 +38,11 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
             <img class="profile img-responsive img-circle" src="<?php echo get_gravatar($curriculo->getEmail1(), 100) ?>" alt="<?php echo $curriculo->getNome(); ?>" />
             <h1 class="name"><?php echo $curriculo->getNome(); ?></h1>
             <h3 class="tagline"><?php echo $curriculo->getCargoAtual(); ?></h3>
+            <div>
+                <a target="_blank" href="<?php echo TEMA_PATH . "/pdf/" . IDIOMA . "/" . PROFILE; ?>">
+                    <i class="fa fw fa-download"></i> <?php echo _("Download PDF"); ?>
+                </a>
+            </div>
         </div><!--//profile-container-->
 
         <div class="contact-container container-block">
