@@ -5,15 +5,12 @@ RewriteEngine On
 #RewriteBase /equipe/
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^pdf/([a-z,A-Z,0-9,_]+)/([a-z,A-Z,0-9,_]+) pdf.php?profile=$2&idioma=$1?%1 [QSA,L,END]
+RewriteRule ^pdf/([a-z,A-Z,0-9,_]+)/([a-z,A-Z,0-9,_]+) pdf.php?profile=$2&idioma=$1 [QSA,L,END]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^([a-z,A-Z,0-9,_]+)/([a-z,A-Z,0-9,_]+) index.php?profile=$2&idioma=$1?%1 [QSA,L,END]
+RewriteRule ^([a-z,A-Z,0-9,_]+)/([a-z,A-Z,0-9,_]+) index.php?profile=$2&idioma=$1 [QSA,L,END]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^([a-z,A-Z,0-9,_]+) index.php?profile=$1&idioma=pt_BR?%1 [QSA,L,END]
+RewriteRule ^([a-z,A-Z,0-9,_]+) index.php?profile=$1&idioma=pt_BR [QSA,L,END]
 
 </IfModule>
