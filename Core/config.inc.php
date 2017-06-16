@@ -23,9 +23,11 @@ if (function_exists('bindtextdomain')) {
     }
 }
 
+if (!function_exists("_")) :
 function _($text) {
     return $text;
 }
+endif;
 
 /**
  * @param stdClass|string $value
