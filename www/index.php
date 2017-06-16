@@ -5,8 +5,10 @@ require dirname(__DIR__ ) . "/Core/config.inc.php";
 use Emagine\BLL\CurriculoBLL;
 use Emagine\Model\ProjetoInfo;
 
+var_dump($_GET);
+
 $regraCurriculo = new CurriculoBLL();
-$curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
+$curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
 ?>
     <!DOCTYPE html>
