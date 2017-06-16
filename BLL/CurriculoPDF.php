@@ -104,7 +104,7 @@ class CurriculoPDF extends FPDF
      * @param string $style
      */
     private function escreverLn($text, $size, $cor, $h, $align = "", $w = 0, $style = "") {
-        $this->escrever($text, $size, $cor, $h, $align, $w, $style, 1);
+        $this->escrever($text, $size, $cor, $h, $align, $w, $style, true);
     }
 
     /**
@@ -129,7 +129,7 @@ class CurriculoPDF extends FPDF
      * @param int $w
      */
     private function escreverNegritoLn($text, $size, $cor, $h, $align = "", $w = 0) {
-        $this->escrever($text, $size, $cor, $h, $align, $w, "B", 1);
+        $this->escrever($text, $size, $cor, $h, $align, $w, "B", true);
     }
 
     /**
@@ -152,7 +152,7 @@ class CurriculoPDF extends FPDF
      * @param int $w
      */
     private function escreverLinkLn($text, $size, $h, $align = "", $w = 0) {
-        $this->escrever($text, $size, CurriculoPDF::AZUL, $h, $align, $w, "U", 1);
+        $this->escrever($text, $size, CurriculoPDF::AZUL, $h, $align, $w, "U", true);
     }
 
     /**
