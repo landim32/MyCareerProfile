@@ -56,16 +56,31 @@ class CurriculoPDF extends FPDF
         $this->Cell(0,10,$this->PageNo(),0,0,'R');
     }
 
-    private function textoCinza() {
+    /**
+     * @param string $style
+     * @param int $size
+     */
+    private function textoCinza($size = 9, $style = "") {
         $this->SetTextColor(120,120,120);
+        $this->SetFont('Arial', $style, $size);
     }
 
-    private function textoAzul() {
+    /**
+     * @param string $style
+     * @param int $size
+     */
+    private function textoAzul($size = 9, $style = "") {
         $this->SetTextColor(0,0,139);
+        $this->SetFont('Arial', $style, $size);
     }
 
-    private function textoPreto() {
+    /**
+     * @param string $style
+     * @param int $size
+     */
+    private function textoPreto($size = 9, $style = "") {
         $this->SetTextColor(0,0,0);
+        $this->SetFont('Arial', $style, $size);
     }
 
     /**
@@ -91,8 +106,7 @@ class CurriculoPDF extends FPDF
      * @param string $texto
      */
     private function escreverTituloSessao($texto) {
-        $this->SetFont('Arial','',12);
-        $this->textoCinza();
+        $this->textoCinza(12);
         $this->Cell(0,7, utf8_decode($texto), 0, 1);
     }
 
@@ -100,35 +114,34 @@ class CurriculoPDF extends FPDF
      * @param CurriculoInfo $curriculo
      */
     private function gerarDados($curriculo) {
-        $this->SetFont('Arial','B',16);
-        $this->textoPreto();
+        $this->textoPreto(16, "B");
         $this->Cell(0,6,utf8_decode($curriculo->getNome()), 0 ,1);
 
-        $this->SetFont('Arial','',12);
-        $this->textoCinza();
+        $this->textoCinza(12);
         $this->Cell(0,6,utf8_decode($curriculo->getCargoAtual()), 0, 1);
 
         $this->desenharLinha();
-        $this->textoPreto();
 
         $y = $this->GetY();
 
-        $this->SetFont('Arial','',9);
+        $this->textoPreto();
         $this->Cell(20,5,_("Phone") . ":", 0, 0, "R");
-        $this->SetFont('Arial','B',9);
+        $this->textoPreto(9, "B");
         $this->Cell(0,5,utf8_decode($curriculo->getTelefone1()), 0, 1);
 
-        $this->SetFont('Arial','',9);
+        $this->textoPreto();
         $this->Cell(20,5,_("Email") . ":", 0, 0, "R");
-        $this->SetFont('Arial','B',9);
+        $this->textoPreto(9, "B");
         $this->Cell(0,5,utf8_decode($curriculo->getEmail1()), 0, 1);
 
         $colx = ($this->GetPageWidth() / 2) - 10;
 
         $this->SetXY($colx, $y);
 
+        $this->textoCinza();
         $this->SetFont('Arial','',9);
         $this->Cell(20,5,"LinkedIn:", 0, 0, "R");
+        $this->textoAzul();
         $this->SetFont('Arial','U',9);
         $this->Cell(0,5,$curriculo->getLinkedinUrl(), 0, 1);
 
