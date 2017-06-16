@@ -193,11 +193,9 @@ class CurriculoPDF extends FPDF
         $this->MultiCell(0, 5, utf8_decode($projeto->getDescricao()));
 
         foreach ($projeto->listarLinks() as $link) {
-            $this->SetX($this->GetX() + 5);
-
             $this->SetTextColor(0, 0, 0);
             $this->SetFont('Arial','',8);
-            $this->Cell(80,4, utf8_decode($link->getNome() . ": "), 0,0,"R");
+            $this->Cell(40,4, utf8_decode($link->getNome() . ": "), 0,0,"R");
 
             $this->SetTextColor(0,0,139);
             $this->SetFont('Arial','U',8);
