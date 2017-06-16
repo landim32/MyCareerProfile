@@ -10,7 +10,8 @@ define("IDIOMA", "pt_BR");
 if (function_exists('bindtextdomain')) {
     if (IDIOMA == 'pt_BR') {
         putenv('LC_ALL='.IDIOMA.'.utf8');
-        setlocale(LC_ALL, IDIOMA.'.utf8');
+        //setlocale(LC_ALL, IDIOMA.'.utf8');
+        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
     }
     else {
         putenv('LC_ALL='.IDIOMA);
