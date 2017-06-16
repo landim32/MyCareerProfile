@@ -5,8 +5,6 @@ require dirname(__DIR__ ) . "/Core/config.inc.php";
 use Emagine\BLL\CurriculoBLL;
 use Emagine\Model\ProjetoInfo;
 
-var_dump($_GET);
-
 $regraCurriculo = new CurriculoBLL();
 $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
@@ -44,6 +42,7 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
         <div class="contact-container container-block">
             <ul class="list-unstyled contact-list">
+                <li><i class="fa fa-download"></i><a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Download in PDF"); ?></a></li>
                 <?php if (!isNullOrEmpty($curriculo->getEmail1())) : ?>
                 <li class="email"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
                 <?php endif; ?>

@@ -2,7 +2,6 @@ php_flag display_errors on
 php_value error_reporting 6143
 <IfModule mod_rewrite.c>
 RewriteEngine On
-#RewriteBase /equipe/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^pdf/([a-z,A-Z,0-9,_]+)/([a-z,A-Z,0-9,_]+) pdf.php?profile=$2&idioma=$1 [QSA,L,END]

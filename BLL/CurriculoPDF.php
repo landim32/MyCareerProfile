@@ -77,7 +77,8 @@ class CurriculoPDF extends FPDF
         $this->SetTextColor(0, 0, 0);
         $this->Cell($this->GetStringWidth($cargo->getNome()),6, utf8_decode($cargo->getNome()));
         $this->SetFont('Arial','',9);
-        $this->Cell($this->GetStringWidth(" em "),6, " " . _("at") . " ");
+        $em = " " . _("at") . " ";
+        $this->Cell($this->GetStringWidth($em),6, $em);
         $this->SetFont('Arial','B',9);
         $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, utf8_decode($cargo->getEmpresa()), 0, 1);
 

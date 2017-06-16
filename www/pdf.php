@@ -6,7 +6,7 @@ use Emagine\BLL\CurriculoBLL;
 use Emagine\BLL\CurriculoPDF;
 
 $regraCurriculo = new CurriculoBLL();
-$curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
+$curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
 $curriculoPDF = new CurriculoPDF();
 $curriculoPDF->setCurriculo($curriculo);
