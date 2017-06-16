@@ -188,7 +188,16 @@ class CurriculoPDF extends FPDF
         */
 
         $this->SetX($this->GetX() + 5);
+        $this->SetFont('Arial','',9);
+        $this->SetTextColor(0, 0, 0);
         $this->MultiCell(0, 5, utf8_decode($projeto->getDescricao()));
+        $this->SetFont('Arial','',8);
+
+        foreach ($projeto->listarLinks() as $link) {
+            $this->SetX($this->GetX() + 5);
+            $linkTexto = "- " . $link->getNome() . ": " . $link->getUrl();
+            $this->MultiCell(0, 5, utf8_decode($linkTexto));
+        }
 
         $this->SetY($this->GetY() + 3);
     }
@@ -198,7 +207,7 @@ class CurriculoPDF extends FPDF
      */
     private function gerarProjeto($curriculo) {
         $this->desenharLinha();
-        $this->escreverTituloSessao(_("Project"));
+        $this->escreverTituloSessao(_("Projects"));
         foreach ($curriculo->listarProjeto() as $projeto) {
             $this->escreverProjeto($projeto);
         }
