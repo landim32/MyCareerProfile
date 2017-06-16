@@ -138,7 +138,7 @@ class CurriculoPDF extends FPDF
         $this->escreverTituloSessao(_("Career Profile"));
         $this->SetFont('Arial','',9);
         $this->SetTextColor(0, 0, 0);
-        $this->MultiCell(0, 5, utf8_decode($curriculo->getResumo()));
+        $this->MultiCell(0, 4, utf8_decode($curriculo->getResumo()));
 
     }
 
@@ -148,16 +148,16 @@ class CurriculoPDF extends FPDF
     private function escreverCargo($cargo) {
         $this->SetFont('Arial','B',9);
         $this->SetTextColor(0, 0, 0);
-        $this->Cell($this->GetStringWidth($cargo->getNome()),5, utf8_decode($cargo->getNome()));
+        $this->Cell($this->GetStringWidth($cargo->getNome()),4, utf8_decode($cargo->getNome()));
         $this->SetFont('Arial','',9);
         $em = " " . _("at") . " ";
-        $this->Cell($this->GetStringWidth($em),5, $em);
+        $this->Cell($this->GetStringWidth($em),4, $em);
         $this->SetFont('Arial','B',9);
-        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),5, utf8_decode($cargo->getEmpresa()), 0, 1);
+        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),4, utf8_decode($cargo->getEmpresa()), 0, 1);
 
         $this->SetFont('Arial','',9);
         $this->SetDrawColor(120, 120, 120);
-        $this->Cell(0,6, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
+        $this->Cell(0,4, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
         $this->SetFont('Arial','',9);
         $this->SetTextColor(0, 0, 0);
 
@@ -226,7 +226,7 @@ class CurriculoPDF extends FPDF
         $this->escreverTituloSessao(_("Skills"));
         $this->SetFont('Arial','',10);
         $this->SetTextColor(0, 0, 0);
-        $this->MultiCell(0, 4, utf8_decode($this->consolidarConhecimento($curriculo->listarConhecimento())));
+        $this->MultiCell(0, 5, utf8_decode($this->consolidarConhecimento($curriculo->listarConhecimento())));
     }
 
     public function gerar() {
