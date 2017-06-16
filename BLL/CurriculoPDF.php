@@ -214,8 +214,9 @@ class CurriculoPDF extends FPDF
     /**
      * @param string $texto
      */
-    private function escreverTituloSessao($texto) {
-        $this->textoCinza(12);
+    private function escreverTitulo($texto) {
+        $this->SetTextColor(120,120,120);
+        $this->SetFont('Arial', "B", 12);
         $this->Cell(0,7, utf8_decode($texto), 0, 1);
     }
 
@@ -253,7 +254,7 @@ class CurriculoPDF extends FPDF
 
         $this->desenharLinha();
 
-        $this->escreverTituloSessao(_("Career Profile"));
+        $this->escreverTitulo(_("Career Profile"));
         $this->SetFont('Arial','',9);
         $this->textoPreto();
         $this->MultiCell(0, 4, utf8_decode($curriculo->getResumo()));
@@ -292,7 +293,7 @@ class CurriculoPDF extends FPDF
      */
     private function gerarCargo($curriculo) {
         $this->desenharLinha();
-        $this->escreverTituloSessao(_("Experiences"));
+        $this->escreverTitulo(_("Experiences"));
         foreach ($curriculo->listarCargo() as $cargo) {
             $this->escreverCargo($cargo);
         }
@@ -330,7 +331,7 @@ class CurriculoPDF extends FPDF
      */
     private function gerarProjeto($curriculo) {
         $this->desenharLinha();
-        $this->escreverTituloSessao(_("Projects"));
+        $this->escreverTitulo(_("Projects"));
         foreach ($curriculo->listarProjeto() as $projeto) {
             $this->escreverProjeto($projeto);
         }
@@ -341,7 +342,7 @@ class CurriculoPDF extends FPDF
      */
     private function gerarConhecimento($curriculo) {
         $this->desenharLinha();
-        $this->escreverTituloSessao(_("Skills"));
+        $this->escreverTitulo(_("Skills"));
         $this->SetFont('Arial','',10);
         $this->textoPreto();
         $this->MultiCell(0, 5, utf8_decode($this->consolidarConhecimento($curriculo->listarConhecimento())));
