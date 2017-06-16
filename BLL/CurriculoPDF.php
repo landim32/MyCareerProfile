@@ -18,6 +18,10 @@ use Emagine\Model\CurriculoInfo;
 
 class CurriculoPDF extends FPDF
 {
+    const PRETO = "preto";
+    const CINZA = "cinza";
+    const AZUL = "azul";
+
     private $curriculo = null;
 
     /**
@@ -54,6 +58,101 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','I',8);
         // Page number
         $this->Cell(0,10,$this->PageNo(),0,0,'R');
+    }
+
+    /**
+     * @param string $cor
+     */
+    private function definirCor($cor) {
+        switch ($cor) {
+            case CurriculoPDF::CINZA:
+                $this->SetTextColor(120,120,120);
+                break;
+            case CurriculoPDF::AZUL:
+                $this->SetTextColor(0,0,139);
+                break;
+            default:
+                $this->SetTextColor(0,0,0);
+                break;
+        }
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param string $align
+     * @param int|null $w
+     * @param string $style
+     * @param bool $ln
+     */
+    private function escrever($text, $size, $cor, $h, $align = "", $w = 0, $style = "", $ln = false) {
+        $largura = is_null($w) ? $this->GetStringWidth($text) : $w;
+        $this->definirCor($cor);
+        $this->SetFont('Arial', $style, $size);
+        $this->Cell($largura, $h, utf8_decode($text), 0, (($ln === true) ? 1 : 0), $align);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param string $align
+     * @param int $w
+     * @param string $style
+     */
+    private function escreverLn($text, $size, $cor, $h, $align = "", $w = 0, $style = "") {
+        $this->escrever($text, $size, $cor, $h, $align, $w, $style, 1);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param string $align
+     * @param int $w
+     * @param bool $ln
+     */
+    private function escreverNegrito($text, $size, $cor, $h, $align = "", $w = 0, $ln = false) {
+        $this->escrever($text, $size, $cor, $h, $align, $w, "B", $ln);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param string $align
+     * @param int $w
+     */
+    private function escreverNegritoLn($text, $size, $cor, $h, $align = "", $w = 0) {
+        $this->escrever($text, $size, $cor, $h, $align, $w, "B", 1);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param int $h
+     * @param string $align
+     * @param int $w
+     * @param bool $ln
+     */
+    private function escreverLink($text, $size, $h, $align = "", $w = 0, $ln = false) {
+        $this->escrever($text, $size, CurriculoPDF::AZUL, $h, $align, $w, "U", $ln);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param int $h
+     * @param string $align
+     * @param int $w
+     */
+    private function escreverLinkLn($text, $size, $h, $align = "", $w = 0) {
+        $this->escrever($text, $size, CurriculoPDF::AZUL, $h, $align, $w, "U", 1);
     }
 
     /**
@@ -114,20 +213,14 @@ class CurriculoPDF extends FPDF
      * @param CurriculoInfo $curriculo
      */
     private function gerarDados($curriculo) {
-        $this->textoPreto(16, "B");
-        $this->Cell(0,6,utf8_decode($curriculo->getNome()), 0 ,1);
-
-        $this->textoCinza(12);
-        $this->Cell(0,6,utf8_decode($curriculo->getCargoAtual()), 0, 1);
-
+        $this->escreverNegritoLn($curriculo->getNome(),16,CurriculoPDF::PRETO,6);
+        $this->escreverNegritoLn($curriculo->getCargoAtual(),12,CurriculoPDF::CINZA,6);
         $this->desenharLinha();
 
         $y = $this->GetY();
 
-        $this->textoPreto();
-        $this->Cell(20,5,_("Phone") . ":", 0, 0, "R");
-        $this->textoPreto(9, "B");
-        $this->Cell(0,5,utf8_decode($curriculo->getTelefone1()), 0, 1);
+        $this->escrever(_("Phone") . ":",9,CurriculoPDF::CINZA,5,"R",20, "",false);
+        $this->escreverNegritoLn($curriculo->getTelefone1(),9,CurriculoPDF::PRETO,5);
 
         $this->textoPreto();
         $this->Cell(20,5,_("Email") . ":", 0, 0, "R");
