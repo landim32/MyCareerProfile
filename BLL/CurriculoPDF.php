@@ -243,6 +243,7 @@ class CurriculoPDF extends FPDF
         $this->escreverLabel(_("LinkedIn") . ":",9,5,20);
         $this->escreverLinkLn($curriculo->getLinkedinUrl(),9,5);
 
+        $this->SetX($colx);
         $this->escreverLabel(_("GitHub") . ":",9,5,20);
         $this->escreverLinkLn($curriculo->getGithubUrl(),9,5);
 
