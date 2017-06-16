@@ -65,7 +65,8 @@ class CurriculoPDF extends FPDF
         foreach ($conhecimentos as $conhecimento) {
             $vetor[] = $conhecimento->getNome();
         }
-        return implode(", ", $vetor);
+        $str = implode(", ", $vetor);
+        return str_lreplace(", ", " e ", $str);
     }
 
     private function desenharLinha() {
@@ -147,12 +148,12 @@ class CurriculoPDF extends FPDF
     private function escreverCargo($cargo) {
         $this->SetFont('Arial','B',9);
         $this->SetTextColor(0, 0, 0);
-        $this->Cell($this->GetStringWidth($cargo->getNome()),6, utf8_decode($cargo->getNome()));
+        $this->Cell($this->GetStringWidth($cargo->getNome()),5, utf8_decode($cargo->getNome()));
         $this->SetFont('Arial','',9);
         $em = " " . _("at") . " ";
-        $this->Cell($this->GetStringWidth($em),6, $em);
+        $this->Cell($this->GetStringWidth($em),5, $em);
         $this->SetFont('Arial','B',9);
-        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, utf8_decode($cargo->getEmpresa()), 0, 1);
+        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),5, utf8_decode($cargo->getEmpresa()), 0, 1);
 
         $this->SetFont('Arial','',9);
         $this->SetDrawColor(120, 120, 120);
@@ -161,7 +162,7 @@ class CurriculoPDF extends FPDF
         $this->SetTextColor(0, 0, 0);
 
         $this->SetX($this->GetX() + 5);
-        $this->SetFont('Arial','',8);
+        $this->SetFont('Arial','',9);
         $descricao = $cargo->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($cargo->listarConhecimento()) . ".";
         $this->MultiCell(0, 4, utf8_decode($descricao));
 
@@ -217,6 +218,17 @@ class CurriculoPDF extends FPDF
         }
     }
 
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarConhecimento($curriculo) {
+        $this->desenharLinha();
+        $this->escreverTituloSessao(_("Skills"));
+        $this->SetFont('Arial','',10);
+        $this->SetTextColor(0, 0, 0);
+        $this->MultiCell(0, 4, utf8_decode($this->consolidarConhecimento($curriculo->listarConhecimento())));
+    }
+
     public function gerar() {
         $curriculo = $this->getCurriculo();
         $this->AliasNbPages();
@@ -224,6 +236,7 @@ class CurriculoPDF extends FPDF
         $this->gerarDados($curriculo);
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
+        $this->gerarConhecimento($curriculo);
         /*
         $this->SetFont('Arial','',12);
         for($i=1;$i<=40;$i++)
