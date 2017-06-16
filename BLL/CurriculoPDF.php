@@ -197,10 +197,9 @@ class CurriculoPDF extends FPDF
 
             $this->SetTextColor(0, 0, 0);
             $this->SetFont('Arial','',8);
-            $linkTexto = "- " . $link->getNome() . ": ";
-            $this->Cell($this->GetStringWidth($linkTexto),4, utf8_decode($linkTexto));
+            $this->Cell(80,4, utf8_decode($link->getNome() . ": "), 0,0,"R");
 
-            $this->SetTextColor(0,191,255);
+            $this->SetTextColor(0,0,139);
             $this->SetFont('Arial','U',8);
             $this->Cell(0,4, utf8_decode($link->getUrl()), 0, 1);
         }
