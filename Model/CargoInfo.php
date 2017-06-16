@@ -125,7 +125,7 @@ class CargoInfo
      * @return string
      */
     public function getDataInicioStr() {
-        return date("M/Y", strtotime($this->getDataInicio()));
+        return strftime("%h/%Y", strtotime($this->getDataInicio()));
     }
 
     /**
@@ -133,9 +133,9 @@ class CargoInfo
      */
     public function getDataTerminoStr() {
         if (isNullOrEmpty($this->data_termino)) {
-            return "Atual";
+            return _("Present");
         }
-        return date("M/Y", strtotime($this->getDataTermino()));
+        return strftime("%h/%Y", strtotime($this->getDataTermino()));
     }
 
     /**

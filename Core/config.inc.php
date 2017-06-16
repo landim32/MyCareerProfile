@@ -1,5 +1,32 @@
 <?php
 
+ini_set('memory_limit', '120M');
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
+setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo');
+
+define("IDIOMA", "pt_BR");
+
+if (function_exists('bindtextdomain')) {
+    if (IDIOMA == 'pt_BR') {
+        putenv('LC_ALL='.IDIOMA.'.utf8');
+        setlocale(LC_ALL, IDIOMA.'.utf8');
+    }
+    else {
+        putenv('LC_ALL='.IDIOMA);
+        setlocale(LC_ALL, IDIOMA);
+    }
+    if (IDIOMA != 'en') {
+        bindtextdomain('default', dirname(__DIR__).'/locale');
+        bind_textdomain_codeset('default', 'UTF-8');
+        textdomain('default');
+    }
+}
+
+function _($text) {
+    return $text;
+}
+
 /**
  * @param stdClass|string $value
  * @param string $language

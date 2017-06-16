@@ -10,11 +10,11 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
 
 ?>
     <!DOCTYPE html>
-    <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-    <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-    <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+    <!--[if IE 8]> <html lang="<?php echo IDIOMA; ?>" class="ie8"> <![endif]-->
+    <!--[if IE 9]> <html lang="<?php echo IDIOMA; ?>" class="ie9"> <![endif]-->
+    <!--[if !IE]><!--> <html lang="<?php echo IDIOMA; ?>"> <!--<![endif]-->
     <head>
-        <title><?php echo $curriculo->getNome(); ?> | Curriculum Vitae</title>
+        <title><?php echo $curriculo->getNome(); ?> | <?php echo _("Curriculum Vitae"); ?></title>
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -64,7 +64,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         </div><!--//contact-container-->
         <?php if (count($curriculo->listarCurso()) > 0) : ?>
         <div class="education-container container-block">
-            <h2 class="container-block-title">Education</h2>
+            <h2 class="container-block-title"><?php echo _("Education"); ?></h2>
             <?php foreach ($curriculo->listarGraduacao() as $graduacao) : ?>
             <div class="item">
                 <h4 class="degree"><?php echo $graduacao->getCurso(); ?></h4>
@@ -77,7 +77,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
 
         <?php if (count($curriculo->listarLingua()) > 0) : ?>
         <div class="languages-container container-block">
-            <h2 class="container-block-title">Languages</h2>
+            <h2 class="container-block-title"><?php echo _("Languages"); ?></h2>
             <ul class="list-unstyled interests-list">
                 <?php foreach ($curriculo->listarLingua() as $lingua) : ?>
                 <li><?php echo $lingua->getNome(); ?> <span class="lang-desc">(<?php echo $lingua->getTipo(); ?>)</span></li>
@@ -99,7 +99,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
     <div class="main-wrapper">
 
         <section class="section summary-section">
-            <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+            <h2 class="section-title"><i class="fa fa-user"></i><?php echo _("Career Profile"); ?></h2>
             <div class="summary">
                 <p>
                     <?php echo $curriculo->getResumo(); ?>
@@ -108,7 +108,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         </section><!--//section-->
         <?php if (count($curriculo->listarCargo()) > 0) : ?>
         <section class="section experiences-section">
-            <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+            <h2 class="section-title"><i class="fa fa-briefcase"></i><?php echo _("Experiences"); ?></h2>
             <?php foreach ($curriculo->listarCargoVisivel() as $cargo) : ?>
             <div class="item">
                 <div class="meta">
@@ -127,7 +127,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
             </div><!--//item-->
             <?php endforeach; ?>
             <?php if (count($curriculo->listarCargoEscondido()) > 0) : ?>
-            <a href="#profession-hidden" class="hidden-btn">Visualizar mais cargos <i class="fa fa-chevron-down"></i></a>
+            <a href="#profession-hidden" class="hidden-btn"><?php echo _("View more experiences"); ?> <i class="fa fa-chevron-down"></i></a>
             <div id="profession-hidden" style="display: none;">
                 <?php foreach ($curriculo->listarCargoEscondido() as $cargo) : ?>
                     <div class="item">
@@ -152,9 +152,9 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         <?php endif; ?>
         <?php if (count($curriculo->listarProjeto()) > 0) : ?>
         <section class="section projects-section">
-            <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+            <h2 class="section-title"><i class="fa fa-archive"></i><?php echo _("Projects"); ?></h2>
             <div class="intro">
-                <p>Segue abaixo alguns dos projetos que desensenvolvi:</p>
+                <p><?php echo _("Here are some of the projects developed for me"); ?>:</p>
             </div>
             <?php foreach ($curriculo->listarProjetoVisivel() as $projeto) : ?>
             <div class="item">
@@ -190,7 +190,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
             </div>
             <?php endforeach; ?>
             <?php if (count($curriculo->listarProjetoEscondido()) > 0) : ?>
-            <a href="#project-hidden" class="hidden-btn">Visualizar mais projetos <i class="fa fa-chevron-down"></i></a>
+            <a href="#project-hidden" class="hidden-btn"><?php echo _("View more projects"); ?> <i class="fa fa-chevron-down"></i></a>
             <div id="project-hidden" style="display: none;">
                 <?php foreach ($curriculo->listarProjetoEscondido() as $projeto) : ?>
                     <div class="item">
@@ -231,7 +231,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
         <?php endif; ?>
         <?php if (count($curriculo->listarConhecimento()) > 0) : ?>
         <section class="skills-section section">
-            <h2 class="section-title"><i class="fa fa-rocket"></i>Conhecimentos<!--Skills &amp; Proficiency--></h2>
+            <h2 class="section-title"><i class="fa fa-rocket"></i><?php echo _("Skills"); ?></h2>
             <div class="skillset">
                 <?php foreach ($curriculo->listarConhecimentoVisivel() as $conhecimento) : ?>
                 <div class="item">
@@ -243,7 +243,7 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
                 </div><!--//item-->
                 <?php endforeach; ?>
                 <?php if (count($curriculo->listarConhecimentoOculto()) > 0) : ?>
-                <a href="#skill-hidden" class="hidden-btn">Visualizar mais conhecimentos <i class="fa fa-chevron-down"></i></a>
+                <a href="#skill-hidden" class="hidden-btn"><?php echo _("View more skills"); ?> <i class="fa fa-chevron-down"></i></a>
                 <div id="skill-hidden" style="display: none;">
                     <?php foreach ($curriculo->listarConhecimentoOculto() as $conhecimento) : ?>
                         <div class="item">
@@ -264,14 +264,11 @@ $curriculo = $regraCurriculo->carregarJson("rodrigo.json", "pt_BR");
 </div>
 <footer class="footer">
     <div class="text-center">
-        <small class="copyright">Designed by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        <small class="copyright"><?php echo sprintf( _("Designed by %s for developers"), "<a href=\"http://themes.3rdwavemedia.com\" target=\"_blank\">Xiaoying Riley</a>"); ?></small>
     </div><!--//container-->
 </footer><!--//footer-->
-
-<!-- Javascript -->
 <script type="text/javascript" src="plugins/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- custom js -->
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
