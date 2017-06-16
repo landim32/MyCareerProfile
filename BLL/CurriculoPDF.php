@@ -11,6 +11,7 @@ namespace Emagine\BLL;
 require_once dirname(__DIR__) . '/fpdf/fpdf.php';
 
 use Emagine\Model\CargoInfo;
+use Emagine\Model\ProjetoInfo;
 use FPDF;
 use Emagine\Model\CurriculoInfo;
 
@@ -51,7 +52,7 @@ class CurriculoPDF extends FPDF
         // Arial italic 8
         $this->SetFont('Arial','I',8);
         // Page number
-        $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+        $this->Cell(0,10,$this->PageNo(),0,0,'R');
     }
 
     private function desenharLinha() {
@@ -67,31 +68,6 @@ class CurriculoPDF extends FPDF
         $this->SetFont('Arial','',12);
         $this->SetTextColor(120, 120, 120);
         $this->Cell(0,7, utf8_decode($texto), 0, 1);
-    }
-
-    /**
-     * @param CargoInfo $cargo
-     */
-    private function escreverCargo($cargo) {
-        $this->SetFont('Arial','B',9);
-        $this->SetTextColor(0, 0, 0);
-        $this->Cell($this->GetStringWidth($cargo->getNome()),6, utf8_decode($cargo->getNome()));
-        $this->SetFont('Arial','',9);
-        $em = " " . _("at") . " ";
-        $this->Cell($this->GetStringWidth($em),6, $em);
-        $this->SetFont('Arial','B',9);
-        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, utf8_decode($cargo->getEmpresa()), 0, 1);
-
-        $this->SetFont('Arial','',9);
-        $this->SetDrawColor(120, 120, 120);
-        $this->Cell(0,6, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
-        $this->SetFont('Arial','',9);
-        $this->SetTextColor(0, 0, 0);
-
-        $this->SetX($this->GetX() + 5);
-        $this->MultiCell(0, 5, utf8_decode($cargo->getDescricao()));
-
-        $this->SetY($this->GetY() + 3);
     }
 
     /**
@@ -150,15 +126,82 @@ class CurriculoPDF extends FPDF
         $this->SetTextColor(0, 0, 0);
         $this->MultiCell(0, 5, utf8_decode($curriculo->getResumo()));
 
+    }
+
+    /**
+     * @param CargoInfo $cargo
+     */
+    private function escreverCargo($cargo) {
+        $this->SetFont('Arial','B',9);
+        $this->SetTextColor(0, 0, 0);
+        $this->Cell($this->GetStringWidth($cargo->getNome()),6, utf8_decode($cargo->getNome()));
+        $this->SetFont('Arial','',9);
+        $em = " " . _("at") . " ";
+        $this->Cell($this->GetStringWidth($em),6, $em);
+        $this->SetFont('Arial','B',9);
+        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, utf8_decode($cargo->getEmpresa()), 0, 1);
+
+        $this->SetFont('Arial','',9);
+        $this->SetDrawColor(120, 120, 120);
+        $this->Cell(0,6, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
+        $this->SetFont('Arial','',9);
+        $this->SetTextColor(0, 0, 0);
+
+        $this->SetX($this->GetX() + 5);
+        $this->MultiCell(0, 5, utf8_decode($cargo->getDescricao()));
+
+        $this->SetY($this->GetY() + 3);
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarCargo($curriculo) {
         $this->desenharLinha();
-
         $this->escreverTituloSessao(_("Experiences"));
-
         foreach ($curriculo->listarCargo() as $cargo) {
             $this->escreverCargo($cargo);
         }
+    }
 
+    /**
+     * @param ProjetoInfo $projeto
+     */
+    private function escreverProjeto($projeto) {
+        $this->SetFont('Arial','B',9);
+        $this->SetTextColor(0, 0, 0);
+        $this->Cell($this->GetStringWidth($projeto->getNome()),6, utf8_decode($projeto->getNome()), 0 , 1);
+        /*
+        $this->SetFont('Arial','',9);
+        $em = " " . _("at") . " ";
+        $this->Cell($this->GetStringWidth($em),6, $em);
+        $this->SetFont('Arial','B',9);
+        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),6, utf8_decode($cargo->getEmpresa()), 0, 1);
+        */
 
+        /*
+        $this->SetFont('Arial','',9);
+        $this->SetDrawColor(120, 120, 120);
+        $this->Cell(0,6, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
+        $this->SetFont('Arial','',9);
+        $this->SetTextColor(0, 0, 0);
+        */
+
+        $this->SetX($this->GetX() + 5);
+        $this->MultiCell(0, 5, utf8_decode($projeto->getDescricao()));
+
+        $this->SetY($this->GetY() + 3);
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarProjeto($curriculo) {
+        $this->desenharLinha();
+        $this->escreverTituloSessao(_("Project"));
+        foreach ($curriculo->listarProjeto() as $projeto) {
+            $this->escreverProjeto($projeto);
+        }
     }
 
     public function gerar() {
@@ -166,6 +209,8 @@ class CurriculoPDF extends FPDF
         $this->AliasNbPages();
         $this->AddPage();
         $this->gerarDados($curriculo);
+        $this->gerarCargo($curriculo);
+        $this->gerarProjeto($curriculo);
         /*
         $this->SetFont('Arial','',12);
         for($i=1;$i<=40;$i++)
