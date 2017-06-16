@@ -42,24 +42,24 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
         <div class="contact-container container-block">
             <ul class="list-unstyled contact-list">
-                <li><i class="fa fa-download"></i><a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Download in PDF"); ?></a></li>
+                <li class="text-center"><i class="fa fw fa-download"></i><a target="_blank" href="<?php echo TEMA_PATH . "/pdf/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Download PDF"); ?></a></li>
                 <?php if (!isNullOrEmpty($curriculo->getEmail1())) : ?>
-                <li class="email"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
+                <li class="email"><i class="fa fw fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getTelefone1())) : ?>
-                <li class="phone"><i class="fa fa-phone"></i><a href="tel:55062996257590"><?php echo $curriculo->getTelefone1(); ?></a></li>
+                <li class="phone"><i class="fa fw fa-phone"></i><a href="tel:55062996257590"><?php echo $curriculo->getTelefone1(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getWebsite())) : ?>
-                <li class="website"><i class="fa fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a></li>
+                <li class="website"><i class="fa fw fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getLinkedin())) : ?>
-                <li class="linkedin"><i class="fa fa-linkedin"></i><a href="<?php echo $curriculo->getLinkedinUrl(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a></li>
+                <li class="linkedin"><i class="fa fw fa-linkedin"></i><a href="<?php echo $curriculo->getLinkedinUrl(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getGithub())) : ?>
-                <li class="github"><i class="fa fa-github"></i><a href="<?php echo $curriculo->getGithubUrl(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
+                <li class="github"><i class="fa fw fa-github"></i><a href="<?php echo $curriculo->getGithubUrl(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getTwitter())) : ?>
-                <li class="twitter"><i class="fa fa-twitter"></i><a href="<?php echo $curriculo->getTwitterUrl(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
+                <li class="twitter"><i class="fa fw fa-twitter"></i><a href="<?php echo $curriculo->getTwitterUrl(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
                 <?php endif; ?>
             </ul>
         </div><!--//contact-container-->
