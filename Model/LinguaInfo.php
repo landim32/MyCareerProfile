@@ -40,6 +40,22 @@ class LinguaInfo
     }
 
     /**
+     * @return string
+     */
+    public function getTipoStr() {
+        $str = "";
+        switch ($this->tipo){
+            case LinguaInfo::NATIVO:
+                $str = _("Native");
+                break;
+            case LinguaInfo::AVANCADO:
+                $str = _("Advanced");
+                break;
+        }
+        return $str;
+    }
+
+    /**
      * @param string $value
      */
     public function setTipo($value) {

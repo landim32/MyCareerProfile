@@ -210,7 +210,7 @@ class CurriculoPDF extends FPDF
             $vetor[] = $conhecimento->getNome();
         }
         $str = implode(", ", $vetor);
-        return str_lreplace(", ", " e ", $str);
+        return str_lreplace(", ", " " . _("and") . " ", $str);
     }
 
     private function desenharLinha() {
@@ -333,6 +333,21 @@ class CurriculoPDF extends FPDF
         $this->paragrafo($conhecimento, 10, CurriculoPDF::PRETO, 5);
     }
 
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarIdioma($curriculo) {
+        $this->desenharLinha();
+        $this->escreverTitulo(_("Language"));
+        $vetor = array();
+        foreach ($curriculo->listarLingua() as $lingua) {
+            $vetor[] = $lingua->getNome() . " (" . $lingua->getTipoStr() . ")";
+        }
+        $str = implode(", ", $vetor);
+        $descricao = str_lreplace(", ", " " . _("and") . " ", $str);
+        $this->paragrafo($descricao, 10, CurriculoPDF::PRETO, 5);
+    }
+
     public function gerar() {
         $curriculo = $this->getCurriculo();
         $this->AliasNbPages();
@@ -341,6 +356,7 @@ class CurriculoPDF extends FPDF
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
         $this->gerarConhecimento($curriculo);
+        $this->gerarIdioma($curriculo);
     }
 
 }

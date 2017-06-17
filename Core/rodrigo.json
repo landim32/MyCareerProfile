@@ -173,9 +173,7 @@
       "links": [
         { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
         { "nome": "Imhovel Busca (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
-        { "nome": "Imhovel Busca (iOS)", "tipo": "ios", "url": "#" },
-        { "nome": "Imhovel Corretor (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" },
-        { "nome": "Imhovel Corretor (iOS)", "tipo": "ios", "url": "#" }
+        { "nome": "Imhovel Corretor (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" }
       ],
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
@@ -214,8 +212,7 @@
       "url": "http://simeon.com.br",
       "descricao" : "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
       "links": [
-        { "nome": "EPA (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" },
-        { "nome": "EPA (iOS)", "tipo": "ios", "url": "#" }
+        { "nome": "EPA (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" }
       ],
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
