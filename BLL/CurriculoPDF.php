@@ -237,28 +237,29 @@ class CurriculoPDF extends FPDF
         $this->desenharLinha();
 
         $y = $this->GetY();
+        $h = 4;
 
         //$this->escrever(_("Phone") . ":",9,CurriculoPDF::CINZA,5,"R",20, "",false);
-        $this->escreverLabel(_("Phone") . ":",9,5,20);
-        $this->escreverNegritoLn($curriculo->getTelefone1(),9,CurriculoPDF::PRETO,5);
+        $this->escreverLabel(_("Phone") . ":",9,$h,20);
+        $this->escreverNegritoLn($curriculo->getTelefone1(),9,CurriculoPDF::PRETO, $h);
 
-        $this->escreverLabel(_("Email") . ":",9,5,20);
-        $this->escreverNegritoLn($curriculo->getEmail1(),9,CurriculoPDF::PRETO,5);
+        $this->escreverLabel(_("Email") . ":",9,$h,20);
+        $this->escreverNegritoLn($curriculo->getEmail1(),9,CurriculoPDF::PRETO, $h);
 
         $colx = ($this->GetPageWidth() / 2) - 10;
 
         $this->SetXY($colx, $y);
 
-        $this->escreverLabel(_("LinkedIn") . ":",9,5,20);
-        $this->escreverLinkLn($curriculo->getLinkedinUrl(),9,5);
+        $this->escreverLabel(_("LinkedIn") . ":",9, $h,20);
+        $this->escreverLinkLn($curriculo->getLinkedinUrl(),9, $h);
 
         $this->SetX($colx);
-        $this->escreverLabel(_("GitHub") . ":",9,5,20);
-        $this->escreverLinkLn($curriculo->getGithubUrl(),9,5);
+        $this->escreverLabel(_("GitHub") . ":",9, $h,20);
+        $this->escreverLinkLn($curriculo->getGithubUrl(),9, $h);
 
         $this->SetX($colx);
-        $this->escreverLabel(_("Twitter") . ":",9,5,20);
-        $this->escreverLinkLn($curriculo->getTwitterUrl(),9,5);
+        $this->escreverLabel(_("Twitter") . ":",9, $h,20);
+        $this->escreverLinkLn($curriculo->getTwitterUrl(),9, $h);
 
         $this->desenharLinha();
 
@@ -338,7 +339,7 @@ class CurriculoPDF extends FPDF
      */
     private function gerarIdioma($curriculo) {
         $this->desenharLinha();
-        $this->escreverTitulo(_("Language"));
+        $this->escreverTitulo(_("Languages"));
         $vetor = array();
         foreach ($curriculo->listarLingua() as $lingua) {
             $vetor[] = $lingua->getNome() . " (" . $lingua->getTipoStr() . ")";
@@ -355,8 +356,8 @@ class CurriculoPDF extends FPDF
         $this->gerarDados($curriculo);
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
-        $this->gerarConhecimento($curriculo);
         $this->gerarIdioma($curriculo);
+        $this->gerarConhecimento($curriculo);
     }
 
 }
