@@ -277,8 +277,8 @@ class CurriculoPDF extends FPDF
         $this->escreverXLn($cargo->getEmpresa(),9,CurriculoPDF::PRETO, 4, "B");
 
         $data = $cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr();
-        $this->escreverX($data,9,CurriculoPDF::PRETO,4);
-        $this->escreverXLn(" - " . $cargo->getTempo(),9,CurriculoPDF::CINZA,4);
+        $this->escreverX($data,9,CurriculoPDF::PRETO,4, "I");
+        $this->escreverXLn(" (" . $cargo->getTempo() . ")",9,CurriculoPDF::CINZA,4, "I");
         $descricao = $cargo->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($cargo->listarConhecimento()) . ".";
         $this->SetX($this->GetX() + 5);
         $this->paragrafo($descricao, 9, CurriculoPDF::PRETO,4);
