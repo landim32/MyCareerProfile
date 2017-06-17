@@ -12,6 +12,7 @@ require_once dirname(__DIR__) . '/fpdf/fpdf.php';
 
 use Emagine\Model\CargoInfo;
 use Emagine\Model\ConhecimentoInfo;
+use Emagine\Model\CursoInfo;
 use Emagine\Model\ProjetoInfo;
 use FPDF;
 use Emagine\Model\CurriculoInfo;
@@ -349,6 +350,27 @@ class CurriculoPDF extends FPDF
         $this->paragrafo($descricao, 10, CurriculoPDF::PRETO, 5);
     }
 
+    /**
+     * @param CursoInfo $curso
+     */
+    private function escreverGraduacao($curso) {
+        $this->escreverNegritoLn($curso->getCurso(),9,CurriculoPDF::PRETO,4);
+        $this->escreverX($curso->getInstituicao(),9,CurriculoPDF::PRETO,4);
+        $this->escreverX($curso->getDataInicioAno() . " - " . $curso->getDataTerminoAno(),9,CurriculoPDF::CINZA,4);
+        $this->SetY($this->GetY() + 2);
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarGraduacao($curriculo) {
+        $this->desenharLinha();
+        $this->escreverTitulo(_("Education"));
+        foreach ($curriculo->listarGraduacao() as $graduacao) {
+            $this->escreverGraduacao($graduacao);
+        }
+    }
+
     public function gerar() {
         $curriculo = $this->getCurriculo();
         $this->AliasNbPages();
@@ -357,6 +379,7 @@ class CurriculoPDF extends FPDF
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
         $this->gerarIdioma($curriculo);
+        $this->gerarGraduacao($curriculo);
         $this->gerarConhecimento($curriculo);
     }
 
