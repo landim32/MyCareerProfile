@@ -277,7 +277,8 @@ class CurriculoPDF extends FPDF
         $this->escreverXLn($cargo->getEmpresa(),9,CurriculoPDF::PRETO, 4, "B");
 
         $data = $cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr();
-        $this->escreverLn($data,9,CurriculoPDF::CINZA,4);
+        $this->escreverX($data,9,CurriculoPDF::PRETO,4);
+        $this->escreverXLn(" - " . $cargo->getTempo(),9,CurriculoPDF::CINZA,4);
         $descricao = $cargo->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($cargo->listarConhecimento()) . ".";
         $this->SetX($this->GetX() + 5);
         $this->paragrafo($descricao, 9, CurriculoPDF::PRETO,4);
@@ -355,8 +356,8 @@ class CurriculoPDF extends FPDF
      */
     private function escreverGraduacao($curso) {
         $this->escreverNegritoLn($curso->getCurso(),9,CurriculoPDF::PRETO,4);
-        $this->escreverX($curso->getInstituicao(),9,CurriculoPDF::PRETO,4);
-        $this->escreverX($curso->getDataInicioAno() . " - " . $curso->getDataTerminoAno(),9,CurriculoPDF::CINZA,4);
+        $this->escreverX($curso->getInstituicao() . " ",9,CurriculoPDF::PRETO,4);
+        $this->escreverXLn("(" . $curso->getDataInicioAno() . " - " . $curso->getDataTerminoAno() . ")",9,CurriculoPDF::CINZA,4);
         $this->SetY($this->GetY() + 2);
     }
 

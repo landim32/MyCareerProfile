@@ -139,6 +139,40 @@ class CargoInfo
     }
 
     /**
+     * @return string
+     */
+    public function getTempo() {
+        $date1 = strtotime($this->getDataInicio());
+        if (is_null($this->getDataTermino())) {
+            $date2 = time();
+        }
+        else {
+            $date2 = strtotime($this->getDataTermino());
+        }
+        $diff = abs($date2 - $date1);
+
+        $ano = floor($diff / (365*60*60*24));
+        $mes = floor(($diff - $ano * 365*60*60*24) / (30*60*60*24));
+
+        $str = "";
+        if ($ano > 0 && $mes > 0) {
+            $str = ($ano > 1) ? sprintf("%s years", $ano) : sprintf("%s year", $ano);
+            $str .= " " . _("and") . " ";
+            $str .= ($mes > 1) ? sprintf("%s months", $mes) : sprintf("%s month", $mes);
+        }
+        elseif ($ano > 0) {
+            $str = ($ano > 1) ? sprintf("%s years", $ano) : sprintf("%s year", $ano);
+        }
+        elseif ($mes > 0) {
+            $str .= ($mes > 1) ? sprintf("%s months", $mes) : sprintf("%s month", $mes);
+        }
+        else {
+            $str = _("Less than a month");
+        }
+        return $str;
+    }
+
+    /**
      * @param stdClass $value
      * @param string $language
      * @return CargoInfo
