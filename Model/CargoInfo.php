@@ -156,15 +156,15 @@ class CargoInfo
 
         $str = "";
         if ($ano > 0 && $mes > 0) {
-            $str = ($ano > 1) ? sprintf("%s years", $ano) : sprintf("%s year", $ano);
+            $str = ($ano > 1) ? sprintf(_("%s years"), $ano) : sprintf(_("%s year"), $ano);
             $str .= " " . _("and") . " ";
-            $str .= ($mes > 1) ? sprintf("%s months", $mes) : sprintf("%s month", $mes);
+            $str .= ($mes > 1) ? sprintf(_("%s months"), $mes) : sprintf(_("%s month"), $mes);
         }
         elseif ($ano > 0) {
-            $str = ($ano > 1) ? sprintf("%s years", $ano) : sprintf("%s year", $ano);
+            $str = ($ano > 1) ? sprintf(_("%s years"), $ano) : sprintf(_("%s year"), $ano);
         }
         elseif ($mes > 0) {
-            $str .= ($mes > 1) ? sprintf("%s months", $mes) : sprintf("%s month", $mes);
+            $str .= ($mes > 1) ? sprintf(_("%s months"), $mes) : sprintf(_("%s month"), $mes);
         }
         else {
             $str = _("Less than a month");

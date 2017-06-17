@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Meu Curriculo\n"
-"POT-Creation-Date: 2017-06-16 10:14-0300\n"
-"PO-Revision-Date: 2017-06-16 10:14-0300\n"
+"POT-Creation-Date: 2017-06-17 11:23-0300\n"
+"PO-Revision-Date: 2017-06-17 11:23-0300\n"
 "Last-Translator: \n"
 "Language-Team: Emagine\n"
 "Language: en\n"
@@ -15,67 +15,131 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: BLL/CurriculoPDF.php:80
-msgid "at"
-msgstr "at"
+#: BLL/CurriculoPDF.php:214 BLL/CurriculoPDF.php:350 Model/CargoInfo.php:160
+msgid "and"
+msgstr "and"
 
-#: BLL/CurriculoPDF.php:115
+#: BLL/CurriculoPDF.php:244
 msgid "Phone"
 msgstr "Phone"
 
-#: BLL/CurriculoPDF.php:120
+#: BLL/CurriculoPDF.php:247
 msgid "Email"
 msgstr "Email"
 
-#: BLL/CurriculoPDF.php:147 www/index.php:102
+#: BLL/CurriculoPDF.php:254
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: BLL/CurriculoPDF.php:258
+msgid "GitHub"
+msgstr "GitHub"
+
+#: BLL/CurriculoPDF.php:262
+msgid "Twitter"
+msgstr "Twitter"
+
+#: BLL/CurriculoPDF.php:267 www/index.php:115
 msgid "Career Profile"
 msgstr "Career Profile"
 
-#: BLL/CurriculoPDF.php:154 www/index.php:111
+#: BLL/CurriculoPDF.php:276
+msgid "at"
+msgstr "at"
+
+#: BLL/CurriculoPDF.php:282 BLL/CurriculoPDF.php:307
+msgid "Related skills"
+msgstr "Related skills"
+
+#: BLL/CurriculoPDF.php:293 www/index.php:124
 msgid "Experiences"
 msgstr "Experiences"
+
+#: BLL/CurriculoPDF.php:323 www/index.php:168
+msgid "Projects"
+msgstr "Projects"
+
+#: BLL/CurriculoPDF.php:334 www/index.php:247
+msgid "Skills"
+msgstr "Skills"
+
+#: BLL/CurriculoPDF.php:344 www/index.php:85
+msgid "Languages"
+msgstr "Languages"
+
+#: BLL/CurriculoPDF.php:369 www/index.php:72
+msgid "Education"
+msgstr "Education"
 
 #: Model/CargoInfo.php:136
 msgid "Present"
 msgstr "Present"
 
+#: Model/CargoInfo.php:159 Model/CargoInfo.php:164
+#, php-format
+msgid "%s years"
+msgstr "%s years"
+
+#: Model/CargoInfo.php:159 Model/CargoInfo.php:164
+#, php-format
+msgid "%s year"
+msgstr "%s year"
+
+#: Model/CargoInfo.php:161 Model/CargoInfo.php:167
+#, php-format
+msgid "%s months"
+msgstr "%s months"
+
+#: Model/CargoInfo.php:161 Model/CargoInfo.php:167
+#, php-format
+msgid "%s month"
+msgstr "%s month"
+
+#: Model/CargoInfo.php:170
+msgid "Less than a month"
+msgstr "Less than a month"
+
+#: Model/LinguaInfo.php:49
+msgid "Native"
+msgstr "Native"
+
+#: Model/LinguaInfo.php:52
+msgid "Advanced"
+msgstr "Advanced"
+
 #: www/index.php:17
 msgid "Curriculum Vitae"
 msgstr "Curriculum Vitae"
 
-#: www/index.php:67
-msgid "Education"
-msgstr "Education"
+#: www/index.php:43
+msgid "Download PDF"
+msgstr "Download PDF"
 
-#: www/index.php:80
-msgid "Languages"
-msgstr "Languages"
+#: www/index.php:107 www/index.php:110
+msgid "Portuguese"
+msgstr "Portuguese"
 
-#: www/index.php:130
+#: www/index.php:108 www/index.php:111
+msgid "English"
+msgstr "English"
+
+#: www/index.php:143
 msgid "View more experiences"
 msgstr "View more experiences"
 
-#: www/index.php:155
-msgid "Projects"
-msgstr "Projects"
-
-#: www/index.php:157
+#: www/index.php:170
 msgid "Here are some of the projects developed for me"
 msgstr "Here are some of the projects developed for me"
 
-#: www/index.php:193
+#: www/index.php:206
 msgid "View more projects"
 msgstr "View more projects"
 
-#: www/index.php:234
-msgid "Skills"
-msgstr "Skills"
-
-#: www/index.php:246
+#: www/index.php:259
 msgid "View more skills"
 msgstr "View more skills"
 
-#: www/index.php:267
+#: www/index.php:280
 #, php-format
 msgid "Designed by %s for developers"
 msgstr "Designed by %s for developers"

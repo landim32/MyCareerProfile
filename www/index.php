@@ -85,7 +85,7 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
             <h2 class="container-block-title"><?php echo _("Languages"); ?></h2>
             <ul class="list-unstyled interests-list">
                 <?php foreach ($curriculo->listarLingua() as $lingua) : ?>
-                <li><?php echo $lingua->getNome(); ?> <span class="lang-desc">(<?php echo $lingua->getTipo(); ?>)</span></li>
+                <li><?php echo $lingua->getNome(); ?> <span class="lang-desc">(<?php echo $lingua->getTipoStr(); ?>)</span></li>
                 <?php endforeach; ?>
             </ul>
         </div>
