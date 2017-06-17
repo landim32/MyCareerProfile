@@ -78,6 +78,19 @@ class CurriculoPDF extends FPDF
     }
 
     /**
+     * @param string $texto
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param int $w
+     */
+    private function paragrafo($texto, $size, $cor, $h, $w = 0) {
+        $this->definirCor($cor);
+        $this->SetFont('Arial','',$size);
+        $this->MultiCell(0, 4, utf8_decode($texto));
+    }
+
+    /**
      * @param string $text
      * @param int $size
      * @param string $cor
@@ -92,6 +105,28 @@ class CurriculoPDF extends FPDF
         $this->definirCor($cor);
         $this->SetFont('Arial', $style, $size);
         $this->Cell($largura, $h, utf8_decode($text), 0, (($ln === true) ? 1 : 0), $align);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param string $style
+     */
+    private function escreverX($text, $size, $cor, $h, $style = "") {
+        $this->escrever($text, $size,$cor, $h,"", null,$style,false);
+    }
+
+    /**
+     * @param string $text
+     * @param int $size
+     * @param string $cor
+     * @param int $h
+     * @param string $style
+     */
+    private function escreverXLn($text, $size, $cor, $h, $style = "") {
+        $this->escrever($text, $size,$cor, $h,"", null,$style,true);
     }
 
     /**
@@ -255,24 +290,16 @@ class CurriculoPDF extends FPDF
         $this->desenharLinha();
 
         $this->escreverTitulo(_("Career Profile"));
-        $this->SetFont('Arial','',9);
-        $this->textoPreto();
-        $this->MultiCell(0, 4, utf8_decode($curriculo->getResumo()));
-
+        $this->paragrafo($curriculo->getResumo(),9,CurriculoPDF::PRETO,4);
     }
 
     /**
      * @param CargoInfo $cargo
      */
     private function escreverCargo($cargo) {
-        $this->SetFont('Arial','B',9);
-        $this->textoPreto();
-        $this->Cell($this->GetStringWidth($cargo->getNome()),4, utf8_decode($cargo->getNome()));
-        $this->SetFont('Arial','',9);
-        $em = " " . _("at") . " ";
-        $this->Cell($this->GetStringWidth($em),4, $em);
-        $this->SetFont('Arial','B',9);
-        $this->Cell($this->GetStringWidth($cargo->getEmpresa()),4, utf8_decode($cargo->getEmpresa()), 0, 1);
+        $this->escreverX($cargo->getNome(),9,CurriculoPDF::PRETO, 4, "B");
+        $this->escreverX(" " . _("at") . " ",9,CurriculoPDF::PRETO, 4);
+        $this->escreverXLn($cargo->getEmpresa(),9,CurriculoPDF::PRETO, 4, "B");
 
         $this->SetFont('Arial','',9);
         $this->textoCinza();
