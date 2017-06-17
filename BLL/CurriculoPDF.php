@@ -101,9 +101,9 @@ class CurriculoPDF extends FPDF
      * @param bool $ln
      */
     private function escrever($text, $size, $cor, $h, $align = "", $w = 0, $style = "", $ln = false) {
-        $largura = is_null($w) ? $this->GetStringWidth($text) : $w;
         $this->definirCor($cor);
         $this->SetFont('Arial', $style, $size);
+        $largura = is_null($w) ? $this->GetStringWidth($text) : $w;
         $this->Cell($largura, $h, utf8_decode($text), 0, (($ln === true) ? 1 : 0), $align);
     }
 
