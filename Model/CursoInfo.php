@@ -12,10 +12,14 @@ use stdClass;
 
 class CursoInfo
 {
+    const GRADUACAO = "graduacao";
+    const CURSO = "curso";
+
     private $curso = "";
     private $instituicao = "";
-    private $inicio = "";
-    private $termino = "";
+    private $data_inicio = "";
+    private $data_termino = "";
+    private $tipo = "";
 
     /**
      * @return string
@@ -48,29 +52,57 @@ class CursoInfo
     /**
      * @return string
      */
-    public function getInicio() {
-        return $this->inicio;
+    public function getDataInicio() {
+        return $this->data_inicio;
     }
 
     /**
      * @param string $value
      */
-    public function setInicio($value) {
-        $this->inicio = $value;
+    public function setDataInicio($value) {
+        $this->data_inicio = $value;
     }
 
     /**
      * @return string
      */
-    public function getTermino() {
-        return $this->termino;
+    public function getDataTermino() {
+        return $this->data_termino;
     }
 
     /**
      * @param string $value
      */
-    public function setTermino($value) {
-        $this->termino = $value;
+    public function setDataTermino($value) {
+        $this->data_termino = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setTipo($value) {
+        $this->tipo = $value;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataInicioAno() {
+        return intval(date("Y", strtotime($this->getDataInicio())));
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataTerminoAno() {
+        return intval(date("Y", strtotime($this->getDataTermino())));
     }
 
     /**
@@ -80,6 +112,21 @@ class CursoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $curso = new CursoInfo();
+        if (isset($value->curso)) {
+            $curso->setCurso(getStr($value->curso, $language));
+        }
+        if (isset($value->instituicao)) {
+            $curso->setInstituicao(getStr($value->instituicao, $language));
+        }
+        if (isset($value->inicio)) {
+            $curso->setDataInicio(getStr($value->inicio, $language));
+        }
+        if (isset($value->termino)) {
+            $curso->setDataTermino(getStr($value->termino, $language));
+        }
+        if (isset($value->tipo)) {
+            $curso->setTipo(getStr($value->tipo, $language));
+        }
         return $curso;
     }
 }

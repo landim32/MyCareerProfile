@@ -2,6 +2,7 @@
 
 namespace Emagine\BLL;
 
+use FPDF;
 use Emagine\Model\CurriculoInfo;
 
 /**
@@ -12,6 +13,11 @@ use Emagine\Model\CurriculoInfo;
  */
 class CurriculoBLL
 {
+    /**
+     * @param string $arquivo
+     * @param string $language
+     * @return CurriculoInfo
+     */
     public function carregarJson($arquivo, $language = "pt_BR") {
         $fullPath = dirname( __DIR__ ) . "/Core/" . $arquivo;
         $json = file_get_contents( $fullPath );

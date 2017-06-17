@@ -84,6 +84,13 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getLinkedinUrl() {
+        return "https://linkedin.com/in/" . $this->getLinkedin();
+    }
+
+    /**
      * @param string $value
      */
     public function setLinkedin($value) {
@@ -98,6 +105,13 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getGithubUrl() {
+        return "https://github.com/" . $this->getGithub();
+    }
+
+    /**
      * @param string $value
      */
     public function setGithub($value) {
@@ -109,6 +123,13 @@ class CurriculoInfo {
      */
     public function getTwitter() {
         return $this->twitter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitterUrl() {
+        return "https://twitter.com/" . $this->getTwitter();
     }
 
     /**
@@ -161,10 +182,49 @@ class CurriculoInfo {
     }
 
     /**
+     * @return CursoInfo[]
+     */
+    public function listarGraduacao() {
+        $graduacoes = array();
+        foreach ($this->listarCurso() as $curso) {
+            if ($curso->getTipo() == CursoInfo::GRADUACAO) {
+                $graduacoes[] = $curso;
+            }
+        }
+        return $graduacoes;
+    }
+
+    /**
      * @return CargoInfo[]
      */
     public function listarCargo() {
         return $this->cargos;
+    }
+
+    /**
+     * @return CargoInfo[]
+     */
+    public function listarCargoVisivel() {
+        $cargos = array();
+        foreach ($this->listarCargo() as $cargo) {
+            if ($cargo->getSituacao() != CargoInfo::ESCONDIDO) {
+                $cargos[] = $cargo;
+            }
+        }
+        return $cargos;
+    }
+
+    /**
+     * @return CargoInfo[]
+     */
+    public function listarCargoEscondido() {
+        $cargos = array();
+        foreach ($this->listarCargo() as $cargo) {
+            if ($cargo->getSituacao() == CargoInfo::ESCONDIDO) {
+                $cargos[] = $cargo;
+            }
+        }
+        return $cargos;
     }
 
     /**
@@ -182,6 +242,32 @@ class CurriculoInfo {
     }
 
     /**
+     * @return ProjetoInfo[]
+     */
+    public function listarProjetoVisivel() {
+        $projetos = array();
+        foreach ($this->listarProjeto() as $projeto) {
+            if ($projeto->getSituacao() != ProjetoInfo::OCULTO) {
+                $projetos[] = $projeto;
+            }
+        }
+        return $projetos;
+    }
+
+    /**
+     * @return ProjetoInfo[]
+     */
+    public function listarProjetoEscondido() {
+        $projetos = array();
+        foreach ($this->listarProjeto() as $projeto) {
+            if ($projeto->getSituacao() == ProjetoInfo::OCULTO) {
+                $projetos[] = $projeto;
+            }
+        }
+        return $projetos;
+    }
+
+    /**
      * @param ProjetoInfo $value
      */
     public function adicionarProjeto($value) {
@@ -196,10 +282,36 @@ class CurriculoInfo {
     }
 
     /**
+     * @return ConhecimentoInfo[]
+     */
+    public function listarConhecimentoVisivel() {
+        return array_slice($this->conhecimentos, 0, 7);
+    }
+
+    /**
+     * @return ConhecimentoInfo[]
+     */
+    public function listarConhecimentoOculto() {
+        return array_slice($this->conhecimentos, 7);
+    }
+
+    /**
      * @param ConhecimentoInfo $value
      */
     public function adicionarConhecimento($value) {
         $this->conhecimentos[] = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCargoAtual() {
+        if (count($this->cargos) > 0) {
+            /** @var CargoInfo $cargo */
+            $cargo = $this->cargos[0];
+            return $cargo->getNome();
+        }
+        return "";
     }
 
     /**
@@ -209,14 +321,30 @@ class CurriculoInfo {
      */
     public static function fromJson($value, $language = "pt_BR") {
         $curriculo = new CurriculoInfo();
-        $curriculo->setNome( getStr( $value->nome, $language ) );
-        $curriculo->setEmail1( getStr( $value->email1, $language ) );
-        $curriculo->setTelefone1( getStr( $value->telefone1, $language ) );
-        $curriculo->setWebsite( getStr( $value->website, $language ) );
-        $curriculo->setLinkedin( getStr( $value->linkedin, $language ) );
-        $curriculo->setGithub( getStr( $value->github, $language ) );
-        $curriculo->setTwitter( getStr( $value->twitter, $language ) );
-        $curriculo->setResumo( getStr( $value->resumo, $language ) );
+        if (isset($value->nome)) {
+            $curriculo->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->email1)) {
+            $curriculo->setEmail1(getStr($value->email1, $language));
+        }
+        if (isset($value->telefone1)) {
+            $curriculo->setTelefone1(getStr($value->telefone1, $language));
+        }
+        if (isset($value->website)) {
+            $curriculo->setWebsite(getStr($value->website, $language));
+        }
+        if (isset($value->linkedin)) {
+            $curriculo->setLinkedin(getStr($value->linkedin, $language));
+        }
+        if (isset($value->github)) {
+            $curriculo->setGithub(getStr($value->github, $language));
+        }
+        if (isset($value->twitter)) {
+            $curriculo->setTwitter(getStr($value->twitter, $language));
+        }
+        if (isset($value->resumo)) {
+            $curriculo->setResumo(getStr($value->resumo, $language));
+        }
         if (isset($value->linguas) && count($value->linguas) > 0) {
             foreach ($value->linguas as $lingua) {
                 $curriculo->adicionarLingua( LinguaInfo::fromJson($lingua, $language) );

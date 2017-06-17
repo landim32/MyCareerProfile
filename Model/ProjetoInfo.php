@@ -12,11 +12,19 @@ use stdClass;
  */
 class ProjetoInfo
 {
-    private $nome;
-    private $descricao;
-    private $data_inicio;
-    private $data_termino;
-    private $atual = false;
+    const ATIVO = "ativo";
+    const OCULTO = "oculto";
+
+    const WEBSITE = "website";
+    const ANDROID = "android";
+    const IOS = "ios";
+
+    private $nome = "";
+    private $url = "";
+    private $descricao = "";
+    private $data_inicio = null;
+    private $data_termino = null;
+    private $situacao = "ativo";
     private $links = array();
     private $conhecimentos = array();
 
@@ -32,6 +40,20 @@ class ProjetoInfo
      */
     public function setNome($value) {
         $this->nome = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl() {
+        return $this->url;
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setUrl($value) {
+        $this->url = $value;
     }
 
     /**
@@ -77,17 +99,17 @@ class ProjetoInfo
     }
 
     /**
-     * @return bool
+     * @return string
      */
-    public function getAtual() {
-        return $this->atual;
+    public function getSituacao() {
+        return $this->situacao;
     }
 
     /**
-     * @param bool $value
+     * @param string $value
      */
-    public function setAtual($value) {
-        $this->atual = $value;
+    public function setSituacao($value) {
+        $this->situacao = $value;
     }
 
     /**
@@ -125,6 +147,34 @@ class ProjetoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $projeto = new ProjetoInfo();
+        if (isset($value->nome)) {
+            $projeto->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->url)) {
+            $projeto->setUrl(getStr($value->url, $language));
+        }
+        if (isset($value->descricao)) {
+            $projeto->setDescricao(getStr($value->descricao, $language));
+        }
+        if (isset($value->data_inicio)) {
+            $projeto->setDataInicio($value->data_inicio);
+        }
+        if (isset($value->data_termino)) {
+            $projeto->setDataTermino($value->data_termino);
+        }
+        if (isset($value->situacao)) {
+            $projeto->setSituacao($value->situacao);
+        }
+        if (isset($value->links) && count($value->links) > 0) {
+            foreach ($value->links as $link) {
+                $projeto->adicionarLink( LinkInfo::fromJson($link, $language) );
+            }
+        }
+        if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
+            foreach ($value->conhecimentos as $conhecimento) {
+                $projeto->adicionarConhecimento( ConhecimentoInfo::fromJson($conhecimento, $language) );
+            }
+        }
         return $projeto;
     }
 }

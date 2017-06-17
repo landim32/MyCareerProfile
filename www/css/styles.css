@@ -155,7 +155,7 @@ p {
 }
 .main-wrapper {
   background: #fff;
-  padding: 60px;
+  padding: 40px 60px 60px 60px;
   padding-right: 300px;
 }
 .main-wrapper .section-title {
