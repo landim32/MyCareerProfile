@@ -103,7 +103,7 @@ class CurriculoPDF extends FPDF
     private function escrever($text, $size, $cor, $h, $align = "", $w = 0, $style = "", $ln = false) {
         $this->definirCor($cor);
         $this->SetFont('Arial', $style, $size);
-        $largura = is_null($w) ? $this->GetStringWidth($text) : $w;
+        $largura = is_null($w) ? $this->GetStringWidth(utf8_decode($text)) : $w;
         $this->Cell($largura, $h, utf8_decode($text), 0, (($ln === true) ? 1 : 0), $align);
     }
 
@@ -198,33 +198,6 @@ class CurriculoPDF extends FPDF
      */
     private function escreverLinkLn($text, $size, $h, $align = "", $w = 0) {
         $this->escrever($text, $size, CurriculoPDF::AZUL, $h, $align, $w, "U", true);
-    }
-
-    /**
-     * @param string $style
-     * @param int $size
-     */
-    private function textoCinza($size = 9, $style = "") {
-        $this->SetTextColor(120,120,120);
-        $this->SetFont('Arial', $style, $size);
-    }
-
-    /**
-     * @param string $style
-     * @param int $size
-     */
-    private function textoAzul($size = 9, $style = "") {
-        $this->SetTextColor(0,0,139);
-        $this->SetFont('Arial', $style, $size);
-    }
-
-    /**
-     * @param string $style
-     * @param int $size
-     */
-    private function textoPreto($size = 9, $style = "") {
-        $this->SetTextColor(0,0,0);
-        $this->SetFont('Arial', $style, $size);
     }
 
     /**
@@ -324,24 +297,16 @@ class CurriculoPDF extends FPDF
      * @param ProjetoInfo $projeto
      */
     private function escreverProjeto($projeto) {
-        $this->SetFont('Arial','B',9);
-        $this->textoPreto();
-        $this->Cell($this->GetStringWidth($projeto->getNome()),6, utf8_decode($projeto->getNome()), 0 , 1);
-
+        $this->escreverNegritoLn($projeto->getNome(),9,CurriculoPDF::PRETO,6);
         $this->SetX($this->GetX() + 3);
-        $this->SetFont('Arial','',9);
-        $this->textoPreto();
-        $descricao = $projeto->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($projeto->listarConhecimento()) . ".";
-        $this->MultiCell(0, 4, utf8_decode($descricao));
+
+        $conhecimento = $this->consolidarConhecimento($projeto->listarConhecimento());
+        $descricao = $projeto->getDescricao() . " " . _("Related skills") . ": " . $conhecimento . ".";
+        $this->paragrafo($descricao, 9, CurriculoPDF::PRETO, 4);
 
         foreach ($projeto->listarLinks() as $link) {
-            $this->textoPreto();
-            $this->SetFont('Arial','',8);
-            $this->Cell(40,4, utf8_decode($link->getNome() . ": "), 0,0,"R");
-
-            $this->textoAzul();
-            $this->SetFont('Arial','U',8);
-            $this->Cell(0,4, utf8_decode($link->getUrl()), 0, 1);
+            $this->escreverLabel($link->getNome() . ": ",8,4,40);
+            $this->escreverLinkLn($link->getUrl(),8,4);
         }
 
         $this->SetY($this->GetY() + 2);
@@ -364,9 +329,8 @@ class CurriculoPDF extends FPDF
     private function gerarConhecimento($curriculo) {
         $this->desenharLinha();
         $this->escreverTitulo(_("Skills"));
-        $this->SetFont('Arial','',10);
-        $this->textoPreto();
-        $this->MultiCell(0, 5, utf8_decode($this->consolidarConhecimento($curriculo->listarConhecimento())));
+        $conhecimento = $this->consolidarConhecimento($curriculo->listarConhecimento());
+        $this->paragrafo($conhecimento, 10, CurriculoPDF::PRETO, 5);
     }
 
     public function gerar() {
@@ -377,11 +341,6 @@ class CurriculoPDF extends FPDF
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
         $this->gerarConhecimento($curriculo);
-        /*
-        $this->SetFont('Arial','',12);
-        for($i=1;$i<=40;$i++)
-            $this->Cell(0,10,'Printing line number '.$i,0,1);
-        */
     }
 
 }
