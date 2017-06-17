@@ -301,17 +301,11 @@ class CurriculoPDF extends FPDF
         $this->escreverX(" " . _("at") . " ",9,CurriculoPDF::PRETO, 4);
         $this->escreverXLn($cargo->getEmpresa(),9,CurriculoPDF::PRETO, 4, "B");
 
-        $this->SetFont('Arial','',9);
-        $this->textoCinza();
-        $this->Cell(0,4, utf8_decode($cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr()), 0, 1);
-        $this->SetFont('Arial','',9);
-        $this->textoPreto();
-
-        $this->SetX($this->GetX() + 5);
-        $this->SetFont('Arial','',9);
+        $data = $cargo->getDataInicioStr() . " - " . $cargo->getDataTerminoStr();
+        $this->escreverLn($data,9,CurriculoPDF::CINZA,4);
         $descricao = $cargo->getDescricao() . " " . _("Related skills") . ": " . $this->consolidarConhecimento($cargo->listarConhecimento()) . ".";
-        $this->MultiCell(0, 4, utf8_decode($descricao));
-
+        $this->SetX($this->GetX() + 5);
+        $this->paragrafo($descricao, 9, CurriculoPDF::PRETO,4);
         $this->SetY($this->GetY() + 2);
     }
 
