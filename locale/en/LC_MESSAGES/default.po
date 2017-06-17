@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Meu Curriculo\n"
-"POT-Creation-Date: 2017-06-17 11:23-0300\n"
-"PO-Revision-Date: 2017-06-17 11:23-0300\n"
+"POT-Creation-Date: 2017-06-17 13:23-0300\n"
+"PO-Revision-Date: 2017-06-17 13:23-0300\n"
 "Last-Translator: \n"
 "Language-Team: Emagine\n"
 "Language: en\n"
@@ -130,6 +130,12 @@ msgstr "View more experiences"
 #: www/index.php:170
 msgid "Here are some of the projects developed for me"
 msgstr "Here are some of the projects developed for me"
+
+#: www/index.php:187 www/index.php:189 www/index.php:223 www/index.php:225
+#, php-format
+#| msgid "Download PDF"
+msgid "Download from %s"
+msgstr "Download from %s"
 
 #: www/index.php:206
 msgid "View more projects"

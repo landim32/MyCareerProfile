@@ -184,9 +184,9 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
                         <li>
                             <?php echo $link->getNome(); ?>:
                             <?php if ($link->getTipo() == ProjetoInfo::ANDROID) : ?>
-                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> Baixe no Google Play</a>
+                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> <?php echo sprintf(_("Download from %s"),"Google Play"); ?></a>
                             <?php elseif ($link->getTipo() == ProjetoInfo::IOS) : ?>
-                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> Baixe na Apple</a>
+                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> <?php echo sprintf(_("Download from %s"), "Apple"); ?></a>
                             <?php else : ?>
                                 <a target="_blank" href="<?php echo $link->getUrl(); ?>"><?php echo $link->getUrl(); ?></a>
                             <?php endif; ?>
@@ -220,9 +220,9 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
                                 <li>
                                     <?php echo $link->getNome(); ?>:
                                     <?php if ($link->getTipo() == ProjetoInfo::ANDROID) : ?>
-                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> Baixe no Google Play</a>
+                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> <?php echo sprintf(_("Download from %s"),"Google Play"); ?></a>
                                     <?php elseif ($link->getTipo() == ProjetoInfo::IOS) : ?>
-                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> Baixe na Apple</a>
+                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> <?php echo sprintf(_("Download from %s"),"Apple"); ?></a>
                                     <?php else : ?>
                                         <a target="_blank" href="<?php echo $link->getUrl(); ?>"><?php echo $link->getUrl(); ?></a>
                                     <?php endif; ?>
