@@ -104,11 +104,11 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
     <div class="main-wrapper">
         <div class="text-right">
             <?php if (IDIOMA == "en") : ?>
-                <a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Portuguese") ?></a> -
+                <a href="<?php echo TEMA_PATH . "/pt_BR/" . PROFILE; ?>"><?php echo _("Portuguese") ?></a> -
                 <?php echo _("English") ?>
             <?php else : ?>
                 <?php echo _("Portuguese") ?> -
-                <a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("English") ?></a>
+                <a href="<?php echo TEMA_PATH . "/en/" . PROFILE; ?>"><?php echo _("English") ?></a>
             <?php endif; ?>
         </div>
         <section class="section summary-section">
