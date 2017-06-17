@@ -33,15 +33,6 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
     </head>
 <body>
 <div class="wrapper">
-    <div class="text-right">
-        <?php if (IDIOMA == "en") : ?>
-            <a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Portuguese") ?></a> -
-            <?php echo _("English") ?>
-        <?php else : ?>
-            <?php echo _("Portuguese") ?> -
-            <a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("English") ?></a>
-        <?php endif; ?>
-    </div>
     <div class="sidebar-wrapper">
         <div class="profile-container">
             <img class="profile img-responsive img-circle" src="<?php echo get_gravatar($curriculo->getEmail1(), 100) ?>" alt="<?php echo $curriculo->getNome(); ?>" />
@@ -111,7 +102,15 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 
     </div><!--//sidebar-wrapper-->
     <div class="main-wrapper">
-
+        <div class="text-right">
+            <?php if (IDIOMA == "en") : ?>
+                <a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("Portuguese") ?></a> -
+                <?php echo _("English") ?>
+            <?php else : ?>
+                <?php echo _("Portuguese") ?> -
+                <a href="<?php echo TEMA_PATH . "/" . IDIOMA . "/" . PROFILE; ?>"><?php echo _("English") ?></a>
+            <?php endif; ?>
+        </div>
         <section class="section summary-section">
             <h2 class="section-title"><i class="fa fa-user"></i><?php echo _("Career Profile"); ?></h2>
             <div class="summary">
