@@ -43,7 +43,10 @@
       "nome": "Full Stack Developer",
       "empresa" : "Emagine",
       "data_inicio": "2017-04-01",
-      "descricao" : "Trabalhando como Freelance, desenvolvendo projetos mobile em Xamarin, dando manutenção e dando consultoria em projetos anteriores.",
+      "descricao" : {
+        "pt_BR": "Trabalhando como Freelance, desenvolvendo projetos mobile em Xamarin, dando manutenção e dando consultoria em projetos anteriores.",
+        "en": "Working as a Freelance, developing mobile projects in Xamarin, giving maintenance and consulting on previous projects."
+      },
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "c#.NET", "estilo": "primary" },
@@ -58,11 +61,17 @@
       ]
     },
     {
-      "nome": "Xamarin Developer",
+      "nome": {
+        "pt_BR": "Desenvolvedor Xamarin",
+        "en": "Xamarin Developer"
+      },
       "empresa" : "Club Management Apps",
       "data_inicio": "2016-07-01",
       "data_termino": "2017-03-01",
-      "descricao" : "Trabalhei na migração de um aplicativo móvel para gestão de obras de pavimentação feito em Titanium para Xamarin. Desenvolvi uma ferramenta de Geolocalização de radares em Android e iOS usando Xamarin.",
+      "descricao" : {
+        "pt_BR": "Trabalhei na migração de um aplicativo móvel para gestão de obras de pavimentação feito em Titanium para Xamarin. Desenvolvi uma ferramenta de Geolocalização de radares em Android e iOS usando Xamarin.",
+        "en": "I worked on the migration of a mobile application for the management of paving works made in Titanium for Xamarin. I developed a Geolocation tool for radars on Android and iOS using Xamarin."
+      },
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "c#.NET", "estilo": "primary" },
@@ -73,11 +82,17 @@
       ]
     },
     {
-      "nome": "PHP Developer",
+      "nome": {
+        "pt_BR": "Desenvolvedor PHP",
+        "en": "PHP Developer"
+      },
       "empresa" : "Imobsync",
       "data_inicio": "2013-01-01",
       "data_termino": "2016-07-01",
-      "descricao" : "Desenvolvi todo o sistema de gestão imobiliária, portal imobiliário, integração entre corretores, websites usando WordPress e API própria.",
+      "descricao" : {
+        "pt_BR": "Desenvolvi todo o sistema de gestão imobiliária, portal imobiliário, integração entre corretores, websites usando WordPress e API própria.",
+        "en": "Developed the entire system of real estate management, real estate portal, integration between brokers, websites using WordPress and own API."
+      },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
         { "nome": "MySQL", "estilo": "success" },
@@ -91,16 +106,22 @@
         { "nome": "Apache", "estilo": "info" },
         { "nome": "OpenSSL", "estilo": "info" },
         { "nome": "PowerDNS", "estilo": "info" },
-        { "nome": "Java para Android", "estilo": "info" },
+        { "nome": "Java to Android", "estilo": "info" },
         { "nome": "SQLite", "estilo": "success" }
       ]
     },
     {
-      "nome": ".NET Developer / Gerente de Projetos",
+      "nome": {
+        "pt_BR": ".NET Developer / Gerente de Projetos",
+        "en": ".NET Developer / Project Manager"
+      },
       "empresa" : "Wimoveis.com",
       "data_inicio": "2005-09-01",
       "data_termino": "2011-11-01",
-      "descricao" : "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões.",
+      "descricao" : {
+        "pt_BR": "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões.",
+        "en": "Responsible for the portal project Wimoveis.com, the largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million."
+      },
       "conhecimentos": [
         { "nome": "c#.NET", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
@@ -111,11 +132,17 @@
       ]
     },
     {
-      "nome": "Senior Developer",
+      "nome": {
+        "pt_BR": "Desenvolvedor Senior",
+        "en": "Senior Developer"
+      },
       "empresa" : "Implanta Informática",
       "data_inicio": "2003-07-01",
       "data_termino": "2005-08-01",
-      "descricao" : "Ajudei no desenvolvimento do sistema SISCAF, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, que era uma interface web do sistema.",
+      "descricao" : {
+        "pt_BR": "Ajudei no desenvolvimento do sistema SISCAF, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, que era uma interface web do sistema.",
+        "en": "I helped develop the SISCAF system, used by many of the country's professional councils, such as OAB / DF, CRA / DF, CORECON / SP, etc. I also worked on SISCAF Web, which was a system web interface."
+      },
       "conhecimentos": [
         { "nome": "c#.NET", "estilo": "primary" },
         { "nome": "Delphi", "estilo": "primary" },
@@ -126,11 +153,17 @@
       ]
     },
     {
-      "nome": "Network Manager",
+      "nome": {
+        "pt_BR": "Network Manager",
+        "en": "Gerente de Rede"
+      },
       "empresa" : "ZarpNet Internet",
       "data_inicio": "2001-04-01",
       "data_termino": "2003-06-01",
-      "descricao" : "Configuração e automação de rotinas para servdores FreeBSD e Linux usando serviços de hospedagem de páginas, email e acesso a Internet.",
+      "descricao" : {
+        "pt_BR": "Configuração e automação de rotinas para servdores FreeBSD e Linux usando serviços de hospedagem de páginas, email e acesso a Internet.",
+        "en": "Configuration and automation of routines for FreeBSD and Linux servers using web page, email and Internet access services."
+      },
       "conhecimentos": [
         { "nome": "C++", "estilo": "primary" },
         { "nome": "MySQL", "estilo": "success" },
@@ -158,11 +191,17 @@
       "situacao" : "escondido"
     },
     {
-      "nome": "PHP Developer",
+      "nome": {
+        "pt_BR": "Desenvolvedor PHP",
+        "en": "PHP Developer"
+      },
       "empresa" : "Rudah Internet",
       "data_inicio": "1999-09-01",
       "data_termino": "2000-04-01",
-      "descricao" : "Ajudei no desenvolvimento de uma intranet para a FUNCEP.",
+      "descricao" : {
+        "pt_BR": "Ajudei no desenvolvimento de uma intranet para a FUNCEP.",
+        "en": "I helped develop an intranet for FUNCEP."
+      },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" }
@@ -170,11 +209,17 @@
       "situacao" : "escondido"
     },
     {
-      "nome": "Desenvolvedor / Suporte Têcnico",
+      "nome": {
+        "pt_BR": "Programador / Suporte Têcnico",
+        "en": "Developer / Technical Support"
+      },
       "empresa" : "Netium Internet",
       "data_inicio": "1998-09-01",
       "data_termino": "1999-04-01",
-      "descricao" : "Ajudei no desenvolvimento de uma intranet para a FUNCEP.",
+      "descricao" : {
+        "pt_BR": "Suporte técnico e desenvolvimento de websites.",
+        "en": "Technical support and website development."
+      },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" }
@@ -185,11 +230,28 @@
   "projetos": [
     {
       "nome": "Imhovel",
-      "descricao" : "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
+      "descricao" : {
+        "pt_BR": "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
+        "en": "Imhovel is a collaborative platform for real estate leasing that connects lessors, renters, realtors and real estate agents."
+      },
       "links": [
         { "nome": "Website", "tipo": "website", "url": "https://imhovel.com.br" },
-        { "nome": "Imhovel Busca (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca" },
-        { "nome": "Imhovel Corretor (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor" }
+        {
+          "nome": {
+            "pt_BR": "Imhovel Busca (Android)",
+            "en": "Imhovel Search (Android)"
+          },
+          "tipo": "android",
+          "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.busca"
+        },
+        {
+          "nome": {
+            "pt_BR": "Imhovel Corretor (Android)",
+            "en": "Imhovel Agent (Android)"
+          },
+          "tipo": "android",
+          "url": "https://play.google.com/store/apps/details?id=br.com.imhovel.corretor"
+        }
       ],
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
@@ -208,7 +270,10 @@
     {
       "nome": "Wimoveis",
       "url": "http://wimoveis.com",
-      "descricao" : "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Fui responsável pelo desenovimento de todo o projeto.",
+      "descricao" : {
+        "pt_BR": "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Fui responsável pelo desenovimento de todo o projeto.",
+        "en": "The largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million. I was responsible for the development of the whole project."
+      },
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://wimoveis.com" }
       ],
@@ -226,7 +291,10 @@
     {
       "nome": "Simeon",
       "url": "http://simeon.com.br",
-      "descricao" : "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
+      "descricao" : {
+        "pt_BR": "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
+        "en": "Strategy for action - is a solution made to support organizations in the execution of the strategy. I developed the version of this system for Android and iOS."
+      },
       "links": [
         { "nome": "EPA (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" }
       ],
@@ -238,7 +306,10 @@
     },
     {
       "nome": "Radar Mais",
-      "descricao" : "O Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
+      "descricao" : {
+        "pt_BR": "Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
+        "en": "Radar Mais is the newest application that alerts you to different types of radars that will be found during your journey, whatever it is! It was developed to be used without being connected to the internet facilitating its use in areas where the cellular signal is not working besides saving the internet consumption in the cell phone."
+      },
       "links": [
         { "nome": "Radar Mais (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
         { "nome": "Radar Mais (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
@@ -252,7 +323,10 @@
     {
       "nome": "Imobsync",
       "url": "http://imobsync.com",
-      "descricao" : "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
+      "descricao" : {
+        "pt_BR": "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
+        "en": "Complete system of real estate management with creation of websites templates, CRM real estate, integration with portals, integration with Facebook, etc."
+      },
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://imobsync.com" }
       ],
@@ -274,7 +348,10 @@
     {
       "nome": "Emagine",
       "url": "http://emagine.com.br",
-      "descricao" : "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
+      "descricao" : {
+        "pt_BR": "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
+        "en": "I developed a pattern of Wordpress-based websites and several custom designs for clients."
+      },
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br" }
       ],
@@ -293,7 +370,10 @@
     },
     {
       "nome": "Unico Calc",
-      "descricao" : "Calculadora exclusiva de usinagem para a Único Asfaltos.",
+      "descricao" : {
+        "pt_BR": "Calculadora exclusiva de usinagem para a Único Asfaltos.",
+        "en": "Unique Machining Calculator for Single Asphalt."
+      },
       "links": [
         { "nome": "UnicoCalc (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagementApps.UnicoCalc" },
         { "nome": "UnicoCalc (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/unicocalc/id1160854486?l=en&mt=8" }
@@ -307,7 +387,10 @@
     },
     {
       "nome": "PAVmanager",
-      "descricao" : "O PAVmanager é um sistema de gestão de obras de pavimentação essencial para sua empresa. Através dele você pode gerenciar online e offline, todas as fases de sua obra, de onde estiver e em tempo real.",
+      "descricao" : {
+        "pt_BR": "O PAVmanager é um sistema de gestão de obras de pavimentação essencial para sua empresa. Através dele você pode gerenciar online e offline, todas as fases de sua obra, de onde estiver e em tempo real.",
+        "en": "PAVmanager is a paving works management system essential for your company. Through it you can manage online and offline, all phases of your work, wherever you are and in real time."
+      },
       "links": [
         { "nome": "PAVManager (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.ClubManagement.PAVmanager" },
         { "nome": "PAVManager (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/pt/app/pavmanager/id1090884915?l=en&mt=8" }
