@@ -11,4 +11,4 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
 $curriculoPDF = new CurriculoPDF();
 $curriculoPDF->setCurriculo($curriculo);
 $curriculoPDF->gerar();
-$curriculoPDF->output();
+$curriculoPDF->Output("D", PROFILE . "-cv.pdf");
