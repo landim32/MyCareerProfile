@@ -6,7 +6,7 @@
  * Time: 15:03
  */
 
-namespace Emagine\Model;
+namespace Landim32\MyCareerProfile\Model;
 
 use stdClass;
 

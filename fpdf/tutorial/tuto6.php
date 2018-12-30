@@ -91,7 +91,7 @@ function PutLink($URL, $txt)
 
 $html = 'You can now easily print text mixing different styles: <b>bold</b>, <i>italic</i>,
 <u>underlined</u>, or <b><i><u>all at once</u></i></b>!<br><br>You can also insert links on
-text, such as <a href="http://www.fpdf.org">www.fpdf.org</a>, or on an image: click on the logo.';
+text, such as <a href="http://theme.fpdf.org">theme.fpdf.org</a>, or on an image: click on the logo.';
 
 $pdf = new PDF();
 // First page
@@ -105,7 +105,7 @@ $pdf->SetFont('');
 // Second page
 $pdf->AddPage();
 $pdf->SetLink($link);
-$pdf->Image('logo.png',10,12,30,0,'','http://www.fpdf.org');
+$pdf->Image('logo.png',10,12,30,0,'','http://theme.fpdf.org');
 $pdf->SetLeftMargin(45);
 $pdf->SetFontSize(14);
 $pdf->WriteHTML($html);

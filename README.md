@@ -8,6 +8,6 @@ Website para centralizar o seu curriculo. Os recursos são:
 
 Preencha apenas o JSON em coloque no ar. 
 
-Visit http://emagine.com.br/equipe/rodrigo
+Visit http://emagine.com.br/rodrigo
 
 

@@ -1,9 +1,11 @@
 <?php
 
-require dirname(__DIR__ ) . "/Core/config.inc.php";
+require __DIR__ . "/Core/config.inc.php";
+require __DIR__ . "/Core/function.inc.php";
+require __DIR__ . "/Core/idioma.inc.php";
 
-use Emagine\BLL\CurriculoBLL;
-use Emagine\BLL\CurriculoPDF;
+use Landim32\MyCareerProfile\BLL\CurriculoBLL;
+use Landim32\MyCareerProfile\BLL\CurriculoPDF;
 
 $regraCurriculo = new CurriculoBLL();
 $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
