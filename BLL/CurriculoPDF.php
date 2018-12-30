@@ -1,21 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: rodri
- * Date: 15/06/2017
- * Time: 12:18
- */
-
-namespace Emagine\BLL;
+namespace Landim32\MyCareerProfile\BLL;
 
 require_once dirname(__DIR__) . '/fpdf/fpdf.php';
 
-use Emagine\Model\CargoInfo;
-use Emagine\Model\ConhecimentoInfo;
-use Emagine\Model\CursoInfo;
-use Emagine\Model\ProjetoInfo;
 use FPDF;
-use Emagine\Model\CurriculoInfo;
+use Landim32\MyCareerProfile\Model\CargoInfo;
+use Landim32\MyCareerProfile\Model\ConhecimentoInfo;
+use Landim32\MyCareerProfile\Model\CursoInfo;
+use Landim32\MyCareerProfile\Model\ProjetoInfo;
+use Landim32\MyCareerProfile\Model\CurriculoInfo;
 
 class CurriculoPDF extends FPDF
 {

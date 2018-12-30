@@ -1,7 +1,7 @@
 {
   "nome": "Rodrigo Landim",
   "email1": "rodrigo@emagine.com.br",
-  "telefone1": "+55 (62) 9 9625-7590",
+  "telefone1": "+55 (62) 9 8464 6330",
   "website": "emagine.com.br",
   "github": "landim32",
   "linkedin": "rodrigolandim",
@@ -35,8 +35,8 @@
     }
   ],
   "resumo": {
-    "pt_BR": "Sou um Full Stack Developer. Recentemente participei de alguns projetos como: aplicativos para Android & iOS usando Xamarin c#.NET; um sistema de gestão imobiliária completo integrado com websites, rede sociais e outros serviços; desenvolvimento de plugins e templates para Wordpress;e automação de negociações para mercado financeiro IBOV e Forex.",
-    "en": "I'm a Full Stack Developer. I recently participated in some projects like: applications for Android & iOS using Xamarin c # .NET; A complete real estate management system integrated with websites, social networks and other services; Development of plugins and templates for Wordpress; and automation of negotiations for IBOV and Forex financial market."
+    "pt_BR": "Desenvolvedor FullStack com mais vinte anos de experiência. Atualmente desenvolvo aplicativos para dispositivos móveis Android, iOS e Windows Phone. CEO da Emagine.com.br, criador da plataforma Imobsync.com.br (gestão imobiliária), desenvolvedor do portal Wimóveis. Conhecimentos em Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, entre outros. Certificado pela Microsoft #B252-4585.",
+    "en": "FullStack Developer with over twenty years of experience. I am currently developing applications for Android, iOS and Windows Phone mobile devices. CEO of Emagine.com.br, creator of the platform Imobsync.com.br (real estate management), developer of the portal Wimóveis. Knowledge in Xamarin, Titanium, Android, Swift, React Native, PHP, C # .Net, among others. Certified by Microsoft # B252-4585."
   },
   "cargos": [
     {

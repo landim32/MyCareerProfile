@@ -1,9 +1,9 @@
 <?php
 
-namespace Emagine\BLL;
+namespace Landim32\MyCareerProfile\BLL;
 
 use FPDF;
-use Emagine\Model\CurriculoInfo;
+use Landim32\MyCareerProfile\Model\CurriculoInfo;
 
 /**
  * Created by PhpStorm.
@@ -19,7 +19,7 @@ class CurriculoBLL
      * @return CurriculoInfo
      */
     public function carregarJson($arquivo, $language = "pt_BR") {
-        $fullPath = dirname( __DIR__ ) . "/Core/" . $arquivo;
+        $fullPath = dirname( __DIR__ ) . "/Json/" . $arquivo;
         $json = file_get_contents( $fullPath );
         $curriculo = json_decode($json);
         return CurriculoInfo::fromJson($curriculo, $language);

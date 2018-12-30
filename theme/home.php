@@ -1,12 +1,13 @@
 <?php
 
-require dirname(__DIR__ ) . "/Core/config.inc.php";
+namespace Landim32\MyCareerProfile\Theme;
 
-use Emagine\BLL\CurriculoBLL;
-use Emagine\Model\ProjetoInfo;
+use Landim32\MyCareerProfile\Model\CurriculoInfo;
+use Landim32\MyCareerProfile\Model\ProjetoInfo;
 
-$regraCurriculo = new CurriculoBLL();
-$curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
+/**
+ * @var CurriculoInfo $curriculo
+ */
 
 ?>
     <!DOCTYPE html>
@@ -32,6 +33,9 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
         <![endif]-->
     </head>
 <body>
+<a href="https://github.com/landim32/MyCareerProfile">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+</a>
 <div class="wrapper">
     <div class="sidebar-wrapper">
         <div class="profile-container">
@@ -39,7 +43,7 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
             <h1 class="name"><?php echo $curriculo->getNome(); ?></h1>
             <h3 class="tagline"><?php echo $curriculo->getCargoAtual(); ?></h3>
             <div style="margin-top: 12px;">
-                <a target="_blank" href="<?php echo TEMA_PATH . "/pdf/" . IDIOMA . "/" . PROFILE; ?>">
+                <a target="_blank" href="<?php echo BASE_PATH . "/" . IDIOMA . "/" . PROFILE . ".pdf"; ?>">
                     <i class="fa fw fa-download"></i> <?php echo _("Download PDF"); ?>
                 </a>
             </div>
@@ -51,7 +55,12 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
                 <li class="email"><i class="fa fw fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getTelefone1())) : ?>
-                <li class="phone"><i class="fa fw fa-phone"></i><a href="tel:55062996257590"><?php echo $curriculo->getTelefone1(); ?></a></li>
+                <li class="phone">
+                    <i class="fa fw fa-whatsapp"></i>
+                    <a href="https://api.whatsapp.com/send?phone=+<?php echo preg_replace('/\D/', '', $curriculo->getTelefone1()) ?>&text=Oi">
+                        <?php echo $curriculo->getTelefone1(); ?>
+                    </a>
+                </li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getWebsite())) : ?>
                 <li class="website"><i class="fa fw fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a></li>
@@ -104,11 +113,11 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
     <div class="main-wrapper">
         <div class="text-right">
             <?php if (IDIOMA == "en") : ?>
-                <a href="<?php echo TEMA_PATH . "/pt_BR/" . PROFILE; ?>"><?php echo _("Portuguese") ?></a> -
+                <a href="<?php echo BASE_PATH . "/pt_BR"; ?>"><?php echo _("Portuguese") ?></a> -
                 <?php echo _("English") ?>
             <?php else : ?>
                 <?php echo _("Portuguese") ?> -
-                <a href="<?php echo TEMA_PATH . "/en/" . PROFILE; ?>"><?php echo _("English") ?></a>
+                <a href="<?php echo BASE_PATH . "/en"; ?>"><?php echo _("English") ?></a>
             <?php endif; ?>
         </div>
         <section class="section summary-section">
@@ -184,9 +193,9 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
                         <li>
                             <?php echo $link->getNome(); ?>:
                             <?php if ($link->getTipo() == ProjetoInfo::ANDROID) : ?>
-                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> Baixe no Google Play</a>
+                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> <?php echo sprintf(_("Download from %s"),"Google Play"); ?></a>
                             <?php elseif ($link->getTipo() == ProjetoInfo::IOS) : ?>
-                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> Baixe na Apple</a>
+                                <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> <?php echo sprintf(_("Download from %s"), "Apple"); ?></a>
                             <?php else : ?>
                                 <a target="_blank" href="<?php echo $link->getUrl(); ?>"><?php echo $link->getUrl(); ?></a>
                             <?php endif; ?>
@@ -220,9 +229,9 @@ $curriculo = $regraCurriculo->carregarJson(PROFILE . ".json", IDIOMA);
                                 <li>
                                     <?php echo $link->getNome(); ?>:
                                     <?php if ($link->getTipo() == ProjetoInfo::ANDROID) : ?>
-                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> Baixe no Google Play</a>
+                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-android"></i> <?php echo sprintf(_("Download from %s"),"Google Play"); ?></a>
                                     <?php elseif ($link->getTipo() == ProjetoInfo::IOS) : ?>
-                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> Baixe na Apple</a>
+                                        <a target="_blank" href="<?php echo $link->getUrl(); ?>"><i class="fa fa-apple"></i> <?php echo sprintf(_("Download from %s"),"Apple"); ?></a>
                                     <?php else : ?>
                                         <a target="_blank" href="<?php echo $link->getUrl(); ?>"><?php echo $link->getUrl(); ?></a>
                                     <?php endif; ?>

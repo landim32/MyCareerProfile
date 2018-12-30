@@ -1,6 +1,6 @@
 <?php
 
-namespace Emagine\Model;
+namespace Landim32\MyCareerProfile\Model;
 
 use stdClass;
 
