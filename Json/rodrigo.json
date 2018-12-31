@@ -440,7 +440,6 @@
         { "nome": "PowerDNS", "estilo": "Info" }
       ]
     },
-
     {
       "nome": "Radar Mais",
       "descricao" : {
@@ -455,7 +454,8 @@
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "c#.NET", "estilo": "primary" },
         { "nome": "SQLite", "estilo": "success" }
-      ]
+      ],
+      "situacao": "oculto"
     },
     {
       "nome": "LadinoBot",
