@@ -319,7 +319,12 @@
       },
       "links": [
         { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br/produto/frete" },
-        { "nome": { "pt_BR": "Vídeo", "en": "Video"}, "tipo": "website", "url": "https://vimeo.com/306612999" }
+        { "nome": { "pt_BR": "Vídeo", "en": "Video"}, "tipo": "website", "url": "https://vimeo.com/306612999" },
+        {
+          "nome": "Demo (Android)",
+          "tipo": "android",
+          "url": "https://play.google.com/store/apps/details?id=br.com.emagine.carona"
+        }
       ],
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
@@ -435,6 +440,7 @@
         { "nome": "PowerDNS", "estilo": "Info" }
       ]
     },
+
     {
       "nome": "Radar Mais",
       "descricao" : {
@@ -450,6 +456,20 @@
         { "nome": "c#.NET", "estilo": "primary" },
         { "nome": "SQLite", "estilo": "success" }
       ]
+    },
+    {
+      "nome": "LadinoBot",
+      "descricao" : {
+        "pt_BR": "Robô para negociações automatizadas para mercado financeiro. Pode ser usando tando em IBOV como para FOREX.",
+        "en": "Robot for automated trading for financial market. It can be using tando in IBOV as for FOREX."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "https://github.com/landim32/LadinoBot" }
+      ],
+      "conhecimentos": [
+        { "nome": "MQL5", "estilo": "primary" }
+      ],
+      "situacao": "oculto"
     },
     {
       "nome": "Unico Calc",
