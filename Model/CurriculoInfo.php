@@ -13,6 +13,7 @@ class CurriculoInfo {
     private $linkedin = "";
     private $github = "";
     private $twitter = "";
+    private $vimeo = "";
     private $resumo = "";
     private $linguas = array();
     private $cursos = array();
@@ -126,6 +127,13 @@ class CurriculoInfo {
     }
 
     /**
+     * @param string $value
+     */
+    public function setTwitter($value) {
+        $this->twitter = $value;
+    }
+
+    /**
      * @return string
      */
     public function getTwitterUrl() {
@@ -133,10 +141,24 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getVimeo() {
+        return $this->vimeo;
+    }
+
+    /**
      * @param string $value
      */
-    public function setTwitter($value) {
-        $this->twitter = $value;
+    public function setVimeo($value) {
+        $this->vimeo = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVimeoUrl() {
+        return "https://vimeo.com/" . $this->getVimeo();
     }
 
     /**
@@ -341,6 +363,9 @@ class CurriculoInfo {
         }
         if (isset($value->twitter)) {
             $curriculo->setTwitter(getStr($value->twitter, $language));
+        }
+        if (isset($value->vimeo)) {
+            $curriculo->setVimeo(getStr($value->vimeo, $language));
         }
         if (isset($value->resumo)) {
             $curriculo->setResumo(getStr($value->resumo, $language));

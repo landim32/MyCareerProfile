@@ -15,6 +15,7 @@ class LinkInfo
     const WEBSITE = "website";
     const ANDROID = "android";
     const IOS = "ios";
+    const VIDEO = "video";
 
     private $nome;
     private $tipo;

@@ -52,27 +52,39 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
         <div class="contact-container container-block">
             <ul class="list-unstyled contact-list">
                 <?php if (!isNullOrEmpty($curriculo->getEmail1())) : ?>
-                <li class="email"><i class="fa fw fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a></li>
+                <li class="email" style="word-wrap: break-word; white-space: nowrap;">
+                    <i class="fa fa-fw fa-envelope"></i><a href="mailto:<?php echo $curriculo->getEmail1(); ?>"><?php echo $curriculo->getEmail1(); ?></a>
+                </li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getTelefone1())) : ?>
                 <li class="phone">
-                    <i class="fa fw fa-whatsapp"></i>
-                    <a href="https://api.whatsapp.com/send?phone=+<?php echo preg_replace('/\D/', '', $curriculo->getTelefone1()) ?>&text=Oi">
-                        <?php echo $curriculo->getTelefone1(); ?>
+                    <i class="fa fa-fw fa-whatsapp"></i><a
+                        href="https://api.whatsapp.com/send?phone=+<?php echo
+                        preg_replace('/\D/', '', $curriculo->getTelefone1());
+                        ?>&text=Oi"><?php echo $curriculo->getTelefone1(); ?>
                     </a>
                 </li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getWebsite())) : ?>
-                <li class="website"><i class="fa fw fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a></li>
+                <li class="website">
+                    <i class="fa fa-fw fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a>
+                </li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getLinkedin())) : ?>
-                <li class="linkedin"><i class="fa fw fa-linkedin"></i><a href="<?php echo $curriculo->getLinkedinUrl(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a></li>
+                <li class="linkedin">
+                    <i class="fa fa-fw fa-linkedin"></i><a href="<?php echo $curriculo->getLinkedinUrl(); ?>" target="_blank">#<?php echo $curriculo->getLinkedin(); ?></a>
+                </li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getGithub())) : ?>
-                <li class="github"><i class="fa fw fa-github"></i><a href="<?php echo $curriculo->getGithubUrl(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
+                <li class="github"><i class="fa fa-fw fa-github"></i><a href="<?php echo $curriculo->getGithubUrl(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getTwitter())) : ?>
-                <li class="twitter"><i class="fa fw fa-twitter"></i><a href="<?php echo $curriculo->getTwitterUrl(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
+                <li class="twitter"><i class="fa fa-fw fa-twitter"></i><a href="<?php echo $curriculo->getTwitterUrl(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
+                <?php endif; ?>
+                <?php if (!isNullOrEmpty($curriculo->getVimeo())) : ?>
+                    <li class="vimeo">
+                        <i class="fa fa-fw fa-vimeo"></i><a href="<?php echo $curriculo->getVimeoUrl(); ?>" target="_blank">@<?php echo $curriculo->getVimeo(); ?></a>
+                    </li>
                 <?php endif; ?>
             </ul>
         </div><!--//contact-container-->

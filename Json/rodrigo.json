@@ -6,6 +6,7 @@
   "github": "landim32",
   "linkedin": "rodrigolandim",
   "twitter": "landim32official",
+  "vimeo": "landim32",
   "cursos": [
     {
       "curso": {
@@ -36,16 +37,19 @@
   ],
   "resumo": {
     "pt_BR": "Desenvolvedor FullStack com mais vinte anos de experiência. Atualmente desenvolvo aplicativos para dispositivos móveis Android, iOS e Windows Phone. CEO da Emagine.com.br, criador da plataforma Imobsync.com.br (gestão imobiliária), desenvolvedor do portal Wimóveis. Conhecimentos em Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, entre outros. Certificado pela Microsoft #B252-4585.",
-    "en": "FullStack Developer with over twenty years of experience. I am currently developing applications for Android, iOS and Windows Phone mobile devices. CEO of Emagine.com.br, creator of the platform Imobsync.com.br (real estate management), developer of the portal Wimóveis. Knowledge in Xamarin, Titanium, Android, Swift, React Native, PHP, C # .Net, among others. Certified by Microsoft # B252-4585."
+    "en": "FullStack Developer with over twenty years of experience. I am currently developing applications for Android, iOS and Windows Phone mobile devices. CEO of Emagine.com.br, creator of the platform Imobsync.com.br (real estate management), developer of the portal Wimóveis. Knowledge in Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, among others. Certified by Microsoft #B252-4585."
   },
   "cargos": [
     {
-      "nome": "Full Stack Developer",
+      "nome": {
+        "pt_BR": "Desenvolvedor Fullstack",
+        "en": "Fullstack Developer"
+      },
       "empresa" : "Emagine",
-      "data_inicio": "2017-04-01",
+      "data_inicio": "2017-03-01",
       "descricao" : {
-        "pt_BR": "Trabalhando como Freelance, desenvolvendo projetos mobile em Xamarin, dando manutenção e dando consultoria em projetos anteriores.",
-        "en": "Working as a Freelance, developing mobile projects in Xamarin, giving maintenance and consulting on previous projects."
+        "pt_BR": "Atualmente trabalhando como desenvolvedor mobile freelancer com apps Uber Clone, carona, frete e lojas virtuais.",
+        "en": "Currently working as a freelancer mobile developer with Uber Clone, rides, freight and e-commerce apps."
       },
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
@@ -61,13 +65,31 @@
       ]
     },
     {
+      "nome": "Mobile Developer",
+      "empresa" : "Foursys",
+      "data_inicio": "2017-08-01",
+      "data_termino": "2018-02-01",
+      "descricao" : {
+        "pt_BR": "Trabalhei como desenvolvedor mobile na Caixa Seguradora desenvolvendo o aplicativo Caixa Seguradora Odonto & Saúde que hoje é chamado de Odonto Empresas.",
+        "en": "I worked as a mobile developer at the Caixa Seguradora (health insurance plan), developing the \"Caixa Seguradora Odonto & Saúde\" application that is now called \"Odonto Empresas\"."
+      },
+      "conhecimentos": [
+        { "nome": "Titanium", "estilo": "primary" },
+        { "nome": "Appcelerator", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" }
+      ]
+    },
+    {
       "nome": {
-        "pt_BR": "Desenvolvedor Xamarin",
-        "en": "Xamarin Developer"
+        "pt_BR": "Desenvolvedor Mobile",
+        "en": "Mobile Developer"
       },
       "empresa" : "Club Management Apps",
-      "data_inicio": "2016-07-01",
-      "data_termino": "2017-03-01",
+      "data_inicio": "2016-08-01",
+      "data_termino": "2017-07-01",
       "descricao" : {
         "pt_BR": "Trabalhei na migração de um aplicativo móvel para gestão de obras de pavimentação feito em Titanium para Xamarin. Desenvolvi uma ferramenta de Geolocalização de radares em Android e iOS usando Xamarin.",
         "en": "I worked on the migration of a mobile application for the management of paving works made in Titanium for Xamarin. I developed a Geolocation tool for radars on Android and iOS using Xamarin."
@@ -83,19 +105,19 @@
     },
     {
       "nome": {
-        "pt_BR": "Desenvolvedor PHP",
-        "en": "PHP Developer"
+        "pt_BR": "Desenvolvedor Full Stack",
+        "en": "Full Stack Developer"
       },
       "empresa" : "Imobsync",
       "data_inicio": "2013-01-01",
-      "data_termino": "2016-07-01",
+      "data_termino": "2016-08-01",
       "descricao" : {
         "pt_BR": "Desenvolvi todo o sistema de gestão imobiliária, portal imobiliário, integração entre corretores, websites usando WordPress e API própria.",
         "en": "Developed the entire system of real estate management, real estate portal, integration between brokers, websites using WordPress and own API."
       },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "MySQL", "estilo": "primary" },
         { "nome": "HTML5", "estilo": "primary" },
         { "nome": "Javascript", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
@@ -112,6 +134,33 @@
     },
     {
       "nome": {
+        "pt_BR": "Desenvolvedor PHP",
+        "en": "PHP Developer"
+      },
+      "empresa" : "Emagine",
+      "data_inicio": "2011-01-01",
+      "data_termino": "2012-12-01",
+      "descricao" : {
+        "pt_BR": "Desenvolvi um padrão de websites baseados em Wordpress / Joomla e vários projetos personalizados para clientes.",
+        "en": "I developed a pattern of websites based on Wordpress / Joomla and several custom projects for clients."
+      },
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "primary" },
+        { "nome": "HTML5", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "Wordpress", "estilo": "info" },
+        { "nome": "Apache", "estilo": "info" },
+        { "nome": "OpenSSL", "estilo": "info" },
+        { "nome": "PowerDNS", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": {
         "pt_BR": ".NET Developer / Gerente de Projetos",
         "en": ".NET Developer / Project Manager"
       },
@@ -123,7 +172,7 @@
         "en": "Responsible for the portal project Wimoveis.com, the largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million."
       },
       "conhecimentos": [
-        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "HTML5", "estilo": "info" },
         { "nome": "Javascript", "estilo": "info" },
@@ -183,7 +232,10 @@
       "empresa" : "Yawl Internet",
       "data_inicio": "2000-04-01",
       "data_termino": "2001-05-01",
-      "descricao" : "Ajudei a criar uma interface web para a configuração de serviços de um provedor de Internet.",
+      "descricao" : {
+        "pt_BR": "Ajudei a criar uma interface web para a configuração de serviços de um provedor de Internet.",
+        "en": "I helped create a web interface for configuring the services of an ISP."
+      },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" }
@@ -229,7 +281,78 @@
   ],
   "projetos": [
     {
+      "nome": {
+        "pt_BR": "App de E-Commerce",
+        "en": "E-Commerce App"
+      },
+      "url": "http://emagine.com.br/produto/loja",
+      "descricao" : {
+        "pt_BR": "Uma solução de vendas online para Website, Android e iOS. Pode ser adaptada para qualquer negócio (lojas, supermercados, lanchonetes, agências de turismo, etc). Integrado com geolocalização, pagamentos, correios, etc.",
+        "en": "An online sales solution for Website, Android and iOS. It can be adapted to any business (shops, supermarkets, snack bars, tourist agencies, etc). Integrated with geolocation, payments, post office, etc."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br/produto/loja" },
+        { "nome": { "pt_BR": "Vídeo", "en": "Video"}, "tipo": "website", "url": "https://vimeo.com/306942979" }
+      ],
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": {
+        "pt_BR": "App de Uber Clone, Frete ou Carona",
+        "en": "Uber Clone App, Freight or Ride"
+      },
+      "url": "http://emagine.com.br/produto/loja",
+      "descricao" : {
+        "pt_BR": "Solução adaptável estilo Uber para as necessidades do cliente para Android e iOS. Pode ser usada para gerencia entregas, fretes e caronas solidárias.",
+        "en": "Uber-style adaptive solution for customer needs for Android and iOS. It can be used to manage deliveries, freights and carpool."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br/produto/frete" },
+        { "nome": { "pt_BR": "Vídeo", "en": "Video"}, "tipo": "website", "url": "https://vimeo.com/306612999" }
+      ],
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" }
+      ]
+    },
+    {
+      "nome": "Simeon",
+      "url": "http://simeon.com.br",
+      "descricao" : {
+        "pt_BR": "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
+        "en": "Strategy for action - is a solution made to support organizations in the execution of the strategy. I developed the version of this system for Android and iOS."
+      },
+      "links": [
+        { "nome": "EPA (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" }
+      ],
+      "conhecimentos": [
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
+    },
+    {
       "nome": "Imhovel",
+      "url": "http://imhovel.com.br",
       "descricao" : {
         "pt_BR": "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
         "en": "Imhovel is a collaborative platform for real estate leasing that connects lessors, renters, realtors and real estate agents."
@@ -254,11 +377,10 @@
         }
       ],
       "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
         { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "PHP", "estilo": "primary" },
         { "nome": "MySQL", "estilo": "success" },
-        { "nome": "SQLite", "estilo": "success" },
         { "nome": "Javascript", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
         { "nome": "Angular", "estilo": "info" },
@@ -278,7 +400,7 @@
         { "nome": "Website", "tipo": "website", "url": "http://wimoveis.com" }
       ],
       "conhecimentos": [
-        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "WebServices", "estilo": "info" },
         { "nome": "AJAX", "estilo": "info" },
@@ -289,46 +411,14 @@
       ]
     },
     {
-      "nome": "Simeon",
-      "url": "http://simeon.com.br",
-      "descricao" : {
-        "pt_BR": "Estratégia para ação - é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvi a versão desse sistema para Android e iOS.",
-        "en": "Strategy for action - is a solution made to support organizations in the execution of the strategy. I developed the version of this system for Android and iOS."
-      },
-      "links": [
-        { "nome": "EPA (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=simeon.com.br.appepa" }
-      ],
-      "conhecimentos": [
-        { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "SQLite", "estilo": "success" }
-      ]
-    },
-    {
-      "nome": "Radar Mais",
-      "descricao" : {
-        "pt_BR": "Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
-        "en": "Radar Mais is the newest application that alerts you to different types of radars that will be found during your journey, whatever it is! It was developed to be used without being connected to the internet facilitating its use in areas where the cellular signal is not working besides saving the internet consumption in the cell phone."
-      },
-      "links": [
-        { "nome": "Radar Mais (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
-        { "nome": "Radar Mais (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
-      ],
-      "conhecimentos": [
-        { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "SQLite", "estilo": "success" }
-      ]
-    },
-    {
       "nome": "Imobsync",
-      "url": "http://imobsync.com",
+      "url": "http://imobsync.com.br",
       "descricao" : {
         "pt_BR": "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
         "en": "Complete system of real estate management with creation of websites templates, CRM real estate, integration with portals, integration with Facebook, etc."
       },
       "links": [
-        { "nome": "Website", "tipo": "website", "url": "http://imobsync.com" }
+        { "nome": "Website", "tipo": "website", "url": "http://imobsync.com.br" }
       ],
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
@@ -346,27 +436,20 @@
       ]
     },
     {
-      "nome": "Emagine",
-      "url": "http://emagine.com.br",
+      "nome": "Radar Mais",
       "descricao" : {
-        "pt_BR": "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
-        "en": "I developed a pattern of Wordpress-based websites and several custom designs for clients."
+        "pt_BR": "Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
+        "en": "Radar Mais is the newest application that alerts you to different types of radars that will be found during your journey, whatever it is! It was developed to be used without being connected to the internet facilitating its use in areas where the cellular signal is not working besides saving the internet consumption in the cell phone."
       },
       "links": [
-        { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br" }
+        { "nome": "Radar Mais (Android)", "tipo": "android", "url": "https://play.google.com/store/apps/details?id=br.com.cmapps.radar" },
+        { "nome": "Radar Mais (iOS)", "tipo": "ios", "url": "https://itunes.apple.com/ar/app/radar-mais/id1182364929?mt=8" }
       ],
       "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "Wordpress", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "Bootstrap", "estilo": "info" },
-        { "nome": "jQuery", "estilo": "info" },
-        { "nome": "HTML5", "estilo": "info" },
-        { "nome": "Less", "estilo": "info" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "PostgreSQL", "estilo": "success" }
-      ],
-      "situacao": "oculto"
+        { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "c#.NET", "estilo": "primary" },
+        { "nome": "SQLite", "estilo": "success" }
+      ]
     },
     {
       "nome": "Unico Calc",
@@ -403,11 +486,36 @@
         { "nome": "SQLite", "estilo": "success" }
       ],
       "situacao": "oculto"
+    },
+    {
+      "nome": "Emagine",
+      "url": "http://emagine.com.br",
+      "descricao" : {
+        "pt_BR": "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
+        "en": "I developed a pattern of Wordpress-based websites and several custom designs for clients."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://emagine.com.br" }
+      ],
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "Wordpress", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "PostgreSQL", "estilo": "success" }
+      ],
+      "situacao": "oculto"
     }
   ],
   "conhecimentos": [
-    { "nome": "c#.NET", "value": 100 },
     { "nome": "Xamarin", "value": 100 },
+    { "nome": "Android", "value": 90 },
+    { "nome": "Swift", "value": 70 },
+    { "nome": "C#.NET", "value": 100 },
     { "nome": "PHP", "value": 100 },
     { "nome": "Javascript & jQuery", "value": 95 },
     { "nome": "HTML5, CSS & Less", "value": 95 },
