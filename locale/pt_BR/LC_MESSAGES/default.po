@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Meu Curriculo\n"
-"POT-Creation-Date: 2018-12-30 13:50-0200\n"
-"PO-Revision-Date: 2018-12-30 13:50-0200\n"
+"POT-Creation-Date: 2019-01-08 15:59-0200\n"
+"PO-Revision-Date: 2019-01-08 16:02-0200\n"
 "Last-Translator: \n"
 "Language-Team: Emagine\n"
 "Language: pt_BR\n"
@@ -39,7 +39,7 @@ msgstr "GitHub"
 msgid "Twitter"
 msgstr "Twitter"
 
-#: BLL/CurriculoPDF.php:260 theme/home.php:124
+#: BLL/CurriculoPDF.php:260 theme/home.php:147
 msgid "Career Profile"
 msgstr "Resumo"
 
@@ -51,25 +51,29 @@ msgstr "em"
 msgid "Related skills"
 msgstr "Conhecimentos relacionados"
 
-#: BLL/CurriculoPDF.php:286 theme/home.php:133
+#: BLL/CurriculoPDF.php:286 theme/home.php:156
 msgid "Experiences"
 msgstr "Experiências"
 
-#: BLL/CurriculoPDF.php:316 theme/home.php:177
+#: BLL/CurriculoPDF.php:316 theme/home.php:200
 msgid "Projects"
 msgstr "Projetos"
 
-#: BLL/CurriculoPDF.php:327 theme/home.php:256
+#: BLL/CurriculoPDF.php:327 theme/home.php:279
 msgid "Skills"
 msgstr "Conhecimentos"
 
-#: BLL/CurriculoPDF.php:337 theme/home.php:94
+#: BLL/CurriculoPDF.php:337 theme/home.php:117
 msgid "Languages"
 msgstr "Línguas"
 
-#: BLL/CurriculoPDF.php:362 theme/home.php:81
+#: BLL/CurriculoPDF.php:362 theme/home.php:94
 msgid "Education"
 msgstr "Graduação"
+
+#: BLL/CurriculoPDF.php:383 theme/home.php:104
+msgid "Certification"
+msgstr "Certificações"
 
 #: Model/CargoInfo.php:136
 msgid "Present"
@@ -115,36 +119,36 @@ msgstr "Curriculum Vitae"
 msgid "Download PDF"
 msgstr "Baixar em PDF"
 
-#: theme/home.php:116 theme/home.php:119
+#: theme/home.php:139 theme/home.php:142
 msgid "Portuguese"
 msgstr "Português"
 
-#: theme/home.php:117 theme/home.php:120
+#: theme/home.php:140 theme/home.php:143
 msgid "English"
 msgstr "Inglês"
 
-#: theme/home.php:152
+#: theme/home.php:175
 msgid "View more experiences"
 msgstr "Visualizar mais experiências"
 
-#: theme/home.php:179
+#: theme/home.php:202
 msgid "Here are some of the projects developed for me"
 msgstr "Segue abaixo alguns dos projetos que eu desenvolvi"
 
-#: theme/home.php:196 theme/home.php:198 theme/home.php:232 theme/home.php:234
+#: theme/home.php:219 theme/home.php:221 theme/home.php:255 theme/home.php:257
 #, php-format
 msgid "Download from %s"
 msgstr "Baixe da %s"
 
-#: theme/home.php:215
+#: theme/home.php:238
 msgid "View more projects"
 msgstr "Visualizar mais projetos"
 
-#: theme/home.php:268
+#: theme/home.php:291
 msgid "View more skills"
 msgstr "Visualizar mais conhecimentos"
 
-#: theme/home.php:289
+#: theme/home.php:312
 #, php-format
 msgid "Designed by %s for developers"
 msgstr "Designer por %s para desenvolvedores"

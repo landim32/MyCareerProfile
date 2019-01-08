@@ -365,6 +365,27 @@ class CurriculoPDF extends FPDF
         }
     }
 
+    /**
+     * @param CursoInfo $curso
+     */
+    private function escreverCertificacao($curso) {
+        $this->escreverNegritoLn($curso->getCurso(),9,CurriculoPDF::PRETO,4);
+        $this->escreverX($curso->getInstituicao() . " ",9,CurriculoPDF::PRETO,4);
+        //$this->escreverXLn("(" . $curso->getDataInicioAno() . " - " . $curso->getDataTerminoAno() . ")",9,CurriculoPDF::CINZA,4);
+        $this->SetY($this->GetY() + 4);
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarCertificacao($curriculo) {
+        $this->desenharLinha();
+        $this->escreverTitulo(_("Certification"));
+        foreach ($curriculo->listarCertificacao() as $certificacao) {
+            $this->escreverCertificacao($certificacao);
+        }
+    }
+
     public function gerar() {
         $curriculo = $this->getCurriculo();
         $this->AliasNbPages();
@@ -373,7 +394,12 @@ class CurriculoPDF extends FPDF
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
         $this->gerarIdioma($curriculo);
-        $this->gerarGraduacao($curriculo);
+        if (count($curriculo->listarGraduacao()) > 0) {
+            $this->gerarGraduacao($curriculo);
+        }
+        if (count($curriculo->listarCertificacao()) > 0) {
+            $this->gerarCertificacao($curriculo);
+        }
         $this->gerarConhecimento($curriculo);
     }
 
