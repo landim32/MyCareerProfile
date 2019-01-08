@@ -90,14 +90,25 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
         </div><!--//contact-container-->
         <?php if (count($curriculo->listarCurso()) > 0) : ?>
         <div class="education-container container-block">
-            <h2 class="container-block-title"><?php echo _("Education"); ?></h2>
-            <?php foreach ($curriculo->listarGraduacao() as $graduacao) : ?>
-            <div class="item">
-                <h4 class="degree"><?php echo $graduacao->getCurso(); ?></h4>
-                <h5 class="meta"><?php echo $graduacao->getInstituicao(); ?></h5>
-                <div class="time"><?php echo $graduacao->getDataInicioAno(); ?> - <?php echo $graduacao->getDataTerminoAno(); ?></div>
-            </div><!--//item-->
-            <?php endforeach; ?>
+            <?php if (count($curriculo->listarGraduacao()) > 0) : ?>
+                <h2 class="container-block-title"><?php echo _("Education"); ?></h2>
+                <?php foreach ($curriculo->listarGraduacao() as $graduacao) : ?>
+                    <div class="item">
+                        <h4 class="degree"><?php echo $graduacao->getCurso(); ?></h4>
+                        <h5 class="meta"><?php echo $graduacao->getInstituicao(); ?></h5>
+                        <div class="time"><?php echo $graduacao->getDataInicioAno(); ?> - <?php echo $graduacao->getDataTerminoAno(); ?></div>
+                    </div><!--//item-->
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if (count($curriculo->listarCertificacao()) > 0) : ?>
+                <h2 class="container-block-title"><?php echo _("Certification"); ?></h2>
+                <?php foreach ($curriculo->listarCertificacao() as $certificacao) : ?>
+                    <div class="item">
+                        <h4 class="degree"><?php echo $certificacao->getCurso(); ?></h4>
+                        <h5 class="meta"><?php echo $certificacao->getInstituicao(); ?></h5>
+                    </div><!--//item-->
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div><!--//education-container-->
         <?php endif; ?>
 

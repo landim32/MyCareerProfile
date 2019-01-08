@@ -9,9 +9,14 @@
   "vimeo": "landim32",
   "cursos": [
     {
-      "curso": "MCP #B252-4585",
-      "instituicao": "Microsoft",
-      "tipo": "certificacao"
+      "curso": {
+        "pt_BR": "Engenharia da Computação",
+        "en": "Software Engineer"
+      },
+      "instituicao": "IESB",
+      "inicio": "2003-01-01",
+      "termino": "2008-01-01",
+      "tipo": "graduacao"
     }
   ],
   "linguas": [

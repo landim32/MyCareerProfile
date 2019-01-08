@@ -217,6 +217,19 @@ class CurriculoInfo {
     }
 
     /**
+     * @return CursoInfo[]
+     */
+    public function listarCertificacao() {
+        $certificacoes = array();
+        foreach ($this->listarCurso() as $curso) {
+            if ($curso->getTipo() == CursoInfo::CERTIFICACAO) {
+                $certificacoes[] = $curso;
+            }
+        }
+        return $certificacoes;
+    }
+
+    /**
      * @return CargoInfo[]
      */
     public function listarCargo() {

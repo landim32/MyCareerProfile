@@ -7,6 +7,6 @@ date_default_timezone_set('America/Sao_Paulo');
 
 //define("PROFILE", $_GET["profile"]);
 define("PROFILE", "rodrigo");
-define("BASE_PATH", "/rodrigo");
-//define("BASE_PATH", "/MyCareerProfile");
+//define("BASE_PATH", "/rodrigo");
+define("BASE_PATH", "/MyCareerProfile");
 define("TEMA_PATH", BASE_PATH . "/theme");

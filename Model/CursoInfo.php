@@ -14,6 +14,7 @@ class CursoInfo
 {
     const GRADUACAO = "graduacao";
     const CURSO = "curso";
+    const CERTIFICACAO = "certificacao";
 
     private $curso = "";
     private $instituicao = "";
