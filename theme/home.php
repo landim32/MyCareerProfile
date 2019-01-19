@@ -112,11 +112,11 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
         </div><!--//education-container-->
         <?php endif; ?>
 
-        <?php if (count($curriculo->listarLingua()) > 0) : ?>
+        <?php if (count($curriculo->listarIdioma()) > 0) : ?>
         <div class="languages-container container-block">
             <h2 class="container-block-title"><?php echo _("Languages"); ?></h2>
             <ul class="list-unstyled interests-list">
-                <?php foreach ($curriculo->listarLingua() as $lingua) : ?>
+                <?php foreach ($curriculo->listarIdioma() as $lingua) : ?>
                 <li><?php echo $lingua->getNome(); ?> <span class="lang-desc">(<?php echo $lingua->getTipoStr(); ?>)</span></li>
                 <?php endforeach; ?>
             </ul>
@@ -159,7 +159,10 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                 <div class="meta">
                     <div class="upper-row">
                         <h3 class="job-title"><?php echo $cargo->getNome(); ?></h3>
-                        <div class="time"><?php echo $cargo->getDataInicioStr(); ?> - <?php echo $cargo->getDataTerminoStr(); ?></div>
+                        <div class="time">
+                            <?php echo $cargo->getDataInicioStr(); ?> - <?php echo $cargo->getDataTerminoStr(); ?>
+                            (<?php echo $cargo->getTempo(); ?>)
+                        </div>
                     </div><!--//upper-row-->
                     <div class="company"><?php echo $cargo->getEmpresa(); ?></div>
                 </div><!--//meta-->
@@ -179,7 +182,10 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                         <div class="meta">
                             <div class="upper-row">
                                 <h3 class="job-title"><?php echo $cargo->getNome(); ?></h3>
-                                <div class="time"><?php echo $cargo->getDataInicioStr(); ?> - <?php echo $cargo->getDataTerminoStr(); ?></div>
+                                <div class="time">
+                                    <?php echo $cargo->getDataInicioStr(); ?> - <?php echo $cargo->getDataTerminoStr(); ?>
+                                    (<?php echo $cargo->getTempo(); ?>)
+                                </div>
                             </div><!--//upper-row-->
                             <div class="company"><?php echo $cargo->getEmpresa(); ?></div>
                         </div><!--//meta-->

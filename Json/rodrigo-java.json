@@ -1,0 +1,24 @@
+{
+  "base": "rodrigo",
+  "cursos": [
+  ],
+  "conhecimentos": [
+    { "nome": "Xamarin", "value": 100 },
+    { "nome": "React Native", "value": 80 },
+    { "nome": "Android", "value": 90 },
+    { "nome": "Swift", "value": 70 },
+    { "nome": "C#.NET", "value": 100 },
+    { "nome": "PHP", "value": 100 },
+    { "nome": "Javascript & jQuery", "value": 95 },
+    { "nome": "HTML5, CSS & Less", "value": 95 },
+    { "nome": "Angular", "value": 80 },
+    { "nome": "MySQL", "value": 90 },
+    { "nome": "GitHub", "value": 80 },
+    { "nome": "Bootstrap", "value": 90 },
+    { "nome": "SQL Server", "value": 90 },
+    { "nome": "PostgreSQL", "value": 70 },
+    { "nome": "Wordpress", "value": 70 },
+    { "nome": "Linux & FreeBSD", "value": 70 },
+    { "nome": "Java", "value": 60 }
+  ]
+}

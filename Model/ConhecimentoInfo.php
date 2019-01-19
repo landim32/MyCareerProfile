@@ -13,9 +13,26 @@ class ConhecimentoInfo
     const INFO = "label label-info";
     const SUCCESS = "label label-success";
 
+    private $id;
     private $nome;
     private $estilo;
     private $porcentagem = 0;
+
+    /**
+     * @return string
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setId($value) {
+        $this->id = $value;
+        return $this;
+    }
 
     /**
      * @return string
@@ -26,9 +43,11 @@ class ConhecimentoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
     }
 
     /**
@@ -40,9 +59,11 @@ class ConhecimentoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setEstilo($value) {
         $this->estilo = $value;
+        return $this;
     }
 
     /**
@@ -54,9 +75,11 @@ class ConhecimentoInfo
 
     /**
      * @param int $value
+     * @return $this
      */
     public function setPorcentagem($value) {
         $this->porcentagem = $value;
+        return $this;
     }
 
     /**
@@ -66,6 +89,9 @@ class ConhecimentoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $conhecimento = new ConhecimentoInfo();
+        if (isset($value->id)) {
+            $conhecimento->setId($value->id);
+        }
         if (isset($value->nome)) {
             $conhecimento->setNome(getStr($value->nome, $language));
         }

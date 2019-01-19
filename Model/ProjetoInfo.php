@@ -19,6 +19,7 @@ class ProjetoInfo
     const ANDROID = "android";
     const IOS = "ios";
 
+    private $id = "";
     private $nome = "";
     private $url = "";
     private $descricao = "";
@@ -31,15 +32,33 @@ class ProjetoInfo
     /**
      * @return string
      */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setId($value) {
+        $this->id = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getNome() {
         return $this->nome;
     }
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
     }
 
     /**
@@ -51,9 +70,11 @@ class ProjetoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setUrl($value) {
         $this->url = $value;
+        return $this;
     }
 
     /**
@@ -65,9 +86,11 @@ class ProjetoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDescricao($value) {
         $this->descricao = $value;
+        return $this;
     }
 
     /**
@@ -79,9 +102,11 @@ class ProjetoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDataInicio($value) {
         $this->data_inicio = $value;
+        return $this;
     }
 
     /**
@@ -93,9 +118,11 @@ class ProjetoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDataTermino($value) {
         $this->data_termino = $value;
+        return $this;
     }
 
     /**
@@ -107,9 +134,11 @@ class ProjetoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setSituacao($value) {
         $this->situacao = $value;
+        return $this;
     }
 
     /**
@@ -121,9 +150,11 @@ class ProjetoInfo
 
     /**
      * @param ConhecimentoInfo $value
+     * @return $this
      */
     public function adicionarConhecimento($value) {
         $this->conhecimentos[] = $value;
+        return $this;
     }
 
     /**
@@ -135,9 +166,11 @@ class ProjetoInfo
 
     /**
      * @param LinkInfo $value
+     * @return $this
      */
     public function adicionarLink($value) {
         $this->links[] = $value;
+        return $this;
     }
 
     /**

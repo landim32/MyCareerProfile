@@ -10,13 +10,30 @@ namespace Landim32\MyCareerProfile\Model;
 
 use stdClass;
 
-class LinguaInfo
+class IdiomaInfo
 {
     const NATIVO = "nativo";
     const AVANCADO = "avançado";
 
+    private $id;
     private $nome;
     private $tipo;
+
+    /**
+     * @return string
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setId($value) {
+        $this->id = $value;
+        return $this;
+    }
 
     /**
      * @return string
@@ -27,9 +44,11 @@ class LinguaInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
     }
 
     /**
@@ -45,10 +64,10 @@ class LinguaInfo
     public function getTipoStr() {
         $str = "";
         switch ($this->tipo){
-            case LinguaInfo::NATIVO:
+            case IdiomaInfo::NATIVO:
                 $str = _("Native");
                 break;
-            case LinguaInfo::AVANCADO:
+            case IdiomaInfo::AVANCADO:
                 $str = _("Advanced");
                 break;
         }
@@ -57,18 +76,23 @@ class LinguaInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setTipo($value) {
         $this->tipo = $value;
+        return $this;
     }
 
     /**
      * @param stdClass $value
      * @param string $language
-     * @return LinguaInfo
+     * @return IdiomaInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
-        $lingua = new LinguaInfo();
+        $lingua = new IdiomaInfo();
+        if (isset($value->id)) {
+            $lingua->setId($value->id);
+        }
         if (isset($value->nome)) {
             $lingua->setNome(getStr($value->nome, $language));
         }

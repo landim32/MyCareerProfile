@@ -6,6 +6,7 @@ use stdClass;
 
 class CurriculoInfo {
 
+    private $base = "";
     private $nome = "";
     private $email1 = "";
     private $telefone1 = "";
@@ -15,11 +16,27 @@ class CurriculoInfo {
     private $twitter = "";
     private $vimeo = "";
     private $resumo = "";
-    private $linguas = array();
+    private $idioma = array();
     private $cursos = array();
     private $cargos = array();
     private $projetos = array();
     private $conhecimentos = array();
+
+    /**
+     * @return string
+     */
+    public function getBase() {
+        return $this->base;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setBase($value) {
+        $this->base = $value;
+        return $this;
+    }
 
     /**
      * @return string
@@ -30,9 +47,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
     }
 
     /**
@@ -44,9 +63,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setEmail1($value) {
         $this->email1 = $value;
+        return $this;
     }
 
     /**
@@ -58,9 +79,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setTelefone1($value) {
         $this->telefone1 = $value;
+        return $this;
     }
 
     /**
@@ -72,9 +95,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setWebsite($value) {
         $this->website = $value;
+        return $this;
     }
 
     /**
@@ -93,9 +118,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setLinkedin($value) {
         $this->linkedin = $value;
+        return $this;
     }
 
     /**
@@ -114,9 +141,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setGithub($value) {
         $this->github = $value;
+        return $this;
     }
 
     /**
@@ -128,9 +157,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setTwitter($value) {
         $this->twitter = $value;
+        return $this;
     }
 
     /**
@@ -149,9 +180,11 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setVimeo($value) {
         $this->vimeo = $value;
+        return $this;
     }
 
     /**
@@ -170,23 +203,30 @@ class CurriculoInfo {
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setResumo($value) {
         $this->resumo = $value;
+        return $this;
     }
 
     /**
-     * @return LinguaInfo[]
+     * @return IdiomaInfo[]
      */
-    public function listarLingua() {
-        return $this->linguas;
+    public function listarIdioma() {
+        return $this->idioma;
     }
 
     /**
-     * @param LinguaInfo $value
+     * @param IdiomaInfo $value
+     * @return $this
      */
-    public function adicionarLingua($value) {
-        $this->linguas[] = $value;
+    public function adicionarIdioma($value) {
+        if (isNullOrEmpty($value->getId())) {
+            $value->setId(md5(uniqid()));
+        }
+        $this->idioma[$value->getId()] = $value;
+        return $this;
     }
 
     /**
@@ -198,9 +238,14 @@ class CurriculoInfo {
 
     /**
      * @param CursoInfo $value
+     * @return $this
      */
     public function adicionarCurso($value) {
-        $this->cursos[] = $value;
+        if (isNullOrEmpty($value->getId())) {
+            $value->setId(md5(uniqid()));
+        }
+        $this->cursos[$value->getId()] = $value;
+        return $this;
     }
 
     /**
@@ -264,9 +309,14 @@ class CurriculoInfo {
 
     /**
      * @param CargoInfo $value
+     * @return $this
      */
     public function adicionarCargo($value) {
-        $this->cargos[] = $value;
+        if (isNullOrEmpty($value->getId())) {
+            $value->setId(md5(uniqid()));
+        }
+        $this->cargos[$value->getId()] = $value;
+        return $this;
     }
 
     /**
@@ -304,9 +354,14 @@ class CurriculoInfo {
 
     /**
      * @param ProjetoInfo $value
+     * @return $this
      */
     public function adicionarProjeto($value) {
-        $this->projetos[] = $value;
+        if (isNullOrEmpty($value->getId())) {
+            $value->setId(md5(uniqid()));
+        }
+        $this->projetos[$value->getId()] = $value;
+        return $this;
     }
 
     /**
@@ -332,9 +387,14 @@ class CurriculoInfo {
 
     /**
      * @param ConhecimentoInfo $value
+     * @return $this
      */
     public function adicionarConhecimento($value) {
-        $this->conhecimentos[] = $value;
+        if (isNullOrEmpty($value->getId())) {
+            $value->setId(md5(uniqid()));
+        }
+        $this->conhecimentos[$value->getId()] = $value;
+        return $this;
     }
 
     /**
@@ -343,19 +403,21 @@ class CurriculoInfo {
     public function getCargoAtual() {
         if (count($this->cargos) > 0) {
             /** @var CargoInfo $cargo */
-            $cargo = $this->cargos[0];
+            $cargo = array_values($this->cargos)[0];
             return $cargo->getNome();
         }
         return "";
     }
 
     /**
+     * @param CurriculoInfo $curriculo
      * @param stdClass $value
      * @param string $language
-     * @return CurriculoInfo
      */
-    public static function fromJson($value, $language = "pt_BR") {
-        $curriculo = new CurriculoInfo();
+    public static function converterJsonParaCurriculo(CurriculoInfo &$curriculo, stdClass $value, $language = "pt_BR") {
+        if (isset($value->base)) {
+            $curriculo->setBase($value->base);
+        }
         if (isset($value->nome)) {
             $curriculo->setNome(getStr($value->nome, $language));
         }
@@ -383,31 +445,46 @@ class CurriculoInfo {
         if (isset($value->resumo)) {
             $curriculo->setResumo(getStr($value->resumo, $language));
         }
-        if (isset($value->linguas) && count($value->linguas) > 0) {
+        //if (isset($value->linguas) && count($value->linguas) > 0) {
+        if (isset($value->linguas) && is_array($value->linguas)) {
             foreach ($value->linguas as $lingua) {
-                $curriculo->adicionarLingua( LinguaInfo::fromJson($lingua, $language) );
+                $curriculo->adicionarIdioma( IdiomaInfo::fromJson($lingua, $language) );
             }
         }
-        if (isset($value->cursos) && count($value->cursos) > 0) {
+        //if (isset($value->cursos) && count($value->cursos) > 0) {
+        if (isset($value->cursos) && is_array($value->cursos)) {
             foreach ($value->cursos as $curso) {
                 $curriculo->adicionarCurso( CursoInfo::fromJson($curso, $language) );
             }
         }
-        if (isset($value->cargos) && count($value->cargos) > 0) {
+        //if (isset($value->cargos) && count($value->cargos) > 0) {
+        if (isset($value->cargos) && is_array($value->cargos)) {
             foreach ($value->cargos as $cargo) {
                 $curriculo->adicionarCargo( CargoInfo::fromJson($cargo, $language) );
             }
         }
-        if (isset($value->projetos) && count($value->projetos) > 0) {
+        //if (isset($value->projetos) && count($value->projetos) > 0) {
+        if (isset($value->projetos) && is_array($value->projetos)) {
             foreach ($value->projetos as $projeto) {
                 $curriculo->adicionarProjeto( ProjetoInfo::fromJson($projeto, $language) );
             }
         }
-        if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
+        //if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
+        if (isset($value->conhecimentos) && is_array($value->conhecimentos)) {
             foreach ($value->conhecimentos as $conhecimento) {
                 $curriculo->adicionarConhecimento( ConhecimentoInfo::fromJson($conhecimento, $language) );
             }
         }
+    }
+
+    /**
+     * @param stdClass $value
+     * @param string $language
+     * @return CurriculoInfo
+     */
+    public static function fromJson($value, $language = "pt_BR") {
+        $curriculo = new CurriculoInfo();
+        CurriculoInfo::converterJsonParaCurriculo($curriculo, $value, $language);
         return $curriculo;
     }
 }

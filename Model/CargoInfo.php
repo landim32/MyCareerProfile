@@ -15,6 +15,7 @@ class CargoInfo
     const ATIVO = "ativo";
     const ESCONDIDO = "escondido";
 
+    private $id = "";
     private $nome = "";
     private $empresa = "";
     private $descricao = "";
@@ -26,15 +27,33 @@ class CargoInfo
     /**
      * @return string
      */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setId($value) {
+        $this->id = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getNome() {
         return $this->nome;
     }
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
     }
 
     /**
@@ -46,9 +65,11 @@ class CargoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setEmpresa($value) {
         $this->empresa = $value;
+        return $this;
     }
 
     /**
@@ -60,9 +81,11 @@ class CargoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDescricao($value) {
         $this->descricao = $value;
+        return $this;
     }
 
     /**
@@ -74,9 +97,11 @@ class CargoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDataInicio($value) {
         $this->data_inicio = $value;
+        return $this;
     }
 
     /**
@@ -88,9 +113,11 @@ class CargoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDataTermino($value) {
         $this->data_termino = $value;
+        return $this;
     }
 
     /**
@@ -102,9 +129,11 @@ class CargoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setSituacao($value) {
         $this->situacao = $value;
+        return $this;
     }
 
     /**
@@ -116,9 +145,11 @@ class CargoInfo
 
     /**
      * @param ConhecimentoInfo $value
+     * @return $this
      */
     public function adicionarConhecimento($value) {
         $this->conhecimentos[] = $value;
+        return $this;
     }
 
     /**
@@ -179,6 +210,9 @@ class CargoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $cargo = new CargoInfo();
+        if (isset($value->id)) {
+            $cargo->setId($value->id);
+        }
         if (isset($value->nome)) {
             $cargo->setNome(getStr($value->nome, $language));
         }

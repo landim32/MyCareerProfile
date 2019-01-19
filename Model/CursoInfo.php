@@ -16,11 +16,28 @@ class CursoInfo
     const CURSO = "curso";
     const CERTIFICACAO = "certificacao";
 
+    private $id = "";
     private $curso = "";
     private $instituicao = "";
     private $data_inicio = "";
     private $data_termino = "";
     private $tipo = "";
+
+    /**
+     * @return string
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setId($value) {
+        $this->id = $value;
+        return $this;
+    }
 
     /**
      * @return string
@@ -31,9 +48,11 @@ class CursoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setCurso($value) {
         $this->curso = $value;
+        return $this;
     }
 
     /**
@@ -45,9 +64,11 @@ class CursoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setInstituicao($value) {
         $this->instituicao = $value;
+        return $this;
     }
 
     /**
@@ -59,9 +80,11 @@ class CursoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDataInicio($value) {
         $this->data_inicio = $value;
+        return $this;
     }
 
     /**
@@ -73,9 +96,11 @@ class CursoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setDataTermino($value) {
         $this->data_termino = $value;
+        return $this;
     }
 
     /**
@@ -87,9 +112,11 @@ class CursoInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setTipo($value) {
         $this->tipo = $value;
+        return $this;
     }
 
     /**
@@ -113,6 +140,9 @@ class CursoInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $curso = new CursoInfo();
+        if (isset($value->id)) {
+            $curso->setId($value->id);
+        }
         if (isset($value->curso)) {
             $curso->setCurso(getStr($value->curso, $language));
         }

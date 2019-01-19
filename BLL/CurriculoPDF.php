@@ -251,9 +251,11 @@ class CurriculoPDF extends FPDF
         $this->escreverLabel(_("GitHub") . ":",9, $h,20);
         $this->escreverLinkLn($curriculo->getGithubUrl(),9, $h);
 
+        /*
         $this->SetX($colx);
         $this->escreverLabel(_("Twitter") . ":",9, $h,20);
         $this->escreverLinkLn($curriculo->getTwitterUrl(),9, $h);
+        */
 
         $this->desenharLinha();
 
@@ -336,7 +338,7 @@ class CurriculoPDF extends FPDF
         $this->desenharLinha();
         $this->escreverTitulo(_("Languages"));
         $vetor = array();
-        foreach ($curriculo->listarLingua() as $lingua) {
+        foreach ($curriculo->listarIdioma() as $lingua) {
             $vetor[] = $lingua->getNome() . " (" . $lingua->getTipoStr() . ")";
         }
         $str = implode(", ", $vetor);

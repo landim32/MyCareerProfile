@@ -1,47 +1,16 @@
 {
-  "nome": "Rodrigo Landim",
-  "email1": "rodrigo@emagine.com.br",
-  "telefone1": "+55 (62) 9 8464 6330",
-  "website": "emagine.com.br",
-  "github": "landim32",
-  "linkedin": "rodrigolandim",
-  "twitter": "landim32oficial",
-  "vimeo": "landim32",
+  "base": "rodrigo",
   "cursos": [
     {
       "id": "mcp",
       "curso": "MCP #B252-4585",
       "instituicao": "Microsoft",
       "tipo": "certificacao"
-    },
-    {
-      "id": "faculdade",
-      "curso": "Analíse de Sistemas",
-      "instituicao": "Unip (Cursando)",
-      "inicio": "2019-01-01",
-      "termino": "2020-12-31",
-      "tipo": "graduacao"
-    }
-  ],
-  "linguas": [
-    {
-      "nome": {
-        "pt_BR": "Português",
-        "en": "Portuguese"
-      },
-      "tipo" : "nativo"
-    },
-    {
-      "nome": {
-        "pt_BR": "Inglês",
-        "en": "English"
-      },
-      "tipo" : "avançado"
     }
   ],
   "resumo": {
-    "pt_BR": "Desenvolvedor FullStack com mais de quinze anos de experiência com desenvolvimento. Atualmente crio aplicativos para dispositivos móveis Android, iOS e Windows Phone. Conhecimentos em C#.Net, Xamarin, Appcelerator Titanium, Android, Swift, PHP, entre outros. Certificado pela Microsoft #B252-4585.",
-    "en": ""
+    "pt_BR": "Desenvolvedor FullStack com mais vinte anos de experiência. Atualmente desenvolvo aplicativos para dispositivos móveis Android, iOS e Windows Phone. CEO da Emagine.com.br, criador da plataforma Imobsync.com.br (gestão imobiliária), desenvolvedor do portal Wimóveis. Conhecimentos em Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, entre outros. Certificado pela Microsoft #B252-4585.",
+    "en": "FullStack Developer with over twenty years of experience. I am currently developing applications for Android, iOS and Windows Phone mobile devices. CEO of Emagine.com.br, creator of the platform Imobsync.com.br (real estate management), developer of the portal Wimóveis. Knowledge in Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, among others. Certified by Microsoft #B252-4585."
   },
   "cargos": [
     {
@@ -59,9 +28,9 @@
       "conhecimentos": [
         { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "primary" },
         { "nome": "MySQL", "estilo": "success" },
         { "nome": "HTML5", "estilo": "info" },
+        { "nome": "Javascript", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
         { "nome": "Bootstrap", "estilo": "info" },
         { "nome": "Less", "estilo": "info" }
@@ -77,14 +46,15 @@
       "data_inicio": "2017-08-01",
       "data_termino": "2018-02-01",
       "descricao" : {
-        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS que hoje é chamado de 'Odonto Empresas' desenvolvido em Appceleretor Titanium com backend em C#.NET conectado em um banco de dados SQL Server.",
+        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS que hoje é chamado de Odonto Empresas desenvolvido em Appceleretor Titanium com backend em C#.NET conectado em um banco de dados SQL Server.",
         "en": ""
       },
       "conhecimentos": [
         { "nome": "Titanium", "estilo": "primary" },
         { "nome": "Appcelerator", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" }
+        { "nome": "SQL Server", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" }
       ]
     },
     {
@@ -96,18 +66,16 @@
       "data_inicio": "2016-08-01",
       "data_termino": "2017-07-01",
       "descricao" : {
-        "pt_BR": "Participou da equipe de desenvolvimento de um app para gestão de obras de pavimentação feito em Appcelerator Titanium, incluindo módulos Titanium desenvolvidos em nativo Android e iOS, e um app para detecção de radares móveis em Xamarin ambos com backend em C#.NET conectando à um banco de dados MySQL.",
-        "en": ""
+        "pt_BR": "Trabalhei na migração de um aplicativo móvel para gestão de obras de pavimentação feito em Titanium para Xamarin. Desenvolvi uma ferramenta de Geolocalização de radares em Android e iOS usando Xamarin.",
+        "en": "I worked on the migration of a mobile application for the management of paving works made in Titanium for Xamarin. I developed a Geolocation tool for radars on Android and iOS using Xamarin."
       },
       "conhecimentos": [
-        { "nome": "Titanium", "estilo": "primary" },
-        { "nome": "Appcelerator", "estilo": "primary" },
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "Java", "estilo": "info" },
-        { "nome": "Swift", "estilo": "info" },
-        { "nome": "MySQL", "estilo": "success" }
+        { "nome": "Java para Android", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "Titanium", "estilo": "info" },
+        { "nome": "Appcelerator", "estilo": "info" }
       ]
     },
     {
@@ -119,15 +87,14 @@
       "data_inicio": "2011-01-01",
       "data_termino": "2016-08-01",
       "descricao" : {
-        "pt_BR": "Participou da equipe de desenvolvimento de um sistema de gestão imobiliária completo com recursos \ninicialmente baseado em um plugin WordPress mas depois usando apenas PHP. Consiste em um sistema de templates e administrativo usando PHP, HTML5, Less, Javascript, JQuery e alguns apps para Android e iOS desenvolvidos em Ionic.",
-        "en": ""
+        "pt_BR": "Desenvolvi todo o sistema de gestão imobiliária, portal imobiliário, integração entre corretores, websites usando WordPress e API própria.",
+        "en": "Developed the entire system of real estate management, real estate portal, integration between brokers, websites using WordPress and own API."
       },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "primary" },
         { "nome": "HTML5", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "SQLite", "estilo": "success" },
+        { "nome": "Javascript", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
         { "nome": "Bootstrap", "estilo": "info" },
         { "nome": "Less", "estilo": "info" },
@@ -135,7 +102,9 @@
         { "nome": "Wordpress", "estilo": "info" },
         { "nome": "Apache", "estilo": "info" },
         { "nome": "OpenSSL", "estilo": "info" },
-        { "nome": "PowerDNS", "estilo": "info" }
+        { "nome": "PowerDNS", "estilo": "info" },
+        { "nome": "Java to Android", "estilo": "info" },
+        { "nome": "SQLite", "estilo": "success" }
       ]
     },
     {
@@ -147,8 +116,8 @@
       "data_inicio": "2005-09-01",
       "data_termino": "2011-11-01",
       "descricao" : {
-        "pt_BR": "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb. Tecnologia usando C#.NET conectando um banco de dados SQL Server.",
-        "en": ""
+        "pt_BR": "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões.",
+        "en": "Responsible for the portal project Wimoveis.com, the largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million."
       },
       "conhecimentos": [
         { "nome": "C#.NET", "estilo": "primary" },
@@ -168,8 +137,8 @@
       "data_inicio": "2003-07-01",
       "data_termino": "2005-08-01",
       "descricao" : {
-        "pt_BR": "Trabalhei na equipe de desenvolvimento do sistema SISCAF, desenvolvido em Delphi, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, uma versão web desenvolvida usando C#.NET conectado a um banco de dados SQL Server.",
-        "en": ""
+        "pt_BR": "Ajudei no desenvolvimento do sistema SISCAF, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, que era uma interface web do sistema.",
+        "en": "I helped develop the SISCAF system, used by many of the country's professional councils, such as OAB / DF, CRA / DF, CORECON / SP, etc. I also worked on SISCAF Web, which was a system web interface."
       },
       "conhecimentos": [
         { "nome": "c#.NET", "estilo": "primary" },
@@ -216,8 +185,8 @@
       "data_inicio": "2000-04-01",
       "data_termino": "2001-05-01",
       "descricao" : {
-        "pt_BR": "Ajudou a criar uma interface web para a configuração de serviços de um provedor de Internet usando PHP e SQL Server.",
-        "en": ""
+        "pt_BR": "Ajudei a criar uma interface web para a configuração de serviços de um provedor de Internet.",
+        "en": "I helped create a web interface for configuring the services of an ISP."
       },
       "conhecimentos": [
         { "nome": "PHP", "estilo": "primary" },
@@ -520,8 +489,7 @@
     { "nome": "Android", "value": 90 },
     { "nome": "Swift", "value": 70 },
     { "nome": "PHP", "value": 100 },
-    { "nome": "Javascript", "value": 100 },
-    { "nome": "jQuery", "value": 95 },
+    { "nome": "Javascript & jQuery", "value": 95 },
     { "nome": "HTML5, CSS & Less", "value": 95 },
     { "nome": "Angular", "value": 80 },
     { "nome": "MySQL", "value": 90 },

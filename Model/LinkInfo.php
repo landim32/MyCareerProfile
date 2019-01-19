@@ -17,9 +17,26 @@ class LinkInfo
     const IOS = "ios";
     const VIDEO = "video";
 
+    private $id;
     private $nome;
     private $tipo;
     private $url;
+
+    /**
+     * @return string
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setId($value) {
+        $this->id = $value;
+        return $this;
+    }
 
     /**
      * @return string
@@ -30,9 +47,11 @@ class LinkInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
     }
 
     /**
@@ -44,9 +63,11 @@ class LinkInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setTipo($value) {
         $this->tipo = $value;
+        return $this;
     }
 
     /**
@@ -58,9 +79,11 @@ class LinkInfo
 
     /**
      * @param string $value
+     * @return $this
      */
     public function setUrl($value) {
         $this->url = $value;
+        return $this;
     }
 
     /**
@@ -70,6 +93,9 @@ class LinkInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
         $link = new LinkInfo();
+        if (isset($value->id)) {
+            $link->setId($value->id);
+        }
         if (isset($value->nome)) {
             $link->setNome(getStr($value->nome, $language));
         }
