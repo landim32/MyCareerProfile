@@ -10,17 +10,19 @@ namespace Landim32\MyCareerProfile\Model;
 
 use stdClass;
 
-class CursoInfo
+class ConquistaInfo
 {
     const GRADUACAO = "graduacao";
     const CURSO = "curso";
     const CERTIFICACAO = "certificacao";
 
     private $id = "";
-    private $curso = "";
+    private $nome = "";
+    private $categoria = "";
     private $instituicao = "";
     private $data_inicio = "";
     private $data_termino = "";
+    private $carga_horaria = 0;
     private $tipo = "";
 
     /**
@@ -42,16 +44,32 @@ class CursoInfo
     /**
      * @return string
      */
-    public function getCurso() {
-        return $this->curso;
+    public function getNome() {
+        return $this->nome;
     }
 
     /**
      * @param string $value
      * @return $this
      */
-    public function setCurso($value) {
-        $this->curso = $value;
+    public function setNome($value) {
+        $this->nome = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategoria() {
+        return $this->categoria;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setCategoria($value) {
+        $this->categoria = $value;
         return $this;
     }
 
@@ -104,6 +122,20 @@ class CursoInfo
     }
 
     /**
+     * @return int
+     */
+    public function getCargaHoraria() {
+        return $this->carga_horaria;
+    }
+
+    /**
+     * @param int $value
+     */
+    public function setCargaHoraria($value) {
+        $this->carga_horaria = $value;
+    }
+
+    /**
      * @return string
      */
     public function getTipo() {
@@ -133,18 +165,53 @@ class CursoInfo
         return intval(date("Y", strtotime($this->getDataTermino())));
     }
 
+    public function toString() {
+        $cursoStr = $this->getNome() . " - " . $this->getInstituicao();
+        if ($this->getCargaHoraria() > 0) {
+            $cursoStr .= " (" . $this->getCargaHoraria() . " ";
+            $cursoStr .= ($this->getCargaHoraria() > 1) ? "horas" : "hora";
+            $cursoStr .= ")";
+        }
+        if (!isNullOrEmpty($this->getDataInicio()) && !isNullOrEmpty($this->getDataTermino())) {
+            if ($this->getDataInicioAno() == $this->getDataTerminoAno()) {
+                $cursoStr .= " cursado em " . $this->getDataInicioAno();
+            }
+            else {
+                $cursoStr .= " entre " . $this->getDataInicioAno() . " e " . $this->getDataTerminoAno();
+            }
+        }
+        else if (!isNullOrEmpty($this->getDataInicio())) {
+            $cursoStr .= " cursado em " . $this->getDataInicioAno();
+        }
+        else if (!isNullOrEmpty($this->getDataTermino())) {
+            $cursoStr .= " cursado em " . $this->getDataTerminoAno();
+        }
+        return $cursoStr;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
     /**
      * @param stdClass $value
      * @param string $language
-     * @return CursoInfo
+     * @return ConquistaInfo
      */
     public static function fromJson($value, $language = "pt_BR") {
-        $curso = new CursoInfo();
+        $curso = new ConquistaInfo();
         if (isset($value->id)) {
             $curso->setId($value->id);
         }
-        if (isset($value->curso)) {
-            $curso->setCurso(getStr($value->curso, $language));
+        if (isset($value->nome)) {
+            $curso->setNome(getStr($value->nome, $language));
+        }
+        if (isset($value->categoria)) {
+            $curso->setCategoria(getStr($value->categoria, $language));
         }
         if (isset($value->instituicao)) {
             $curso->setInstituicao(getStr($value->instituicao, $language));
@@ -155,9 +222,13 @@ class CursoInfo
         if (isset($value->termino)) {
             $curso->setDataTermino(getStr($value->termino, $language));
         }
+        if (isset($value->carga_horaria)) {
+            $curso->setCargaHoraria($value->carga_horaria);
+        }
         if (isset($value->tipo)) {
-            $curso->setTipo(getStr($value->tipo, $language));
+            $curso->setTipo($value->tipo);
         }
         return $curso;
     }
+
 }

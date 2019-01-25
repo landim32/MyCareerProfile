@@ -8,6 +8,8 @@ class CurriculoInfo {
 
     private $base = "";
     private $nome = "";
+    private $basico = "";
+    private $endereco = "";
     private $email1 = "";
     private $telefone1 = "";
     private $website = "";
@@ -16,8 +18,9 @@ class CurriculoInfo {
     private $twitter = "";
     private $vimeo = "";
     private $resumo = "";
+    private $pretensao = "";
     private $idioma = array();
-    private $cursos = array();
+    private $conquista = array();
     private $cargos = array();
     private $projetos = array();
     private $conhecimentos = array();
@@ -51,6 +54,38 @@ class CurriculoInfo {
      */
     public function setNome($value) {
         $this->nome = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBasico() {
+        return $this->basico;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setBasico($value) {
+        $this->basico = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEndereco() {
+        return $this->endereco;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setEndereco($value) {
+        $this->endereco = $value;
         return $this;
     }
 
@@ -211,6 +246,22 @@ class CurriculoInfo {
     }
 
     /**
+     * @return string
+     */
+    public function getPretensao() {
+        return $this->pretensao;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setPretensao($value) {
+        $this->pretensao = $value;
+        return $this;
+    }
+
+    /**
      * @return IdiomaInfo[]
      */
     public function listarIdioma() {
@@ -230,31 +281,31 @@ class CurriculoInfo {
     }
 
     /**
-     * @return CursoInfo[]
+     * @return ConquistaInfo[]
      */
-    public function listarCurso() {
-        return $this->cursos;
+    public function listarConquista() {
+        return $this->conquista;
     }
 
     /**
-     * @param CursoInfo $value
+     * @param ConquistaInfo $value
      * @return $this
      */
-    public function adicionarCurso($value) {
+    public function adicionarConquista($value) {
         if (isNullOrEmpty($value->getId())) {
             $value->setId(md5(uniqid()));
         }
-        $this->cursos[$value->getId()] = $value;
+        $this->conquista[$value->getId()] = $value;
         return $this;
     }
 
     /**
-     * @return CursoInfo[]
+     * @return ConquistaInfo[]
      */
     public function listarGraduacao() {
         $graduacoes = array();
-        foreach ($this->listarCurso() as $curso) {
-            if ($curso->getTipo() == CursoInfo::GRADUACAO) {
+        foreach ($this->listarConquista() as $curso) {
+            if ($curso->getTipo() == ConquistaInfo::GRADUACAO) {
                 $graduacoes[] = $curso;
             }
         }
@@ -262,16 +313,44 @@ class CurriculoInfo {
     }
 
     /**
-     * @return CursoInfo[]
+     * @return ConquistaInfo[]
      */
     public function listarCertificacao() {
         $certificacoes = array();
-        foreach ($this->listarCurso() as $curso) {
-            if ($curso->getTipo() == CursoInfo::CERTIFICACAO) {
-                $certificacoes[] = $curso;
+        foreach ($this->listarConquista() as $conquista) {
+            if ($conquista->getTipo() == ConquistaInfo::CERTIFICACAO) {
+                $certificacoes[] = $conquista;
             }
         }
         return $certificacoes;
+    }
+
+    /**
+     * @return ConquistaInfo[]
+     */
+    public function listarCurso() {
+        $certificacoes = array();
+        foreach ($this->listarConquista() as $conquista) {
+            if ($conquista->getTipo() == ConquistaInfo::CURSO) {
+                $certificacoes[] = $conquista;
+            }
+        }
+        return $certificacoes;
+    }
+
+    /**
+     * @return array<string,ConquistaInfo>
+     */
+    public function listarCursoPorCategoria() {
+        $cursosPorCategoria = array();
+        $categoria = null;
+        foreach ($this->listarCurso() as $curso) {
+            if (!array_key_exists($curso->getCategoria(), $cursosPorCategoria)) {
+                $cursosPorCategoria[$curso->getCategoria()] = array();
+            }
+            $cursosPorCategoria[$curso->getCategoria()][] = $curso;
+        }
+        return $cursosPorCategoria;
     }
 
     /**
@@ -305,6 +384,40 @@ class CurriculoInfo {
             }
         }
         return $cargos;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDataUltimoCargoVisivel() {
+        $cargos = $this->listarCargoVisivel();
+        if (count($cargos) > 0) {
+            $cargo = array_values($cargos)[count($cargos) - 1];
+            return $cargo->getDataTerminoStr();
+        }
+        return null;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResumoCargoEscondido() {
+        $cargos = $this->listarCargoEscondido();
+        $str = "Antes de " . $this->getDataUltimoCargoVisivel() . " trabalhou em ";
+        $str .= count($cargos);
+        $str .= " ";
+        $str .= (count($cargos) > 1) ? "cargos" : "cargo";
+        $str .= " como: ";
+        $cargoArray = array();
+        foreach ($cargos as $cargo) {
+            $cargoStr = $cargo->getNome() . " em " . $cargo->getEmpresa() . " por ";
+            $cargoStr .= $cargo->getTempo();
+            $cargoStr .= " até " . $cargo->getDataTerminoAno();
+            $cargoArray[] = $cargoStr;
+        }
+        $str .= implode("; ", $cargoArray);
+        $str .= ".";
+        return $str;
     }
 
     /**
@@ -350,6 +463,23 @@ class CurriculoInfo {
             }
         }
         return $projetos;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResumoProjetoEscondido() {
+        $projetos = $this->listarProjetoEscondido();
+        $cargoArray = array();
+        foreach ($projetos as $projeto) {
+            $cargoStr = $projeto->getNome() . " - ";
+            $cargoStr .= $projeto->getResumo();
+            if (!isNullOrEmpty($projeto->getUrl())) {
+                $cargoStr .= " (" . $projeto->getUrl() . ")";
+            }
+            $cargoArray[] = $cargoStr;
+        }
+        return implode("; ", $cargoArray) . ".";
     }
 
     /**
@@ -421,6 +551,12 @@ class CurriculoInfo {
         if (isset($value->nome)) {
             $curriculo->setNome(getStr($value->nome, $language));
         }
+        if (isset($value->basico)) {
+            $curriculo->setBasico(getStr($value->basico, $language));
+        }
+        if (isset($value->endereco)) {
+            $curriculo->setEndereco(getStr($value->endereco, $language));
+        }
         if (isset($value->email1)) {
             $curriculo->setEmail1(getStr($value->email1, $language));
         }
@@ -445,6 +581,9 @@ class CurriculoInfo {
         if (isset($value->resumo)) {
             $curriculo->setResumo(getStr($value->resumo, $language));
         }
+        if (isset($value->pretensao)) {
+            $curriculo->setPretensao(getStr($value->pretensao, $language));
+        }
         //if (isset($value->linguas) && count($value->linguas) > 0) {
         if (isset($value->linguas) && is_array($value->linguas)) {
             foreach ($value->linguas as $lingua) {
@@ -452,9 +591,9 @@ class CurriculoInfo {
             }
         }
         //if (isset($value->cursos) && count($value->cursos) > 0) {
-        if (isset($value->cursos) && is_array($value->cursos)) {
-            foreach ($value->cursos as $curso) {
-                $curriculo->adicionarCurso( CursoInfo::fromJson($curso, $language) );
+        if (isset($value->conquistas) && is_array($value->conquistas)) {
+            foreach ($value->conquistas as $conquista) {
+                $curriculo->adicionarConquista( ConquistaInfo::fromJson($conquista, $language) );
             }
         }
         //if (isset($value->cargos) && count($value->cargos) > 0) {

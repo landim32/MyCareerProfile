@@ -1,236 +1,9 @@
 {
   "base": "rodrigo",
-  "cursos": [
-    {
-      "id": "mcp",
-      "curso": "MCP #B252-4585",
-      "instituicao": "Microsoft",
-      "tipo": "certificacao"
-    }
-  ],
   "resumo": {
-    "pt_BR": "Desenvolvedor FullStack com mais vinte anos de experiência. Atualmente desenvolvo aplicativos para dispositivos móveis Android, iOS e Windows Phone. CEO da Emagine.com.br, criador da plataforma Imobsync.com.br (gestão imobiliária), desenvolvedor do portal Wimóveis. Conhecimentos em Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, entre outros. Certificado pela Microsoft #B252-4585.",
-    "en": "FullStack Developer with over twenty years of experience. I am currently developing applications for Android, iOS and Windows Phone mobile devices. CEO of Emagine.com.br, creator of the platform Imobsync.com.br (real estate management), developer of the portal Wimóveis. Knowledge in Xamarin, Titanium, Android, Swift, React Native, PHP, C#.Net, among others. Certified by Microsoft #B252-4585."
+    "pt_BR": "Desenvolvedor FullStack com mais de vinte anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS. Conhecimentos em C#.Net, Xamarin, Appcelerator Titanium, PHP, entre outros.",
+    "en": ""
   },
-  "cargos": [
-    {
-      "id": "emagine",
-      "nome": {
-        "pt_BR": "Desenvolvedor Fullstack",
-        "en": "Fullstack Developer"
-      },
-      "empresa" : "Emagine",
-      "data_inicio": "2018-03-01",
-      "descricao" : {
-        "pt_BR": "Trabalhou no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por C#.NET utilizando diversos patterns conectando com um banco de dados MySQL. No frontend são aplicativos desenvolvidos em Xamarin C# para Android/iOS e uma interface web.",
-        "en": ""
-      },
-      "conhecimentos": [
-        { "nome": "C#.NET", "estilo": "primary" },
-        { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "HTML5", "estilo": "info" },
-        { "nome": "Javascript", "estilo": "info" },
-        { "nome": "jQuery", "estilo": "info" },
-        { "nome": "Bootstrap", "estilo": "info" },
-        { "nome": "Less", "estilo": "info" }
-      ]
-    },
-    {
-      "id": "foursys",
-      "nome": {
-        "pt_BR": "Desenvolvedor Fullstack",
-        "en": "Fullstack Developer"
-      },
-      "empresa" : "Foursys",
-      "data_inicio": "2017-08-01",
-      "data_termino": "2018-02-01",
-      "descricao" : {
-        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS que hoje é chamado de Odonto Empresas desenvolvido em Appceleretor Titanium com backend em C#.NET conectado em um banco de dados SQL Server.",
-        "en": ""
-      },
-      "conhecimentos": [
-        { "nome": "Titanium", "estilo": "primary" },
-        { "nome": "Appcelerator", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "info" },
-        { "nome": "Angular", "estilo": "info" }
-      ]
-    },
-    {
-      "nome": {
-        "pt_BR": "Desenvolvedor Mobile",
-        "en": "Mobile Developer"
-      },
-      "empresa" : "Club Management Apps",
-      "data_inicio": "2016-08-01",
-      "data_termino": "2017-07-01",
-      "descricao" : {
-        "pt_BR": "Trabalhei na migração de um aplicativo móvel para gestão de obras de pavimentação feito em Titanium para Xamarin. Desenvolvi uma ferramenta de Geolocalização de radares em Android e iOS usando Xamarin.",
-        "en": "I worked on the migration of a mobile application for the management of paving works made in Titanium for Xamarin. I developed a Geolocation tool for radars on Android and iOS using Xamarin."
-      },
-      "conhecimentos": [
-        { "nome": "Xamarin", "estilo": "primary" },
-        { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "Java para Android", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "Titanium", "estilo": "info" },
-        { "nome": "Appcelerator", "estilo": "info" }
-      ]
-    },
-    {
-      "nome": {
-        "pt_BR": "Desenvolvedor Full Stack",
-        "en": "Full Stack Developer"
-      },
-      "empresa" : "Imobsync",
-      "data_inicio": "2011-01-01",
-      "data_termino": "2016-08-01",
-      "descricao" : {
-        "pt_BR": "Desenvolvi todo o sistema de gestão imobiliária, portal imobiliário, integração entre corretores, websites usando WordPress e API própria.",
-        "en": "Developed the entire system of real estate management, real estate portal, integration between brokers, websites using WordPress and own API."
-      },
-      "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "primary" },
-        { "nome": "HTML5", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "info" },
-        { "nome": "jQuery", "estilo": "info" },
-        { "nome": "Bootstrap", "estilo": "info" },
-        { "nome": "Less", "estilo": "info" },
-        { "nome": "Angular", "estilo": "info" },
-        { "nome": "Wordpress", "estilo": "info" },
-        { "nome": "Apache", "estilo": "info" },
-        { "nome": "OpenSSL", "estilo": "info" },
-        { "nome": "PowerDNS", "estilo": "info" },
-        { "nome": "Java to Android", "estilo": "info" },
-        { "nome": "SQLite", "estilo": "success" }
-      ]
-    },
-    {
-      "nome": {
-        "pt_BR": ".NET Developer / Gerente de Projetos",
-        "en": ".NET Developer / Project Manager"
-      },
-      "empresa" : "Wimoveis.com",
-      "data_inicio": "2005-09-01",
-      "data_termino": "2011-11-01",
-      "descricao" : {
-        "pt_BR": "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões.",
-        "en": "Responsible for the portal project Wimoveis.com, the largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million."
-      },
-      "conhecimentos": [
-        { "nome": "C#.NET", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" },
-        { "nome": "HTML5", "estilo": "info" },
-        { "nome": "Javascript", "estilo": "info" },
-        { "nome": "jQuery", "estilo": "info" },
-        { "nome": "Silverlight", "estilo": "info" }
-      ]
-    },
-    {
-      "nome": {
-        "pt_BR": "Desenvolvedor Senior",
-        "en": "Senior Developer"
-      },
-      "empresa" : "Implanta Informática",
-      "data_inicio": "2003-07-01",
-      "data_termino": "2005-08-01",
-      "descricao" : {
-        "pt_BR": "Ajudei no desenvolvimento do sistema SISCAF, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, que era uma interface web do sistema.",
-        "en": "I helped develop the SISCAF system, used by many of the country's professional councils, such as OAB / DF, CRA / DF, CORECON / SP, etc. I also worked on SISCAF Web, which was a system web interface."
-      },
-      "conhecimentos": [
-        { "nome": "c#.NET", "estilo": "primary" },
-        { "nome": "Delphi", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" },
-        { "nome": "HTML", "estilo": "info" },
-        { "nome": "CSS", "estilo": "info" },
-        { "nome": "Javascript", "estilo": "info" }
-      ],
-      "situacao" : "escondido"
-    },
-    {
-      "nome": {
-        "pt_BR": "Network Manager",
-        "en": "Gerente de Rede"
-      },
-      "empresa" : "ZarpNet Internet",
-      "data_inicio": "2001-04-01",
-      "data_termino": "2003-06-01",
-      "descricao" : {
-        "pt_BR": "Configuração e automação de rotinas para servdores FreeBSD e Linux usando serviços de hospedagem de páginas, email e acesso a Internet.",
-        "en": "Configuration and automation of routines for FreeBSD and Linux servers using web page, email and Internet access services."
-      },
-      "conhecimentos": [
-        { "nome": "C++", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "Firewall", "estilo": "primary" },
-        { "nome": "FreeBSD", "estilo": "info" },
-        { "nome": "Solaris", "estilo": "info" },
-        { "nome": "Linux", "estilo": "info" },
-        { "nome": "Shell Script", "estilo": "primary" },
-        { "nome": "Pearl", "estilo": "primary" },
-        { "nome": "Sendmail", "estilo": "info" },
-        { "nome": "QMail", "estilo": "info" }
-      ],
-      "situacao" : "escondido"
-    },
-    {
-      "nome": {
-        "pt_BR": "Desenvolvedor PHP",
-        "en": "PHP Developer"
-      },
-      "empresa" : "Yawl Internet",
-      "data_inicio": "2000-04-01",
-      "data_termino": "2001-05-01",
-      "descricao" : {
-        "pt_BR": "Ajudei a criar uma interface web para a configuração de serviços de um provedor de Internet.",
-        "en": "I helped create a web interface for configuring the services of an ISP."
-      },
-      "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" }
-      ],
-      "situacao" : "escondido"
-    },
-    {
-      "nome": {
-        "pt_BR": "Desenvolvedor PHP",
-        "en": "PHP Developer"
-      },
-      "empresa" : "Rudah Internet",
-      "data_inicio": "1999-09-01",
-      "data_termino": "2000-04-01",
-      "descricao" : {
-        "pt_BR": "Ajudei no desenvolvimento de uma intranet para a FUNCEP.",
-        "en": "I helped develop an intranet for FUNCEP."
-      },
-      "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" }
-      ],
-      "situacao" : "escondido"
-    },
-    {
-      "nome": {
-        "pt_BR": "Programador / Suporte Têcnico",
-        "en": "Developer / Technical Support"
-      },
-      "empresa" : "Netium Internet",
-      "data_inicio": "1998-09-01",
-      "data_termino": "1999-04-01",
-      "descricao" : {
-        "pt_BR": "Suporte técnico e desenvolvimento de websites.",
-        "en": "Technical support and website development."
-      },
-      "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" }
-      ],
-      "situacao" : "escondido"
-    }
-  ],
   "projetos": [
     {
       "nome": {
@@ -292,6 +65,27 @@
       ]
     },
     {
+      "nome": "Wimoveis",
+      "url": "http://wimoveis.com",
+      "descricao" : {
+        "pt_BR": "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Fui responsável pelo desenovimento de todo o projeto.",
+        "en": "The largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million. I was responsible for the development of the whole project."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://wimoveis.com" }
+      ],
+      "conhecimentos": [
+        { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" },
+        { "nome": "WebServices", "estilo": "info" },
+        { "nome": "AJAX", "estilo": "info" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "CSS", "estilo": "info" },
+        { "nome": "Unit", "estilo": "info" },
+        { "nome": "Silverlight", "estilo": "info" }
+      ]
+    },
+    {
       "nome": "Simeon",
       "url": "http://simeon.com.br",
       "descricao" : {
@@ -308,8 +102,37 @@
       ]
     },
     {
+      "nome": "Imobsync",
+      "url": "http://imobsync.com.br",
+      "descricao" : {
+        "pt_BR": "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
+        "en": "Complete system of real estate management with creation of websites templates, CRM real estate, integration with portals, integration with Facebook, etc."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "http://imobsync.com.br" }
+      ],
+      "conhecimentos": [
+        { "nome": "PHP", "estilo": "primary" },
+        { "nome": "Angular", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
+        { "nome": "jQuery", "estilo": "primary" },
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "Info" },
+        { "nome": "Bootstrap", "estilo": "Info" },
+        { "nome": "Less", "estilo": "Info" },
+        { "nome": "Slim Framework", "estilo": "Info" },
+        { "nome": "PHPUnit", "estilo": "Info" },
+        { "nome": "Apache", "estilo": "Info" },
+        { "nome": "PowerDNS", "estilo": "Info" }
+      ]
+    },
+    {
       "nome": "Imhovel",
       "url": "http://imhovel.com.br",
+      "resumo" : {
+        "pt_BR": "app para conectar compradores, corretores e proprietários de imóveis",
+        "en": ""
+      },
       "descricao" : {
         "pt_BR": "O Imhovel é uma plataforma de colaborativa para locação de imóveis que conectamo locadores, locatários, corretores de imóveis e imobiliárias.",
         "en": "Imhovel is a collaborative platform for real estate leasing that connects lessors, renters, realtors and real estate agents."
@@ -344,56 +167,15 @@
         { "nome": "HTML5", "estilo": "info" },
         { "nome": "Bootstrap", "estilo": "info" },
         { "nome": "Less", "estilo": "info" }
-      ]
-    },
-    {
-      "nome": "Wimoveis",
-      "url": "http://wimoveis.com",
-      "descricao" : {
-        "pt_BR": "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Fui responsável pelo desenovimento de todo o projeto.",
-        "en": "The largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million. I was responsible for the development of the whole project."
-      },
-      "links": [
-        { "nome": "Website", "tipo": "website", "url": "http://wimoveis.com" }
       ],
-      "conhecimentos": [
-        { "nome": "C#.NET", "estilo": "primary" },
-        { "nome": "SQL Server", "estilo": "success" },
-        { "nome": "WebServices", "estilo": "info" },
-        { "nome": "AJAX", "estilo": "info" },
-        { "nome": "HTML5", "estilo": "info" },
-        { "nome": "CSS", "estilo": "info" },
-        { "nome": "Unit", "estilo": "info" },
-        { "nome": "Silverlight", "estilo": "info" }
-      ]
-    },
-    {
-      "nome": "Imobsync",
-      "url": "http://imobsync.com.br",
-      "descricao" : {
-        "pt_BR": "Sistema completo de gestão imobiliária com criação de sites templates, CRM imobiliário, integração com portais, integração com Facebook, etc.",
-        "en": "Complete system of real estate management with creation of websites templates, CRM real estate, integration with portals, integration with Facebook, etc."
-      },
-      "links": [
-        { "nome": "Website", "tipo": "website", "url": "http://imobsync.com.br" }
-      ],
-      "conhecimentos": [
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "Angular", "estilo": "primary" },
-        { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "jQuery", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "HTML5", "estilo": "Info" },
-        { "nome": "Bootstrap", "estilo": "Info" },
-        { "nome": "Less", "estilo": "Info" },
-        { "nome": "Slim Framework", "estilo": "Info" },
-        { "nome": "PHPUnit", "estilo": "Info" },
-        { "nome": "Apache", "estilo": "Info" },
-        { "nome": "PowerDNS", "estilo": "Info" }
-      ]
+      "situacao": "oculto"
     },
     {
       "nome": "Radar Mais",
+      "resumo" : {
+        "pt_BR": "app para avisar a presença de radares (Clone do MapaRadar)",
+        "en": ""
+      },
       "descricao" : {
         "pt_BR": "Radar Mais é o mais novo aplicativo que te alerta sobre diversos tipos de radares que serão encontrados durante o seu percurso, seja ele qual for! Foi desenvolvido para ser utilizado sem estar conectado com a internet facilitando o seu uso em áreas onde o sinal de celular não esteja funcionando além de economizar o consumo da internet no celular",
         "en": "Radar Mais is the newest application that alerts you to different types of radars that will be found during your journey, whatever it is! It was developed to be used without being connected to the internet facilitating its use in areas where the cellular signal is not working besides saving the internet consumption in the cell phone."
@@ -410,21 +192,11 @@
       "situacao": "oculto"
     },
     {
-      "nome": "LadinoBot",
-      "descricao" : {
-        "pt_BR": "Robô para negociações automatizadas para mercado financeiro. Pode ser usando tando em IBOV como para FOREX.",
-        "en": "Robot for automated trading for financial market. It can be using tando in IBOV as for FOREX."
-      },
-      "links": [
-        { "nome": "Website", "tipo": "website", "url": "https://github.com/landim32/LadinoBot" }
-      ],
-      "conhecimentos": [
-        { "nome": "MQL5", "estilo": "primary" }
-      ],
-      "situacao": "oculto"
-    },
-    {
       "nome": "Unico Calc",
+      "resumo" : {
+        "pt_BR": "calculadora exclusiva de usina de asfalto",
+        "en": ""
+      },
       "descricao" : {
         "pt_BR": "Calculadora exclusiva de usinagem para a Único Asfaltos.",
         "en": "Unique Machining Calculator for Single Asphalt."
@@ -442,6 +214,10 @@
     },
     {
       "nome": "PAVmanager",
+      "resumo" : {
+        "pt_BR": "app para gestão de obras de pavimentação",
+        "en": ""
+      },
       "descricao" : {
         "pt_BR": "O PAVmanager é um sistema de gestão de obras de pavimentação essencial para sua empresa. Através dele você pode gerenciar online e offline, todas as fases de sua obra, de onde estiver e em tempo real.",
         "en": "PAVmanager is a paving works management system essential for your company. Through it you can manage online and offline, all phases of your work, wherever you are and in real time."
@@ -462,6 +238,10 @@
     {
       "nome": "Emagine",
       "url": "http://emagine.com.br",
+      "resumo" : {
+        "pt_BR": "templates e plugins Wordpress e sites personalizados",
+        "en": ""
+      },
       "descricao" : {
         "pt_BR": "Desenvolvi um padrão de websites baseados em Wordpress e vários projetos personalizados para clientes.",
         "en": "I developed a pattern of Wordpress-based websites and several custom designs for clients."
@@ -481,24 +261,49 @@
         { "nome": "PostgreSQL", "estilo": "success" }
       ],
       "situacao": "oculto"
+    },
+    {
+      "nome": "LadinoBot",
+      "url": "https://github.com/landim32/LadinoBot",
+      "resumo" : {
+        "pt_BR": "robô de negociação no mercado financeiro",
+        "en": ""
+      },
+      "descricao" : {
+        "pt_BR": "Robô para negociações automatizadas para mercado financeiro. Pode ser usando tando em IBOV como para FOREX.",
+        "en": "Robot for automated trading for financial market. It can be using tando in IBOV as for FOREX."
+      },
+      "links": [
+        { "nome": "Website", "tipo": "website", "url": "https://github.com/landim32/LadinoBot" }
+      ],
+      "conhecimentos": [
+        { "nome": "MQL5", "estilo": "primary" }
+      ],
+      "situacao": "oculto"
     }
   ],
   "conhecimentos": [
     { "nome": "C#.NET", "value": 100 },
     { "nome": "Xamarin", "value": 100 },
+    { "nome": "PHP", "value": 100 },
+    { "nome": "Javascript", "value": 100 },
+    { "nome": "Java", "value": 60 },
     { "nome": "Android", "value": 90 },
     { "nome": "Swift", "value": 70 },
-    { "nome": "PHP", "value": 100 },
-    { "nome": "Javascript & jQuery", "value": 95 },
-    { "nome": "HTML5, CSS & Less", "value": 95 },
-    { "nome": "Angular", "value": 80 },
+    { "nome": "jQuery", "value": 95 },
+    { "nome": "Scrum", "value": 90 },
     { "nome": "MySQL", "value": 90 },
+    { "nome": "SQL Server", "value": 90 },
+    { "nome": "HTML5", "value": 95 },
+    { "nome": "CSS", "value": 95 },
+    { "nome": "Less", "value": 95 },
+    { "nome": "Angular", "value": 80 },
     { "nome": "GitHub", "value": 80 },
     { "nome": "Bootstrap", "value": 90 },
-    { "nome": "SQL Server", "value": 90 },
     { "nome": "PostgreSQL", "value": 70 },
     { "nome": "Wordpress", "value": 70 },
-    { "nome": "Linux & FreeBSD", "value": 70 },
-    { "nome": "Java", "value": 60 }
+    { "nome": "Magento", "value": 70 },
+    { "nome": "Linux", "value": 70 },
+    { "nome": "FreeBSD", "value": 70 }
   ]
 }

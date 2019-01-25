@@ -2,6 +2,7 @@
 
 namespace Landim32\MyCareerProfile\Theme;
 
+use Landim32\MyCareerProfile\Model\ConquistaInfo;
 use Landim32\MyCareerProfile\Model\CurriculoInfo;
 use Landim32\MyCareerProfile\Model\ProjetoInfo;
 
@@ -65,10 +66,10 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                     </a>
                 </li>
                 <?php endif; ?>
-                <?php if (!isNullOrEmpty($curriculo->getWebsite())) : ?>
-                <li class="website">
-                    <i class="fa fa-fw fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a>
-                </li>
+                <?php if (!isNullOrEmpty($curriculo->getEmail1())) : ?>
+                    <li class="website" style="word-wrap: break-word; white-space: nowrap;">
+                        <i class="fa fa-fw fa-money"></i>Pretensão: <?php echo $curriculo->getPretensao(); ?>
+                    </li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getLinkedin())) : ?>
                 <li class="linkedin">
@@ -78,23 +79,28 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                 <?php if (!isNullOrEmpty($curriculo->getGithub())) : ?>
                 <li class="github"><i class="fa fa-fw fa-github"></i><a href="<?php echo $curriculo->getGithubUrl(); ?>" target="_blank">github.com/<?php echo $curriculo->getGithub(); ?></a></li>
                 <?php endif; ?>
-                <?php if (!isNullOrEmpty($curriculo->getTwitter())) : ?>
+                <?php if (!isNullOrEmpty($curriculo->getWebsite())) : ?>
+                    <li class="website">
+                        <i class="fa fa-fw fa-globe"></i><a href="http://<?php echo $curriculo->getWebsite(); ?>" target="_blank"><?php echo $curriculo->getWebsite(); ?></a>
+                    </li>
+                <?php endif; ?>
+                <?php /* if (!isNullOrEmpty($curriculo->getTwitter())) : ?>
                 <li class="twitter"><i class="fa fa-fw fa-twitter"></i><a href="<?php echo $curriculo->getTwitterUrl(); ?>" target="_blank">@<?php echo $curriculo->getTwitter(); ?></a></li>
                 <?php endif; ?>
                 <?php if (!isNullOrEmpty($curriculo->getVimeo())) : ?>
                     <li class="vimeo">
                         <i class="fa fa-fw fa-vimeo"></i><a href="<?php echo $curriculo->getVimeoUrl(); ?>" target="_blank">@<?php echo $curriculo->getVimeo(); ?></a>
                     </li>
-                <?php endif; ?>
+                <?php endif;*/ ?>
             </ul>
         </div><!--//contact-container-->
-        <?php if (count($curriculo->listarCurso()) > 0) : ?>
+        <?php if (count($curriculo->listarConquista()) > 0) : ?>
         <div class="education-container container-block">
             <?php if (count($curriculo->listarGraduacao()) > 0) : ?>
                 <h2 class="container-block-title"><?php echo _("Education"); ?></h2>
                 <?php foreach ($curriculo->listarGraduacao() as $graduacao) : ?>
                     <div class="item">
-                        <h4 class="degree"><?php echo $graduacao->getCurso(); ?></h4>
+                        <h4 class="degree"><?php echo $graduacao->getNome(); ?></h4>
                         <h5 class="meta"><?php echo $graduacao->getInstituicao(); ?></h5>
                         <div class="time"><?php echo $graduacao->getDataInicioAno(); ?> - <?php echo $graduacao->getDataTerminoAno(); ?></div>
                     </div><!--//item-->
@@ -104,7 +110,7 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                 <h2 class="container-block-title"><?php echo _("Certification"); ?></h2>
                 <?php foreach ($curriculo->listarCertificacao() as $certificacao) : ?>
                     <div class="item">
-                        <h4 class="degree"><?php echo $certificacao->getCurso(); ?></h4>
+                        <h4 class="degree"><?php echo $certificacao->getNome(); ?></h4>
                         <h5 class="meta"><?php echo $certificacao->getInstituicao(); ?></h5>
                     </div><!--//item-->
                 <?php endforeach; ?>
@@ -207,18 +213,18 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
             <div class="intro">
                 <p><?php echo _("Here are some of the projects developed for me"); ?>:</p>
             </div>
-            <?php foreach ($curriculo->listarProjetoVisivel() as $projeto) : ?>
+            <?php foreach ($curriculo->listarProjetoVisivel() as $curso) : ?>
             <div class="item">
                 <span class="project-title">
-                    <?php if (!isNullOrEmpty($projeto->getUrl())) : ?>
-                        <a target="_blank" href="<?php echo $projeto->getUrl(); ?>"><?php echo $projeto->getNome(); ?></a>
+                    <?php if (!isNullOrEmpty($curso->getUrl())) : ?>
+                        <a target="_blank" href="<?php echo $curso->getUrl(); ?>"><?php echo $curso->getNome(); ?></a>
                     <?php else : ?>
-                        <?php echo $projeto->getNome(); ?>
+                        <?php echo $curso->getNome(); ?>
                     <?php endif; ?>
                 </span> -
-                <span class="project-tagline"><?php echo $projeto->getDescricao(); ?></span>
+                <span class="project-tagline"><?php echo $curso->getDescricao(); ?></span>
                 <ul>
-                    <?php foreach ($projeto->listarLinks() as $link) : ?>
+                    <?php foreach ($curso->listarLinks() as $link) : ?>
                         <li>
                             <?php echo $link->getNome(); ?>:
                             <?php if ($link->getTipo() == ProjetoInfo::ANDROID) : ?>
@@ -231,9 +237,9 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                         </li>
                     <?php endforeach; ?>
                 </ul>
-                <?php if (count($projeto->listarConhecimento()) > 0) : ?>
+                <?php if (count($curso->listarConhecimento()) > 0) : ?>
                 <div>
-                    <?php foreach ($projeto->listarConhecimento() as $conhecimento) : ?>
+                    <?php foreach ($curso->listarConhecimento() as $conhecimento) : ?>
                         <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php echo $conhecimento->getNome(); ?></span>
                     <?php endforeach; ?>
                 </div>
@@ -243,18 +249,18 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
             <?php if (count($curriculo->listarProjetoEscondido()) > 0) : ?>
             <a href="#project-hidden" class="hidden-btn"><?php echo _("View more projects"); ?> <i class="fa fa-chevron-down"></i></a>
             <div id="project-hidden" style="display: none;">
-                <?php foreach ($curriculo->listarProjetoEscondido() as $projeto) : ?>
+                <?php foreach ($curriculo->listarProjetoEscondido() as $curso) : ?>
                     <div class="item">
                 <span class="project-title">
-                    <?php if (!isNullOrEmpty($projeto->getUrl())) : ?>
-                        <a target="_blank" href="<?php echo $projeto->getUrl(); ?>"><?php echo $projeto->getNome(); ?></a>
+                    <?php if (!isNullOrEmpty($curso->getUrl())) : ?>
+                        <a target="_blank" href="<?php echo $curso->getUrl(); ?>"><?php echo $curso->getNome(); ?></a>
                     <?php else : ?>
-                        <?php echo $projeto->getNome(); ?>
+                        <?php echo $curso->getNome(); ?>
                     <?php endif; ?>
                 </span> -
-                        <span class="project-tagline"><?php echo $projeto->getDescricao(); ?></span>
+                        <span class="project-tagline"><?php echo $curso->getDescricao(); ?></span>
                         <ul>
-                            <?php foreach ($projeto->listarLinks() as $link) : ?>
+                            <?php foreach ($curso->listarLinks() as $link) : ?>
                                 <li>
                                     <?php echo $link->getNome(); ?>:
                                     <?php if ($link->getTipo() == ProjetoInfo::ANDROID) : ?>
@@ -267,9 +273,9 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                        <?php if (count($projeto->listarConhecimento()) > 0) : ?>
+                        <?php if (count($curso->listarConhecimento()) > 0) : ?>
                             <div>
-                                <?php foreach ($projeto->listarConhecimento() as $conhecimento) : ?>
+                                <?php foreach ($curso->listarConhecimento() as $conhecimento) : ?>
                                     <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php echo $conhecimento->getNome(); ?></span>
                                 <?php endforeach; ?>
                             </div>
@@ -280,11 +286,46 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
             <?php endif; ?>
         </section><!--//section-->
         <?php endif; ?>
+        <?php if (count($curriculo->listarCurso()) > 0) : ?>
+            <section class="section experiences-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i><?php echo _("Courses"); ?></h2>
+                <?php
+                    /**
+                     * @var string $categoria
+                     * @var ConquistaInfo $cursos
+                     */
+                foreach ($curriculo->listarCursoPorCategoria() as $categoria => $cursos) :
+                    ?>
+                    <?php
+                    $cursosArray = array();
+                    /** @var ConquistaInfo $curso */
+                    foreach ($cursos as $curso) {
+                        $cursosArray[] = $curso->toString();
+                    }
+                    ?>
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="job-title"><?php echo $categoria; ?></h3>
+                            </div><!--//upper-row-->
+                            <!--div class="company"><?php //echo $curso->getInstituicao(); ?></div-->
+                        </div><!--//meta-->
+                        <div class="details">
+                            <p><?php echo implode(", ", $cursosArray); ?></p>
+                        </div><!--//details-->
+                    </div><!--//item-->
+                <?php endforeach; ?>
+            </section><!--//section-->
+        <?php endif; ?>
+        <!--pre><?php //var_dump($curriculo->listarCurso()); ?></pre-->
         <?php if (count($curriculo->listarConhecimento()) > 0) : ?>
         <section class="skills-section section">
             <h2 class="section-title"><i class="fa fa-rocket"></i><?php echo _("Skills"); ?></h2>
             <div class="skillset">
-                <?php foreach ($curriculo->listarConhecimentoVisivel() as $conhecimento) : ?>
+                <?php foreach ($curriculo->listarConhecimento() as $conhecimento) : ?>
+                    <span class="badge"><?php echo $conhecimento->getNome(); ?></span>
+                <?php endforeach; ?>
+                <?php /*foreach ($curriculo->listarConhecimentoVisivel() as $conhecimento) : ?>
                 <div class="item">
                     <h3 class="level-title"><?php echo $conhecimento->getNome(); ?></h3>
                     <div class="level-bar">
@@ -306,7 +347,7 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                         </div><!--//item-->
                     <?php endforeach; ?>
                 </div>
-                <?php endif; ?>
+                <?php endif;*/ ?>
             </div>
         </section><!--//skills-section-->
         <?php endif; ?>

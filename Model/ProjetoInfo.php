@@ -22,6 +22,7 @@ class ProjetoInfo
     private $id = "";
     private $nome = "";
     private $url = "";
+    private $resumo = "";
     private $descricao = "";
     private $data_inicio = null;
     private $data_termino = null;
@@ -74,6 +75,22 @@ class ProjetoInfo
      */
     public function setUrl($value) {
         $this->url = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResumo() {
+        return $this->resumo;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setResumo($value) {
+        $this->resumo = $value;
         return $this;
     }
 
@@ -185,6 +202,9 @@ class ProjetoInfo
         }
         if (isset($value->url)) {
             $projeto->setUrl(getStr($value->url, $language));
+        }
+        if (isset($value->resumo)) {
+            $projeto->setResumo(getStr($value->resumo, $language));
         }
         if (isset($value->descricao)) {
             $projeto->setDescricao(getStr($value->descricao, $language));

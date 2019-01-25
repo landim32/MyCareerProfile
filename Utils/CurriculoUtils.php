@@ -9,7 +9,7 @@
 namespace Landim32\MyCareerProfile\Utils;
 
 use Landim32\MyCareerProfile\Model\CurriculoInfo;
-use Landim32\MyCareerProfile\Model\CursoInfo;
+use Landim32\MyCareerProfile\Model\ConquistaInfo;
 use Landim32\MyCareerProfile\Model\IdiomaInfo;
 
 class CurriculoUtils
@@ -59,11 +59,11 @@ class CurriculoUtils
      * @return CurriculoInfo
      */
     protected function gerarCurso(CurriculoInfo $curriculo) {
-        return $curriculo->adicionarCurso((new CursoInfo())
+        return $curriculo->adicionarConquista((new ConquistaInfo())
             ->setId("mcp")
-            ->setCurso("MCP #B252-4585")
+            ->setNome("MCP #B252-4585")
             ->setInstituicao("Microsoft")
-            ->setTipo(CursoInfo::CERTIFICACAO)
+            ->setTipo(ConquistaInfo::CERTIFICACAO)
         );
     }
 

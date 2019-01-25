@@ -156,7 +156,14 @@ class CargoInfo
      * @return string
      */
     public function getDataInicioStr() {
-        return strftime("%h/%Y", strtotime($this->getDataInicio()));
+        return ucfirst(strftime("%h/%Y", strtotime($this->getDataInicio())));
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataInicioAno() {
+        return intval(date("Y", strtotime($this->getDataInicio())));
     }
 
     /**
@@ -166,7 +173,14 @@ class CargoInfo
         if (isNullOrEmpty($this->data_termino)) {
             return _("Present");
         }
-        return strftime("%h/%Y", strtotime($this->getDataTermino()));
+        return ucfirst(strftime("%h/%Y", strtotime($this->getDataTermino())));
+    }
+
+    /**
+     * @return int
+     */
+    public function getDataTerminoAno() {
+        return intval(date("Y", strtotime($this->getDataTermino())));
     }
 
     /**

@@ -13,6 +13,7 @@ use stdClass;
 class IdiomaInfo
 {
     const NATIVO = "nativo";
+    const INTERMEDIARIO = "intermediario";
     const AVANCADO = "avançado";
 
     private $id;
@@ -66,6 +67,9 @@ class IdiomaInfo
         switch ($this->tipo){
             case IdiomaInfo::NATIVO:
                 $str = _("Native");
+                break;
+            case IdiomaInfo::INTERMEDIARIO:
+                $str = _("Intermediary");
                 break;
             case IdiomaInfo::AVANCADO:
                 $str = _("Advanced");

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Meu Curriculo\n"
-"POT-Creation-Date: 2019-01-08 15:59-0200\n"
-"PO-Revision-Date: 2019-01-08 16:02-0200\n"
+"POT-Creation-Date: 2019-01-24 20:47-0200\n"
+"PO-Revision-Date: 2019-01-24 20:56-0200\n"
 "Last-Translator: \n"
 "Language-Team: Emagine\n"
 "Language: pt_BR\n"
@@ -15,140 +15,166 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: BLL/CurriculoPDF.php:207 BLL/CurriculoPDF.php:343 Model/CargoInfo.php:160
+#: BLL/CurriculoPDF.php:207 BLL/CurriculoPDF.php:387 Model/CargoInfo.php:205
 msgid "and"
 msgstr "e"
 
-#: BLL/CurriculoPDF.php:237
+#: BLL/CurriculoPDF.php:236
+msgid "Base"
+msgstr "Básico"
+
+#: BLL/CurriculoPDF.php:240
 msgid "Phone"
 msgstr "Telefone"
 
-#: BLL/CurriculoPDF.php:240
+#: BLL/CurriculoPDF.php:243
 msgid "Email"
 msgstr "Email"
 
-#: BLL/CurriculoPDF.php:247
+#: BLL/CurriculoPDF.php:246
+msgid "Pretension"
+msgstr "Pretensão"
+
+#: BLL/CurriculoPDF.php:253
+msgid "Address"
+msgstr "Endereço"
+
+#: BLL/CurriculoPDF.php:257
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: BLL/CurriculoPDF.php:251
+#: BLL/CurriculoPDF.php:261
 msgid "GitHub"
 msgstr "GitHub"
 
-#: BLL/CurriculoPDF.php:255
-msgid "Twitter"
-msgstr "Twitter"
+#: BLL/CurriculoPDF.php:265
+msgid "Website"
+msgstr "Website"
 
-#: BLL/CurriculoPDF.php:260 theme/home.php:147
+#: BLL/CurriculoPDF.php:276 theme/home.php:153
 msgid "Career Profile"
 msgstr "Resumo"
 
-#: BLL/CurriculoPDF.php:269
+#: BLL/CurriculoPDF.php:285
 msgid "at"
 msgstr "em"
 
-#: BLL/CurriculoPDF.php:275 BLL/CurriculoPDF.php:300
+#: BLL/CurriculoPDF.php:291 BLL/CurriculoPDF.php:330
 msgid "Related skills"
 msgstr "Conhecimentos relacionados"
 
-#: BLL/CurriculoPDF.php:286 theme/home.php:156
+#: BLL/CurriculoPDF.php:312 theme/home.php:162
 msgid "Experiences"
 msgstr "Experiências"
 
-#: BLL/CurriculoPDF.php:316 theme/home.php:200
+#: BLL/CurriculoPDF.php:345
+msgid "Others Projects"
+msgstr "Outros Projetos"
+
+#: BLL/CurriculoPDF.php:357 theme/home.php:212
 msgid "Projects"
 msgstr "Projetos"
 
-#: BLL/CurriculoPDF.php:327 theme/home.php:279
+#: BLL/CurriculoPDF.php:371 theme/home.php:323
 msgid "Skills"
 msgstr "Conhecimentos"
 
-#: BLL/CurriculoPDF.php:337 theme/home.php:117
+#: BLL/CurriculoPDF.php:381 theme/home.php:123
 msgid "Languages"
-msgstr "Línguas"
+msgstr "Idiomas"
 
-#: BLL/CurriculoPDF.php:362 theme/home.php:94
+#: BLL/CurriculoPDF.php:406 theme/home.php:100
 msgid "Education"
 msgstr "Graduação"
 
-#: BLL/CurriculoPDF.php:383 theme/home.php:104
+#: BLL/CurriculoPDF.php:427 theme/home.php:110
 msgid "Certification"
 msgstr "Certificações"
 
-#: Model/CargoInfo.php:136
+#: BLL/CurriculoPDF.php:438 theme/home.php:291
+msgid "Courses"
+msgstr "Cursos"
+
+#: Model/CargoInfo.php:174
 msgid "Present"
 msgstr "Atual"
 
-#: Model/CargoInfo.php:159 Model/CargoInfo.php:164
+#: Model/CargoInfo.php:204 Model/CargoInfo.php:209
 #, php-format
 msgid "%s years"
 msgstr "%s anos"
 
-#: Model/CargoInfo.php:159 Model/CargoInfo.php:164
+#: Model/CargoInfo.php:204 Model/CargoInfo.php:209
 #, php-format
 msgid "%s year"
 msgstr "%s ano"
 
-#: Model/CargoInfo.php:161 Model/CargoInfo.php:167
+#: Model/CargoInfo.php:206 Model/CargoInfo.php:212
 #, php-format
 msgid "%s months"
 msgstr "%s meses"
 
-#: Model/CargoInfo.php:161 Model/CargoInfo.php:167
+#: Model/CargoInfo.php:206 Model/CargoInfo.php:212
 #, php-format
 msgid "%s month"
 msgstr "%s mês"
 
-#: Model/CargoInfo.php:170
+#: Model/CargoInfo.php:215
 msgid "Less than a month"
 msgstr "Menos de um mês"
 
-#: Model/LinguaInfo.php:49
+#: Model/IdiomaInfo.php:69
 msgid "Native"
 msgstr "Nativo"
 
-#: Model/LinguaInfo.php:52
+#: Model/IdiomaInfo.php:72
+msgid "Intermediary"
+msgstr "Intermediário"
+
+#: Model/IdiomaInfo.php:75
 msgid "Advanced"
 msgstr "Avançado"
 
-#: theme/home.php:18
+#: theme/home.php:19
 msgid "Curriculum Vitae"
 msgstr "Curriculum Vitae"
 
-#: theme/home.php:47
+#: theme/home.php:48
 msgid "Download PDF"
 msgstr "Baixar em PDF"
 
-#: theme/home.php:139 theme/home.php:142
+#: theme/home.php:145 theme/home.php:148
 msgid "Portuguese"
 msgstr "Português"
 
-#: theme/home.php:140 theme/home.php:143
+#: theme/home.php:146 theme/home.php:149
 msgid "English"
 msgstr "Inglês"
 
-#: theme/home.php:175
+#: theme/home.php:184
 msgid "View more experiences"
 msgstr "Visualizar mais experiências"
 
-#: theme/home.php:202
+#: theme/home.php:214
 msgid "Here are some of the projects developed for me"
 msgstr "Segue abaixo alguns dos projetos que eu desenvolvi"
 
-#: theme/home.php:219 theme/home.php:221 theme/home.php:255 theme/home.php:257
+#: theme/home.php:231 theme/home.php:233 theme/home.php:267 theme/home.php:269
 #, php-format
 msgid "Download from %s"
 msgstr "Baixe da %s"
 
-#: theme/home.php:238
+#: theme/home.php:250
 msgid "View more projects"
 msgstr "Visualizar mais projetos"
 
-#: theme/home.php:291
-msgid "View more skills"
-msgstr "Visualizar mais conhecimentos"
-
-#: theme/home.php:312
+#: theme/home.php:359
 #, php-format
 msgid "Designed by %s for developers"
 msgstr "Designer por %s para desenvolvedores"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "View more skills"
+#~ msgstr "Visualizar mais conhecimentos"

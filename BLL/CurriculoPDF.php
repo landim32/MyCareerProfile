@@ -6,7 +6,7 @@ require_once dirname(__DIR__) . '/fpdf/fpdf.php';
 use FPDF;
 use Landim32\MyCareerProfile\Model\CargoInfo;
 use Landim32\MyCareerProfile\Model\ConhecimentoInfo;
-use Landim32\MyCareerProfile\Model\CursoInfo;
+use Landim32\MyCareerProfile\Model\ConquistaInfo;
 use Landim32\MyCareerProfile\Model\ProjetoInfo;
 use Landim32\MyCareerProfile\Model\CurriculoInfo;
 
@@ -230,8 +230,11 @@ class CurriculoPDF extends FPDF
         $this->escreverNegritoLn($curriculo->getCargoAtual(),12,CurriculoPDF::CINZA,6);
         $this->desenharLinha();
 
-        $y = $this->GetY();
         $h = 4;
+        $y = $this->GetY();
+
+        $this->escreverLabel(_("Base") . ":",9,$h,20);
+        $this->escreverNegritoLn($curriculo->getBasico(),9,CurriculoPDF::PRETO, $h);
 
         //$this->escrever(_("Phone") . ":",9,CurriculoPDF::CINZA,5,"R",20, "",false);
         $this->escreverLabel(_("Phone") . ":",9,$h,20);
@@ -240,16 +243,27 @@ class CurriculoPDF extends FPDF
         $this->escreverLabel(_("Email") . ":",9,$h,20);
         $this->escreverNegritoLn($curriculo->getEmail1(),9,CurriculoPDF::PRETO, $h);
 
+        $this->escreverLabel(_("Pretension") . ":",9,$h,20);
+        $this->escreverNegritoLn($curriculo->getPretensao(),9,CurriculoPDF::PRETO, $h);
+
         $colx = ($this->GetPageWidth() / 2) - 10;
 
         $this->SetXY($colx, $y);
 
+        $this->escreverLabel(_("Address") . ":",9,$h,20);
+        $this->escreverNegritoLn($curriculo->getEndereco(),9,CurriculoPDF::PRETO, $h);
+
+        $this->SetX($colx);
         $this->escreverLabel(_("LinkedIn") . ":",9, $h,20);
         $this->escreverLinkLn($curriculo->getLinkedinUrl(),9, $h);
 
         $this->SetX($colx);
         $this->escreverLabel(_("GitHub") . ":",9, $h,20);
         $this->escreverLinkLn($curriculo->getGithubUrl(),9, $h);
+
+        $this->SetX($colx);
+        $this->escreverLabel(_("Website") . ":",9, $h,20);
+        $this->escreverLinkLn($curriculo->getWebsite(),9, $h);
 
         /*
         $this->SetX($colx);
@@ -283,11 +297,25 @@ class CurriculoPDF extends FPDF
     /**
      * @param CurriculoInfo $curriculo
      */
+    private function escreverCargoEscondido($curriculo) {
+        $this->escreverXLn("Cargos ocupados antes de " . $curriculo->getDataUltimoCargoVisivel(),9,CurriculoPDF::PRETO, 4, "B");
+        $this->SetX($this->GetX() + 5);
+        $this->paragrafo($curriculo->getResumoCargoEscondido(), 9, CurriculoPDF::PRETO,4);
+        $this->SetY($this->GetY() + 2);
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     */
     private function gerarCargo($curriculo) {
         $this->desenharLinha();
         $this->escreverTitulo(_("Experiences"));
-        foreach ($curriculo->listarCargo() as $cargo) {
+        //foreach ($curriculo->listarCargo() as $cargo) {
+        foreach ($curriculo->listarCargoVisivel() as $cargo) {
             $this->escreverCargo($cargo);
+        }
+        if (count($curriculo->listarCargoEscondido()) > 0) {
+            $this->escreverCargoEscondido($curriculo);
         }
     }
 
@@ -303,7 +331,8 @@ class CurriculoPDF extends FPDF
         $this->paragrafo($descricao, 9, CurriculoPDF::PRETO, 4);
 
         foreach ($projeto->listarLinks() as $link) {
-            $this->escreverLabel($link->getNome() . ": ",8,4,40);
+            //$this->escreverLabel($link->getNome() . ": ",8,4,40);
+            $this->escreverLabel($link->getNome() . ": ",8,4,27);
             $this->escreverLinkLn($link->getUrl(),8,4);
         }
 
@@ -313,11 +342,25 @@ class CurriculoPDF extends FPDF
     /**
      * @param CurriculoInfo $curriculo
      */
+    private function escreverProjetoEscondido($curriculo) {
+        $this->escreverXLn(_("Others Projects"),9,CurriculoPDF::PRETO, 4, "B");
+        $this->SetX($this->GetX() + 5);
+        $this->paragrafo($curriculo->getResumoProjetoEscondido(), 9, CurriculoPDF::PRETO,4);
+        $this->SetY($this->GetY() + 2);
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     */
     private function gerarProjeto($curriculo) {
+        //$this->AddPage();
         $this->desenharLinha();
         $this->escreverTitulo(_("Projects"));
-        foreach ($curriculo->listarProjeto() as $projeto) {
+        foreach ($curriculo->listarProjetoVisivel() as $projeto) {
             $this->escreverProjeto($projeto);
+        }
+        if (count($curriculo->listarProjetoEscondido()) > 0) {
+            $this->escreverProjetoEscondido($curriculo);
         }
     }
 
@@ -347,10 +390,10 @@ class CurriculoPDF extends FPDF
     }
 
     /**
-     * @param CursoInfo $curso
+     * @param ConquistaInfo $curso
      */
     private function escreverGraduacao($curso) {
-        $this->escreverNegritoLn($curso->getCurso(),9,CurriculoPDF::PRETO,4);
+        $this->escreverNegritoLn($curso->getNome(),9,CurriculoPDF::PRETO,4);
         $this->escreverX($curso->getInstituicao() . " ",9,CurriculoPDF::PRETO,4);
         $this->escreverXLn("(" . $curso->getDataInicioAno() . " - " . $curso->getDataTerminoAno() . ")",9,CurriculoPDF::CINZA,4);
         $this->SetY($this->GetY() + 2);
@@ -368,10 +411,10 @@ class CurriculoPDF extends FPDF
     }
 
     /**
-     * @param CursoInfo $curso
+     * @param ConquistaInfo $curso
      */
     private function escreverCertificacao($curso) {
-        $this->escreverNegritoLn($curso->getCurso(),9,CurriculoPDF::PRETO,4);
+        $this->escreverNegritoLn($curso->getNome(),9,CurriculoPDF::PRETO,4);
         $this->escreverX($curso->getInstituicao() . " ",9,CurriculoPDF::PRETO,4);
         //$this->escreverXLn("(" . $curso->getDataInicioAno() . " - " . $curso->getDataTerminoAno() . ")",9,CurriculoPDF::CINZA,4);
         $this->SetY($this->GetY() + 4);
@@ -388,6 +431,27 @@ class CurriculoPDF extends FPDF
         }
     }
 
+    /**
+     * @param CurriculoInfo $curriculo
+     */
+    private function gerarCurso($curriculo) {
+        $this->desenharLinha();
+        $this->escreverTitulo(_("Courses"));
+        foreach ($curriculo->listarCursoPorCategoria() as $categoria => $cursos) {
+            $cursosArray = array();
+            /** @var ConquistaInfo $curso */
+            foreach ($cursos as $curso) {
+                $cursosArray[] = $curso->toString();
+            }
+            $this->escreverXLn($categoria,9,CurriculoPDF::PRETO, 4, "B");
+
+            $descricao = implode(", ", $cursosArray);
+            $this->SetX($this->GetX() + 5);
+            $this->paragrafo($descricao, 9, CurriculoPDF::PRETO,4);
+            $this->SetY($this->GetY() + 2);
+        }
+    }
+
     public function gerar() {
         $curriculo = $this->getCurriculo();
         $this->AliasNbPages();
@@ -395,13 +459,14 @@ class CurriculoPDF extends FPDF
         $this->gerarDados($curriculo);
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
+        if (count($curriculo->listarCertificacao()) > 0) {
+            $this->gerarCertificacao($curriculo);
+        }
         $this->gerarIdioma($curriculo);
         if (count($curriculo->listarGraduacao()) > 0) {
             $this->gerarGraduacao($curriculo);
         }
-        if (count($curriculo->listarCertificacao()) > 0) {
-            $this->gerarCertificacao($curriculo);
-        }
+        $this->gerarCurso($curriculo);
         $this->gerarConhecimento($curriculo);
     }
 
