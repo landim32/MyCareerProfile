@@ -100,9 +100,9 @@
         "en": "Full Stack Developer"
       },
       "empresa" : "Emagine",
-      "data_inicio": "2018-03-01",
+      "data_inicio": "2018-06-01",
       "descricao" : {
-        "pt_BR": "Trabalhou como freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por C#.NET utilizando diversos patterns conectando com um banco de dados MySQL. No frontend são aplicativos desenvolvidos em Xamarin C# para Android/iOS e uma interface web.",
+        "pt_BR": "Trabalha como freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por C#.NET utilizando diversos patterns conectando com um banco de dados MySQL. No frontend são aplicativos desenvolvidos em Xamarin C# para Android/iOS e uma interface web.",
         "en": ""
       },
       "conhecimentos": [
@@ -124,16 +124,17 @@
       },
       "empresa" : "Foursys",
       "data_inicio": "2017-08-01",
-      "data_termino": "2018-02-01",
+      "data_termino": "2018-05-31",
       "descricao" : {
-        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS que hoje é chamado de 'Odonto Empresas' desenvolvido em Appceleretor Titanium com backend em C#.NET conectado em um banco de dados SQL Server, também usando Scrum e outras metodologias agéis.",
+        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS que hoje é chamado de 'Odonto Empresas' desenvolvido em Appceleretor Titanium com backend em C#.NET para Saúde e Java para Odonto conectado em um banco de dados SQL Server, também usando Scrum e outras metodologias agéis.",
         "en": ""
       },
       "conhecimentos": [
         { "nome": "Titanium", "estilo": "primary" },
         { "nome": "Appcelerator", "estilo": "primary" },
-        { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "Javascript", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "Java", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "Scrum", "estilo": "info" },
         { "nome": "Kanban", "estilo": "info" }

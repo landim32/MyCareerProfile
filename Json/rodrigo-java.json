@@ -1,24 +1,59 @@
 {
   "base": "rodrigo",
-  "cursos": [
+  "pretensao": "R$ 7.000 CLT",
+  "conquistas": [
+    {
+      "nome": "Desenvolvedor Java",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 120,
+      "tipo": "curso"
+    },
+    {
+      "nome": "Desenvolvedor Java Web",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 110,
+      "tipo": "curso"
+    },
+    {
+      "nome": "Desenvolvedor Java Web Enterprise",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 140,
+      "tipo": "curso"
+    },
+    {
+      "nome": "Desenvolvedor Java Web com Spring",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 80,
+      "tipo": "curso"
+    },
+    {
+      "nome": "Expert em Integrações de Aplicações com Java",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 80,
+      "tipo": "curso"
+    },
+    {
+      "nome": "Avançando na Plataforma Java",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 90,
+      "tipo": "curso"
+    },
+    {
+      "nome": "Expert em Orientação a Objetos com Java",
+      "categoria": "Desenvolvimento",
+      "instituicao": "Alura",
+      "carga_horaria": 70,
+      "tipo": "curso"
+    }
   ],
-  "conhecimentos": [
-    { "nome": "Xamarin", "value": 100 },
-    { "nome": "React Native", "value": 80 },
-    { "nome": "Android", "value": 90 },
-    { "nome": "Swift", "value": 70 },
-    { "nome": "C#.NET", "value": 100 },
-    { "nome": "PHP", "value": 100 },
-    { "nome": "Javascript & jQuery", "value": 95 },
-    { "nome": "HTML5, CSS & Less", "value": 95 },
-    { "nome": "Angular", "value": 80 },
-    { "nome": "MySQL", "value": 90 },
-    { "nome": "GitHub", "value": 80 },
-    { "nome": "Bootstrap", "value": 90 },
-    { "nome": "SQL Server", "value": 90 },
-    { "nome": "PostgreSQL", "value": 70 },
-    { "nome": "Wordpress", "value": 70 },
-    { "nome": "Linux & FreeBSD", "value": 70 },
-    { "nome": "Java", "value": 60 }
-  ]
+  "resumo": {
+    "pt_BR": "Desenvolvedor Full Stack com mais de vinte anos de experiência. Trabalhou com Java no backend da Caixa Seguradora Odonto e com aplicativos Android. Se atualizou com cursos ligados a linguagem. Busca nova oportunidade como Desenvolvedor Java e se coloca a pova para qualquer teste.",
+    "en": ""
+  }
 }

@@ -210,7 +210,7 @@ class CurriculoPDF extends FPDF
     private function desenharLinha() {
         $this->SetDrawColor(120, 120, 120);
         $this->Line(10, $this->GetY() + 2, $this->GetPageWidth() - 10, $this->GetY() + 2);
-        $this->SetY($this->GetY() + 5);
+        $this->SetY($this->GetY() + 4);
     }
 
     /**
@@ -255,11 +255,11 @@ class CurriculoPDF extends FPDF
 
         $this->SetX($colx);
         $this->escreverLabel(_("LinkedIn") . ":",9, $h,20);
-        $this->escreverLinkLn($curriculo->getLinkedinUrl(),9, $h);
+        $this->escreverLinkLn("linkedin.com/in/" . $curriculo->getLinkedin(),9, $h);
 
         $this->SetX($colx);
         $this->escreverLabel(_("GitHub") . ":",9, $h,20);
-        $this->escreverLinkLn($curriculo->getGithubUrl(),9, $h);
+        $this->escreverLinkLn( "github.com/" . $curriculo->getGithub(),9, $h);
 
         $this->SetX($colx);
         $this->escreverLabel(_("Website") . ":",9, $h,20);
