@@ -298,7 +298,7 @@ class CurriculoPDF extends FPDF
      * @param CurriculoInfo $curriculo
      */
     private function escreverCargoEscondido($curriculo) {
-        $this->escreverXLn("Cargos ocupados antes de " . $curriculo->getDataUltimoCargoVisivel(),9,CurriculoPDF::PRETO, 4, "B");
+        $this->escreverXLn(_("Experiences before") . " " . $curriculo->getDataUltimoCargoVisivel(),9,CurriculoPDF::PRETO, 4, "B");
         $this->SetX($this->GetX() + 5);
         $this->paragrafo($curriculo->getResumoCargoEscondido(), 9, CurriculoPDF::PRETO,4);
         $this->SetY($this->GetY() + 2);

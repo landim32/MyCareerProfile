@@ -89,7 +89,7 @@
     }
   ],
   "resumo": {
-    "pt_BR": "Desenvolvedor Full Stack com mais de vinte anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS. Conhecimentos em C#.Net, Xamarin, Appcelerator Titanium, PHP, entre outros.",
+    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS. Conhecimentos em C#.Net, Xamarin, Appcelerator Titanium, PHP, entre outros.",
     "en": ""
   },
   "cargos": [
@@ -102,7 +102,7 @@
       "empresa" : "Emagine",
       "data_inicio": "2018-06-01",
       "descricao" : {
-        "pt_BR": "Trabalha como freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por C#.NET utilizando diversos patterns conectando com um banco de dados MySQL. No frontend são aplicativos desenvolvidos em Xamarin C# para Android/iOS e uma interface web.",
+        "pt_BR": "Freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por C#.NET, com diversos patterns e conectando com um banco de dados MySQL. No frontend são aplicativos desenvolvidos em Xamarin C# para Android/iOS e uma interface web.",
         "en": ""
       },
       "conhecimentos": [
@@ -126,7 +126,7 @@
       "data_inicio": "2017-08-01",
       "data_termino": "2018-05-31",
       "descricao" : {
-        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS que hoje é chamado de 'Odonto Empresas' desenvolvido em Appceleretor Titanium com backend em C#.NET para Saúde e Java para Odonto conectado em um banco de dados SQL Server, também usando Scrum e outras metodologias agéis.",
+        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS (que hoje é chamado de 'Odonto Empresas') desenvolvido em Appceleretor Titanium com backend em C#.NET para Saúde e Java para Odonto, conectado em um banco de dados SQL Server, também usando Scrum e outras metodologias agéis.",
         "en": ""
       },
       "conhecimentos": [
@@ -149,7 +149,7 @@
       "data_inicio": "2016-08-01",
       "data_termino": "2017-07-01",
       "descricao" : {
-        "pt_BR": "Participou da equipe de desenvolvimento de um app para gestão de obras de pavimentação feito em Appcelerator Titanium, incluindo módulos Titanium desenvolvidos em nativo Android e iOS, e um app para detecção de radares móveis em Xamarin ambos com backend em C#.NET conectando à um banco de dados MySQL.",
+        "pt_BR": "Participou da equipe de desenvolvimento de um app para gestão de obras de pavimentação feito em Appcelerator Titanium, incluindo módulos Titanium desenvolvidos em nativo Android e iOS, e um app para detecção de radares móveis em Xamarin, ambos com backend em C#.NET com conexão a um banco de dados MySQL.",
         "en": ""
       },
       "conhecimentos": [
@@ -158,8 +158,8 @@
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "Java", "estilo": "info" },
-        { "nome": "Swift", "estilo": "info" },
+        { "nome": "Java", "estilo": "primary" },
+        { "nome": "Swift", "estilo": "primary" },
         { "nome": "MySQL", "estilo": "success" }
       ]
     },
@@ -172,7 +172,7 @@
       "data_inicio": "2011-01-01",
       "data_termino": "2016-08-01",
       "descricao" : {
-        "pt_BR": "Sócio e desenvolvedor responsável pela equipe de um sistema de gestão imobiliária completo com recursos inicialmente baseado em um plugin WordPress mas depois usando apenas PHP. Consiste em um sistema de templates e administrativo usando PHP com framework laravel, HTML5, Less, Javascript, JQuery e alguns apps para Android e iOS desenvolvidos em Ionic.",
+        "pt_BR": "Sócio e desenvolvedor responsável pela equipe de um sistema de gestão imobiliária completo com recursos inicialmente baseado em um plugin WordPress, seguindo de PHP. Consiste em um sistema de templates e administrativo usando PHP com framework laravel, HTML5, Less, Javascript, JQuery e alguns apps para Android e iOS desenvolvidos em Ionic.",
         "en": ""
       },
       "conhecimentos": [
@@ -202,14 +202,14 @@
       "data_inicio": "2005-09-01",
       "data_termino": "2011-11-01",
       "descricao" : {
-        "pt_BR": "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal, desde o começo, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb. Tecnologia usando C#.NET conectando um banco de dados SQL Server.",
+        "pt_BR": "Responsável pelo projeto do portal Wimoveis.com, maior portal imobiliário do Distrito Federal. Possuia 90% do mercado brasiliense até novembro de 2011 e foi vendido ao portal ImovelWeb. Tecnologia C#.NET com conexão a um banco de dados SQL Server.",
         "en": ""
       },
       "conhecimentos": [
         { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "HTML5", "estilo": "info" },
-        { "nome": "Javascript", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
         { "nome": "Silverlight", "estilo": "info" }
       ]
@@ -223,16 +223,16 @@
       "data_inicio": "2003-07-01",
       "data_termino": "2005-08-01",
       "descricao" : {
-        "pt_BR": "Trabalhei na equipe de desenvolvimento do sistema SISCAF, desenvolvido em Delphi, utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Trabalhei também no SISCAF Web, uma versão web desenvolvida usando C#.NET conectado a um banco de dados SQL Server.",
+        "pt_BR": "Parte da equipe de desenvolvimento do sistema SISCAF, desenvolvido em Delphi e utilizado por boa parte dos conselhos de profissão do país, como OAB/DF, CRA/DF, CORECON/SP, etc. Além disso, atuou no SISCAF Web, uma versão web desenvolvida usando C#.NET conectado a um banco de dados SQL Server.",
         "en": ""
       },
       "conhecimentos": [
         { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "Delphi", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "HTML", "estilo": "info" },
-        { "nome": "CSS", "estilo": "info" },
-        { "nome": "Javascript", "estilo": "info" }
+        { "nome": "CSS", "estilo": "info" }
       ]
     },
     {
@@ -380,7 +380,7 @@
       "nome": "Wimoveis",
       "url": "http://wimoveis.com",
       "descricao" : {
-        "pt_BR": "Maior portal imobiliário do Distrito Federal, possuia 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Foi responsável pelo desenvolvimento de todo o projeto.",
+        "pt_BR": "Maior portal imobiliário do Distrito Federal, possuía 90% do mercado brasiliense até novembro de 2011, vendido ao portal ImovelWeb por mais de 50 milhões. Responsável pelo desenvolvimento de todo o projeto.",
         "en": "The largest real estate portal in the Federal District, owned 90% of the Brazilian market until November 2011, sold to the ImovelWeb portal for more than 50 million. I was responsible for the development of the whole project."
       },
       "links": [
@@ -401,7 +401,7 @@
       "nome": "Simeon",
       "url": "http://simeon.com.br",
       "descricao" : {
-        "pt_BR": "EPA (Estratégia para ação) é uma solução feita para apoiar organizações na execução da estratégia. Desenvolveu a versão desse sistema para Android e iOS.",
+        "pt_BR": "EPA (Estratégia para ação) é uma solução feita para apoiar organizações na execução da estratégia. Desenvolvimento da versão para Android e iOS.",
         "en": "Strategy for action - is a solution made to support organizations in the execution of the strategy. I developed the version of this system for Android and iOS."
       },
       "links": [
