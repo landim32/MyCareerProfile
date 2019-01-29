@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Meu Curriculo\n"
-"POT-Creation-Date: 2019-01-24 20:48-0200\n"
-"PO-Revision-Date: 2019-01-24 20:49-0200\n"
+"POT-Creation-Date: 2019-01-28 14:16-0200\n"
+"PO-Revision-Date: 2019-01-28 14:17-0200\n"
 "Last-Translator: \n"
 "Language-Team: Emagine\n"
 "Language: en\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: BLL/CurriculoPDF.php:207 BLL/CurriculoPDF.php:387 Model/CargoInfo.php:205
+#: BLL/CurriculoPDF.php:207 BLL/CurriculoPDF.php:388 Model/CargoInfo.php:205
 msgid "and"
 msgstr "and"
 
@@ -63,35 +63,39 @@ msgstr "at"
 msgid "Related skills"
 msgstr "Related skills"
 
+#: BLL/CurriculoPDF.php:301
+msgid "Experiences before"
+msgstr "Experiences before"
+
 #: BLL/CurriculoPDF.php:312 theme/home.php:162
 msgid "Experiences"
 msgstr "Experiences"
 
-#: BLL/CurriculoPDF.php:345
+#: BLL/CurriculoPDF.php:346
 msgid "Others Projects"
 msgstr "Others Projects"
 
-#: BLL/CurriculoPDF.php:357 theme/home.php:212
+#: BLL/CurriculoPDF.php:358 theme/home.php:212
 msgid "Projects"
 msgstr "Projects"
 
-#: BLL/CurriculoPDF.php:371 theme/home.php:323
+#: BLL/CurriculoPDF.php:372 theme/home.php:323
 msgid "Skills"
 msgstr "Skills"
 
-#: BLL/CurriculoPDF.php:381 theme/home.php:123
+#: BLL/CurriculoPDF.php:382 theme/home.php:123
 msgid "Languages"
 msgstr "Languages"
 
-#: BLL/CurriculoPDF.php:406 theme/home.php:100
+#: BLL/CurriculoPDF.php:407 theme/home.php:100
 msgid "Education"
 msgstr "Education"
 
-#: BLL/CurriculoPDF.php:427 theme/home.php:110
+#: BLL/CurriculoPDF.php:428 theme/home.php:110
 msgid "Certification"
 msgstr "Certification"
 
-#: BLL/CurriculoPDF.php:438 theme/home.php:291
+#: BLL/CurriculoPDF.php:439 theme/home.php:291
 msgid "Courses"
 msgstr "Courses"
 

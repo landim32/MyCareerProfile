@@ -403,11 +403,13 @@ class CurriculoInfo {
      */
     public function getResumoCargoEscondido() {
         $cargos = $this->listarCargoEscondido();
+        /*
         $str = "Antes de " . $this->getDataUltimoCargoVisivel() . " trabalhou em ";
         $str .= count($cargos);
         $str .= " ";
         $str .= (count($cargos) > 1) ? "cargos" : "cargo";
         $str .= " como: ";
+        */
         $cargoArray = array();
         foreach ($cargos as $cargo) {
             $cargoStr = $cargo->getNome() . " em " . $cargo->getEmpresa() . " por ";
@@ -415,9 +417,12 @@ class CurriculoInfo {
             $cargoStr .= " até " . $cargo->getDataTerminoAno();
             $cargoArray[] = $cargoStr;
         }
+        /*
         $str .= implode("; ", $cargoArray);
         $str .= ".";
         return $str;
+        */
+        return implode("; ", $cargoArray) . ".";
     }
 
     /**
