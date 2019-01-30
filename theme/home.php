@@ -157,6 +157,40 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                 </p>
             </div><!--//summary-->
         </section><!--//section-->
+        <!--pre><?php //var_dump($curriculo->listarCurso()); ?></pre-->
+        <?php if (count($curriculo->listarConhecimento()) > 0) : ?>
+            <section class="skills-section section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i><?php echo _("Skills"); ?></h2>
+                <div class="skillset">
+                    <?php foreach ($curriculo->listarConhecimento() as $conhecimento) : ?>
+                        <span class="badge"><?php echo $conhecimento->getNome(); ?></span>
+                    <?php endforeach; ?>
+                    <?php /*foreach ($curriculo->listarConhecimentoVisivel() as $conhecimento) : ?>
+                <div class="item">
+                    <h3 class="level-title"><?php echo $conhecimento->getNome(); ?></h3>
+                    <div class="level-bar">
+                        <div class="level-bar-inner" data-level="<?php echo $conhecimento->getPorcentagem() . "%"; ?>">
+                        </div>
+                    </div><!--//level-bar-->
+                </div><!--//item-->
+                <?php endforeach; ?>
+                <?php if (count($curriculo->listarConhecimentoOculto()) > 0) : ?>
+                <a href="#skill-hidden" class="hidden-btn"><?php echo _("View more skills"); ?> <i class="fa fa-chevron-down"></i></a>
+                <div id="skill-hidden" style="display: none;">
+                    <?php foreach ($curriculo->listarConhecimentoOculto() as $conhecimento) : ?>
+                        <div class="item">
+                            <h3 class="level-title"><?php echo $conhecimento->getNome(); ?></h3>
+                            <div class="level-bar">
+                                <div class="level-bar-inner" data-level="<?php echo $conhecimento->getPorcentagem() . "%"; ?>">
+                                </div>
+                            </div><!--//level-bar-->
+                        </div><!--//item-->
+                    <?php endforeach; ?>
+                </div>
+                <?php endif;*/ ?>
+                </div>
+            </section><!--//skills-section-->
+        <?php endif; ?>
         <?php if (count($curriculo->listarCargo()) > 0) : ?>
         <section class="section experiences-section">
             <h2 class="section-title"><i class="fa fa-briefcase"></i><?php echo _("Experiences"); ?></h2>
@@ -237,13 +271,13 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                         </li>
                     <?php endforeach; ?>
                 </ul>
-                <?php if (count($curso->listarConhecimento()) > 0) : ?>
+                <?php /*if (count($curso->listarConhecimento()) > 0) : ?>
                 <div>
                     <?php foreach ($curso->listarConhecimento() as $conhecimento) : ?>
                         <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php echo $conhecimento->getNome(); ?></span>
                     <?php endforeach; ?>
                 </div>
-                <?php endif; ?>
+                <?php endif;*/ ?>
             </div>
             <?php endforeach; ?>
             <?php if (count($curriculo->listarProjetoEscondido()) > 0) : ?>
@@ -273,13 +307,13 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                        <?php if (count($curso->listarConhecimento()) > 0) : ?>
+                        <?php /* if (count($curso->listarConhecimento()) > 0) : ?>
                             <div>
                                 <?php foreach ($curso->listarConhecimento() as $conhecimento) : ?>
                                     <span class="<?php echo "label label-" . $conhecimento->getEstilo(); ?>"><?php echo $conhecimento->getNome(); ?></span>
                                 <?php endforeach; ?>
                             </div>
-                        <?php endif; ?>
+                        <?php endif; */ ?>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -317,41 +351,6 @@ use Landim32\MyCareerProfile\Model\ProjetoInfo;
                 <?php endforeach; ?>
             </section><!--//section-->
         <?php endif; ?>
-        <!--pre><?php //var_dump($curriculo->listarCurso()); ?></pre-->
-        <?php if (count($curriculo->listarConhecimento()) > 0) : ?>
-        <section class="skills-section section">
-            <h2 class="section-title"><i class="fa fa-rocket"></i><?php echo _("Skills"); ?></h2>
-            <div class="skillset">
-                <?php foreach ($curriculo->listarConhecimento() as $conhecimento) : ?>
-                    <span class="badge"><?php echo $conhecimento->getNome(); ?></span>
-                <?php endforeach; ?>
-                <?php /*foreach ($curriculo->listarConhecimentoVisivel() as $conhecimento) : ?>
-                <div class="item">
-                    <h3 class="level-title"><?php echo $conhecimento->getNome(); ?></h3>
-                    <div class="level-bar">
-                        <div class="level-bar-inner" data-level="<?php echo $conhecimento->getPorcentagem() . "%"; ?>">
-                        </div>
-                    </div><!--//level-bar-->
-                </div><!--//item-->
-                <?php endforeach; ?>
-                <?php if (count($curriculo->listarConhecimentoOculto()) > 0) : ?>
-                <a href="#skill-hidden" class="hidden-btn"><?php echo _("View more skills"); ?> <i class="fa fa-chevron-down"></i></a>
-                <div id="skill-hidden" style="display: none;">
-                    <?php foreach ($curriculo->listarConhecimentoOculto() as $conhecimento) : ?>
-                        <div class="item">
-                            <h3 class="level-title"><?php echo $conhecimento->getNome(); ?></h3>
-                            <div class="level-bar">
-                                <div class="level-bar-inner" data-level="<?php echo $conhecimento->getPorcentagem() . "%"; ?>">
-                                </div>
-                            </div><!--//level-bar-->
-                        </div><!--//item-->
-                    <?php endforeach; ?>
-                </div>
-                <?php endif;*/ ?>
-            </div>
-        </section><!--//skills-section-->
-        <?php endif; ?>
-
     </div><!--//main-body-->
 </div>
 <footer class="footer">

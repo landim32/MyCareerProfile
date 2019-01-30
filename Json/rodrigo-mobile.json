@@ -1,7 +1,8 @@
 {
   "base": "rodrigo",
+  "pretensao": "R$ 7.000 CLT",
   "resumo": {
-    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS. Conhecimentos vastos em C#.Net, Xamarin, entre outros.",
+    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS.",
     "en": ""
   },
   "cargos": [
@@ -18,8 +19,8 @@
         "en": ""
       },
       "conhecimentos": [
-        { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "Xamarin", "estilo": "primary" },
+        { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "Javascript", "estilo": "primary" },
         { "nome": "PostgreSQL", "estilo": "success" },
         { "nome": "SQLite", "estilo": "success" },
@@ -56,7 +57,11 @@
     }
   ],
   "conhecimentos": [
+    { "nome": "Xamarin", "value": 100 },
+    { "nome": "Titanium", "value": 100 },
+    { "nome": "Appcelerator", "value": 100 },
+    { "nome": "Ionic", "value": 100 },
     { "nome": "C#.NET", "value": 100 },
-    { "nome": "Xamarin", "value": 100 }
+    { "nome": "Javascript", "value": 100 }
   ]
 }

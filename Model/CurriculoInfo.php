@@ -513,6 +513,10 @@ class CurriculoInfo {
         return array_slice($this->conhecimentos, 0, 7);
     }
 
+    public function limparConhecimento() {
+        $this->conhecimentos = array();
+    }
+
     /**
      * @return ConhecimentoInfo[]
      */
@@ -615,8 +619,29 @@ class CurriculoInfo {
         }
         //if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
         if (isset($value->conhecimentos) && is_array($value->conhecimentos)) {
+            $novoConhecimentos = array();
             foreach ($value->conhecimentos as $conhecimento) {
-                $curriculo->adicionarConhecimento( ConhecimentoInfo::fromJson($conhecimento, $language) );
+                $novoConhecimentos[] = ConhecimentoInfo::fromJson($conhecimento, $language);
+            }
+            CurriculoInfo::atualizarConhecimento($curriculo, $novoConhecimentos);
+        }
+    }
+
+    /**
+     * @param CurriculoInfo $curriculo
+     * @param ConhecimentoInfo[] $novoConhecimentos
+     */
+    private static function atualizarConhecimento(&$curriculo, $novoConhecimentos) {
+        $index = array();
+        $antigoConhecimentos = $curriculo->listarConhecimento();
+        $curriculo->limparConhecimento();
+        foreach ($novoConhecimentos as $conhecimento) {
+            $curriculo->adicionarConhecimento($conhecimento);
+            $index[] = $conhecimento->getNome();
+        }
+        foreach ($antigoConhecimentos as $conhecimento) {
+            if (!in_array($conhecimento->getNome(), $index)) {
+                $curriculo->adicionarConhecimento($conhecimento);
             }
         }
     }

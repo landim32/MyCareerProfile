@@ -28,7 +28,6 @@ class ProjetoInfo
     private $data_termino = null;
     private $situacao = "ativo";
     private $links = array();
-    private $conhecimentos = array();
 
     /**
      * @return string
@@ -159,22 +158,6 @@ class ProjetoInfo
     }
 
     /**
-     * @return ConhecimentoInfo[]
-     */
-    public function listarConhecimento() {
-        return $this->conhecimentos;
-    }
-
-    /**
-     * @param ConhecimentoInfo $value
-     * @return $this
-     */
-    public function adicionarConhecimento($value) {
-        $this->conhecimentos[] = $value;
-        return $this;
-    }
-
-    /**
      * @return LinkInfo[]
      */
     public function listarLinks() {
@@ -221,11 +204,6 @@ class ProjetoInfo
         if (isset($value->links) && count($value->links) > 0) {
             foreach ($value->links as $link) {
                 $projeto->adicionarLink( LinkInfo::fromJson($link, $language) );
-            }
-        }
-        if (isset($value->conhecimentos) && count($value->conhecimentos) > 0) {
-            foreach ($value->conhecimentos as $conhecimento) {
-                $projeto->adicionarConhecimento( ConhecimentoInfo::fromJson($conhecimento, $language) );
             }
         }
         return $projeto;

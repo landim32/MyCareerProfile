@@ -89,7 +89,7 @@
     }
   ],
   "resumo": {
-    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS. Conhecimentos em C#.Net, Xamarin, Appcelerator Titanium, PHP, entre outros.",
+    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Espiríto empreendedor, atualmente cria aplicativos para dispositivos móveis Android e iOS. Conhecimentos em C#.Net, Xamarin, Appcelerator Titanium, Java, PHP, entre outros.",
     "en": ""
   },
   "cargos": [
@@ -102,18 +102,21 @@
       "empresa" : "Emagine",
       "data_inicio": "2018-06-01",
       "descricao" : {
-        "pt_BR": "Freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por C#.NET, com diversos patterns e conectando com um banco de dados MySQL. No frontend são aplicativos desenvolvidos em Xamarin C# para Android/iOS e uma interface web.",
+        "pt_BR": "Freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas.",
         "en": ""
       },
       "conhecimentos": [
         { "nome": "C#.NET", "estilo": "primary" },
+        { "nome": "Java", "estilo": "primary" },
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "Javascript", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "PostgreSQL", "estilo": "success" },
         { "nome": "HTML5", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
         { "nome": "Bootstrap", "estilo": "info" },
-        { "nome": "Less", "estilo": "info" }
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Git", "estilo": "info" }
       ]
     },
     {
@@ -137,7 +140,8 @@
         { "nome": "Java", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "Scrum", "estilo": "info" },
-        { "nome": "Kanban", "estilo": "info" }
+        { "nome": "Kanban", "estilo": "info" },
+        { "nome": "Git", "estilo": "info" }
       ]
     },
     {
@@ -160,7 +164,9 @@
         { "nome": "Javascript", "estilo": "primary" },
         { "nome": "Java", "estilo": "primary" },
         { "nome": "Swift", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" }
+        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "SQLite", "estilo": "success" },
+        { "nome": "Git", "estilo": "info" }
       ]
     },
     {
@@ -190,12 +196,13 @@
         { "nome": "Wordpress", "estilo": "info" },
         { "nome": "Apache", "estilo": "info" },
         { "nome": "OpenSSL", "estilo": "info" },
-        { "nome": "PowerDNS", "estilo": "info" }
+        { "nome": "PowerDNS", "estilo": "info" },
+        { "nome": "Git", "estilo": "info" }
       ]
     },
     {
       "nome": {
-        "pt_BR": ".NET Developer / Gerente de Projetos",
+        "pt_BR": "Desenvolvedor .NET / Gerente de Projetos",
         "en": ".NET Developer / Project Manager"
       },
       "empresa" : "Wimoveis.com",
@@ -211,7 +218,8 @@
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "HTML5", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
-        { "nome": "Silverlight", "estilo": "info" }
+        { "nome": "Silverlight", "estilo": "info" },
+        { "nome": "SVN", "estilo": "info" }
       ]
     },
     {
@@ -232,7 +240,8 @@
         { "nome": "Javascript", "estilo": "primary" },
         { "nome": "SQL Server", "estilo": "success" },
         { "nome": "HTML", "estilo": "info" },
-        { "nome": "CSS", "estilo": "info" }
+        { "nome": "CSS", "estilo": "info" },
+        { "nome": "SVN", "estilo": "info" }
       ]
     },
     {
@@ -334,14 +343,15 @@
       "conhecimentos": [
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "C#.NET", "estilo": "primary" },
-        { "nome": "PHP", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
-        { "nome": "Javascript", "estilo": "info" },
+        { "nome": "Java", "estilo": "primary" },
+        { "nome": "Javascript", "estilo": "primary" },
+        { "nome": "PostgreSQL", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
         { "nome": "Angular", "estilo": "info" },
-        { "nome": "HTML5", "estilo": "info" },
         { "nome": "Bootstrap", "estilo": "info" },
-        { "nome": "Less", "estilo": "info" }
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Git", "estilo": "info" }
       ]
     },
     {
@@ -367,7 +377,8 @@
         { "nome": "Xamarin", "estilo": "primary" },
         { "nome": "C#.NET", "estilo": "primary" },
         { "nome": "PHP", "estilo": "primary" },
-        { "nome": "MySQL", "estilo": "success" },
+        { "nome": "PostgreSQL", "estilo": "success" },
+        { "nome": "SQLite", "estilo": "success" },
         { "nome": "Javascript", "estilo": "info" },
         { "nome": "jQuery", "estilo": "info" },
         { "nome": "Angular", "estilo": "info" },
@@ -597,25 +608,22 @@
   "conhecimentos": [
     { "nome": "C#.NET", "value": 100 },
     { "nome": "Xamarin", "value": 100 },
-    { "nome": "PHP", "value": 100 },
     { "nome": "Javascript", "value": 100 },
     { "nome": "Java", "value": 60 },
-    { "nome": "Android", "value": 90 },
-    { "nome": "Swift", "value": 70 },
+    { "nome": "PHP", "value": 100 },
     { "nome": "jQuery", "value": 95 },
-    { "nome": "Scrum", "value": 90 },
     { "nome": "MySQL", "value": 90 },
+    { "nome": "PostgreSQL", "value": 70 },
     { "nome": "SQL Server", "value": 90 },
     { "nome": "HTML5", "value": 95 },
     { "nome": "CSS", "value": 95 },
     { "nome": "Less", "value": 95 },
     { "nome": "Angular", "value": 80 },
-    { "nome": "GitHub", "value": 80 },
     { "nome": "Bootstrap", "value": 90 },
-    { "nome": "PostgreSQL", "value": 70 },
-    { "nome": "Wordpress", "value": 70 },
-    { "nome": "Magento", "value": 70 },
     { "nome": "Linux", "value": 70 },
-    { "nome": "FreeBSD", "value": 70 }
+    { "nome": "FreeBSD", "value": 70 },
+    { "nome": "Git", "value": 80 },
+    { "nome": "SVN", "value": 80 },
+    { "nome": "Scrum", "value": 90 }
   ]
 }

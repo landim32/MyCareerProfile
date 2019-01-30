@@ -53,7 +53,86 @@
     }
   ],
   "resumo": {
-    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Trabalhou com Java no backend da Caixa Seguradora Odonto e com aplicativos Android. Atualização recente (mais de 500 horas de cursos). Busca nova oportunidade como Desenvolvedor Java e se coloca à prova para testes.",
+    "pt_BR": "Desenvolvedor Full Stack com mais de 20 anos de experiência. Trabalhou com Java no backend da Caixa Seguradora Odonto e com aplicativos Android. Atualização recente (mais de 500 horas de cursos). Busca mais experiência como Desenvolvedor Java e se coloca à prova para testes.",
     "en": ""
-  }
+  },
+  "cargos": [
+    {
+      "id": "emagine",
+      "nome": {
+        "pt_BR": "Desenvolvedor Full Stack",
+        "en": "Full Stack Developer"
+      },
+      "empresa" : "Emagine",
+      "data_inicio": "2018-06-01",
+      "descricao" : {
+        "pt_BR": "Freelancer no desenvolvimento completo e manutenção de dois aplicativos principais: um clone de Uber, caronas e fretes; e App de lojas virtuais diferenciadas. O Backend é composto por Java, com diversos patterns e conectando com um banco de dados PostgreSQL. No frontend são aplicativos desenvolvidos em Android Studio e uma interface web.",
+        "en": ""
+      },
+      "conhecimentos": [
+        { "nome": "Android Studio", "estilo": "primary" },
+        { "nome": "Java", "estilo": "primary" },
+        { "nome": "J2EE", "estilo": "primary" },
+        { "nome": "Tomcat", "estilo": "primary" },
+        { "nome": "Maven", "estilo": "primary" },
+        { "nome": "Spring Framework", "estilo": "primary" },
+        { "nome": "JAX-RS", "estilo": "primary" },
+        { "nome": "JDBC", "estilo": "primary" },
+        { "nome": "JPA/Hibernate", "estilo": "primary" },
+        { "nome": "JUnit", "value": 100 },
+        { "nome": "Birt", "estilo": "primary" },
+        { "nome": "PostgreSQL", "estilo": "success" },
+        { "nome": "SQLite", "estilo": "success" },
+        { "nome": "HTML5", "estilo": "info" },
+        { "nome": "jQuery", "estilo": "info" },
+        { "nome": "Angular", "estilo": "info" },
+        { "nome": "Bootstrap", "estilo": "info" },
+        { "nome": "Less", "estilo": "info" },
+        { "nome": "Git", "estilo": "info" }
+      ]
+    },
+    {
+      "id": "foursys",
+      "nome": {
+        "pt_BR": "Desenvolvedor Full Stack",
+        "en": "Full Stack Developer"
+      },
+      "empresa" : "Foursys",
+      "data_inicio": "2017-08-01",
+      "data_termino": "2018-05-31",
+      "descricao" : {
+        "pt_BR": "Alocado na Caixa Seguradora, fez parte da equipe de desenvolvimento do aplicativo 'Caixa Seguradora Odonto & Saúde' para Android / iOS (que hoje é chamado de 'Odonto Empresas') desenvolvido em Appceleretor Titanium com backend em Java, conectado em um banco de dados SQL Server, também usando Scrum e outras metodologias agéis.",
+        "en": ""
+      },
+      "conhecimentos": [
+        { "nome": "Titanium", "estilo": "primary" },
+        { "nome": "Appcelerator", "estilo": "primary" },
+        { "nome": "Java", "estilo": "primary" },
+        { "nome": "J2EE", "estilo": "primary" },
+        { "nome": "Tomcat", "estilo": "primary" },
+        { "nome": "Maven", "estilo": "primary" },
+        { "nome": "Spring Framework", "estilo": "primary" },
+        { "nome": "JAX-RS", "estilo": "primary" },
+        { "nome": "JDBC", "estilo": "primary" },
+        { "nome": "JPA/Hibernate", "estilo": "primary" },
+        { "nome": "Birt", "estilo": "primary" },
+        { "nome": "SQL Server", "estilo": "success" },
+        { "nome": "Scrum", "estilo": "info" },
+        { "nome": "Kanban", "estilo": "info" },
+        { "nome": "Git", "estilo": "info" }
+      ]
+    }
+  ],
+  "conhecimentos": [
+    { "nome": "Java", "value": 60 },
+    { "nome": "J2EE", "value": 100 },
+    { "nome": "Tomcat", "value": 100 },
+    { "nome": "JBoss", "value": 100 },
+    { "nome": "Maven", "value": 100 },
+    { "nome": "Spring Framework", "value": 100 },
+    { "nome": "JAX-RS", "value": 100 },
+    { "nome": "JDBC", "value": 100 },
+    { "nome": "JPA/Hibernate", "value": 95 },
+    { "nome": "JUnit", "value": 100 }
+  ]
 }

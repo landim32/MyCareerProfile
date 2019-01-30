@@ -326,9 +326,9 @@ class CurriculoPDF extends FPDF
         $this->escreverNegritoLn($projeto->getNome(),9,CurriculoPDF::PRETO,6);
         $this->SetX($this->GetX() + 3);
 
-        $conhecimento = $this->consolidarConhecimento($projeto->listarConhecimento());
-        $descricao = $projeto->getDescricao() . " " . _("Related skills") . ": " . $conhecimento . ".";
-        $this->paragrafo($descricao, 9, CurriculoPDF::PRETO, 4);
+        //$conhecimento = $this->consolidarConhecimento($projeto->listarConhecimento());
+        //$descricao = $projeto->getDescricao() . " " . _("Related skills") . ": " . $conhecimento . ".";
+        $this->paragrafo($projeto->getDescricao(), 9, CurriculoPDF::PRETO, 4);
 
         foreach ($projeto->listarLinks() as $link) {
             //$this->escreverLabel($link->getNome() . ": ",8,4,40);
@@ -457,6 +457,7 @@ class CurriculoPDF extends FPDF
         $this->AliasNbPages();
         $this->AddPage();
         $this->gerarDados($curriculo);
+        $this->gerarConhecimento($curriculo);
         $this->gerarCargo($curriculo);
         $this->gerarProjeto($curriculo);
         if (count($curriculo->listarCertificacao()) > 0) {
@@ -467,7 +468,6 @@ class CurriculoPDF extends FPDF
             $this->gerarGraduacao($curriculo);
         }
         $this->gerarCurso($curriculo);
-        $this->gerarConhecimento($curriculo);
     }
 
 }
